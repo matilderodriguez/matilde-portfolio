@@ -129,6 +129,16 @@ main{
     line-height:26px;
     font-weight:400;
 }
+
+
+.ascii-art{
+    display:block;
+    width:25ch;
+    transform:scaleX(1.25);
+    transform-origin:left center;
+}
+
+
 .ascii-name{
     display:block;
     color:#c7923e;
