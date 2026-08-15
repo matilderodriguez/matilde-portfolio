@@ -1,3 +1,12 @@
+@font-face{
+    font-family:"IBM Plex Mono";
+    src:url("IBMPlexMono-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+}
+
+
 *{
     margin:0;
     padding:0;
@@ -29,7 +38,6 @@ body{
 }
 
 
-
 header{
     height:42px;
     background:#1b1b1b;
@@ -54,11 +62,9 @@ header{
 }
 
 
-
 .dots span:nth-child(1){background:#ff5f57;}
 .dots span:nth-child(2){background:#febc2e;}
 .dots span:nth-child(3){background:#28c840;}
-
 
 
 .window-title{
@@ -78,11 +84,9 @@ header{
 
 
 @keyframes blink{
-
     50%{
         opacity:0;
     }
-
 }
 
 
@@ -121,19 +125,17 @@ main{
     color:#c7923e;
     font-family:"IBM Plex Mono","SF Mono",monospace;
     white-space:pre;
-    line-height:1;
-    font-size:15px;
-    font-weight:700;
+    font-size:20px;
+    line-height:26px;
+    font-weight:400;
 }
 .ascii-name{
-
     display:block;
     color:#c7923e;
     font-size:20px;
 letter-spacing:5px;
     line-height:1.1;
     margin-top:0px;
-
 }
 
 
@@ -145,40 +147,33 @@ letter-spacing:5px;
 
 
 .roles{
-
     color:#c7923e;
     font-size:15px;
     line-height:1.8;
-
 }
 
 
 
 .hero-description{
-
     font-size:14px;
     line-height:1.8;
     max-width:600px;
     margin-top:25px;
     margin-bottom:30px;
-
 }
 
 
 
 .buttons{
-
     display:flex;
     flex-direction:row;
     gap:20px;
     flex-wrap:nowrap;
-
 }
 
 
 
 .button{
-
     display:inline-block;
     padding:12px 24px;
     border:1px solid #c7923e;
@@ -187,22 +182,16 @@ letter-spacing:5px;
     font-family:"IBM Plex Mono",monospace;
     font-size:13px;
     text-transform:uppercase;
-
 }
-
 
 
 .button:hover{
-
     background:#c7923e;
     color:#111;
-
 }
 
 
-
 .terminal-box{
-
     font-family:"IBM Plex Mono","SF Mono",monospace;
     color:#d8d8d8;
     font-size:14px;
@@ -215,107 +204,75 @@ letter-spacing:5px;
     display:flex;
     flex-direction:column;
     gap:4px;
-
 }
 
 
-
 .terminal-box h2{
-
     color:#c7923e;
     font-size:14px;
     font-weight:600;
     margin:0;
-
 }
-
 
 
 .contact-box{
-
     width:fit-content;
-
 }
-
 
 
 .iam-box{
-
     width:100%;
     max-width:650px;
-
 }
-
 
 
 .box-content{
-
     padding:0;
     white-space:pre-wrap;
-
 }
-
 
 
 .contact-box .box-content{
-
     line-height:1.5;
-
 }
 .contact-box a{
-
     color:#d8d8d8;
     text-decoration:none;
-
 }
 
 .contact-box a:visited{
-
     color:#d8d8d8;
-
 }
 
 .contact-box a:hover{
-
     color:#c7923e;
-
 }
 
 .contact-box a:active{
-
     color:#c7923e;
-
 }
 
 .iam-box .box-content{
-
     line-height:1.6;
 
 }
 
 
 .line{
-
     height:1px;
     background:#303030;
     margin:45px 0;
 
 }
 @media(max-width:850px){
-
-
     body{
-
         padding:15px;
-
     }
 
 
 
     main{
-
         padding:35px 25px;
-
     }
 
 
@@ -331,74 +288,59 @@ letter-spacing:5px;
 
 
     .ascii{
-
-        font-size:12px;
-
+        font-size:10px;
+        line-height:13px;
     }
 
 
 
     .ascii-name{
-
         font-size:16px;
-letter-spacing:4px;
-
+        letter-spacing:4px;
     }
 
 
 
     .roles{
-
         font-size:13px;
-
     }
 
 
 
     .hero-description{
-
         font-size:13px;
-
     }
 
 
 
     .buttons{
-
         flex-direction:column;
         align-items:flex-start;
-
     }
 
 
 
     .button{
-
         width:100%;
         text-align:center;
-
     }
 
 
 
     .terminal-box{
-
         font-size:12px;
-
     }
 
 
 
     .contact-box{
-    width:fit-content;
-    max-width:100%;
-}
+        width:fit-content;
+        max-width:100%;
+    }
 
 
-.iam-box{
-    width:100%;
-}
-
-
+    .iam-box{
+        width:100%;
+    }
 
 }
