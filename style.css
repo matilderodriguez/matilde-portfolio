@@ -118,6 +118,7 @@ main{
     width:25ch;
     transform:scaleX(1.25);
     transform-origin:left center;
+    text-shadow:0.5px 0 0 currentColor,-0.5px 0 0 currentColor;
 }
 
 .ascii-name{
