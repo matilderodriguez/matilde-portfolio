@@ -319,9 +319,21 @@ main{
     white-space:pre-wrap;
 }
 
-#boot::after{
-    content:"_";
+#boot > div:last-child::after{
+    content:"";
+    display:inline-block;
+    width:1ch;
+    height:1em;
+    margin-left:.35ch;
+    vertical-align:-.12em;
+    background:currentColor;
     animation:blink 1s infinite;
+}
+
+@media(prefers-reduced-motion:reduce){
+    #boot > div:last-child::after{
+        animation:none;
+    }
 }
 
 #boot.boot-hidden{
