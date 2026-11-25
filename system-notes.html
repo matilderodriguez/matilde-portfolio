@@ -32,7 +32,7 @@ h1{font-size:clamp(24px,5vw,42px);line-height:1.1;margin:0 0 30px}
 .learning::after{width:var(--gap)}
 .sources .node::after,.learning::before{width:calc(var(--gap) / 2)}
 .learning::before{right:calc(100% + 1px)}
-.sources::after{content:"";position:absolute;left:calc(100% + var(--gap) / 2);top:25%;bottom:25%;border-left:1px solid var(--line)}
+.sources::after{content:"";position:absolute;left:calc(100% + var(--gap) / 2);top:calc(25% - 4px);bottom:calc(25% - 4px);border-left:1px solid var(--line)}
 article{border-top:1px dotted var(--line);padding:18px 0;max-width:72ch;scroll-margin-top:18px}
 article:target h2{text-decoration:underline;text-underline-offset:.25em}
 article h2{margin:0;font-size:17px}
@@ -40,7 +40,7 @@ article p{margin:8px 0 0}
 @media(max-width:790px){
     .map{--gap:22px;grid-template-columns:1fr;gap:var(--gap)}
     .sources{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .sources::after{left:25%;right:25%;top:calc(100% + var(--gap) / 2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
+    .sources::after{left:calc(25% - 4px);right:calc(25% - 4px);top:calc(100% + var(--gap) / 2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
     .sources .node::after,.learning::after,.learning::before{left:50%;top:calc(100% + 1px);width:1px;height:calc(var(--gap) / 2)}
     .learning::after{height:var(--gap)}
     .learning::before{top:auto;bottom:calc(100% + 1px)}
@@ -56,7 +56,7 @@ article p{margin:8px 0 0}
 <section class="map" aria-label="Concept map: Pallas Athena and Mercury connect to Learning Patterns, applied in Pixel to Teach">
 <div class="sources">
 <a class="node" href="#pallas"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABEUlEQVR4nAXBsUsCYQDG4d/33pEnGB5GYRBoIARNTQkRaltL0B7RFDS02SDVcE2tjbWUf0JT5NS1FQ3RFkJwIaSQhEuk+HnX8wDZdRBERAgHk0d4Qwsi56uHWIQIwakNwbzWy4DTvQUU+28WmBoXLCh9tuuBWNjvA4XOuS2innuvbbTcrSUHUMkk40PcjR2shzjmPYfCIs8tMOWkmgTuyXdS+wxcx4uDNILf0REaET/56IXo8RIK2dJMH+39bZWa0DCdpR801M2mjwbuVWQQo8oFqEkSTgDTrlrAuU4skFp9GCBSd1EGMd1fsYhSK+8CZTNoANQtwHzXgmg3AUyctSCtYcG4H5r10ORrzgUpdAL4B3nTXFmCW4PqAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>PALLAS ATHENA</strong><span>Pattern recognition</span></span></a>
-<a class="node" href="#mercury"><span><strong>MERCURY</strong><span>Language and information</span></span></a>
+<a class="node" href="#mercury"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABCElEQVR4nDXQvyvnARzH8cf37eP7dUe+tq9vyQ0MFoMsBnW3GvwNMiiLDLIZnMl4ZZUig4nBcrIo6Rak1JcrXX5G4fpeV3zwjRs+7rW8ej17TU/ek5tG8CWb1Qz2Z7WXwT9bRL/B7yQXp1dH6K31vZI0dqwNE2crna0kN6UBaCueNBJ1536j8Hj/eVryvFjZGqbw9PB2IKndVSZb5bQPfRxrCr/Oe1owUdpOURxdaEbzQXlJ+Hud+4noHtmRMPdhE/mTkV3k13trwstGeUaIux/gcL4qqEQD6rraqnC7mgqFlUiF+uXSrPD4rQz54hQk4ynYTyH3WiW8fc2MfDomuHy3lj1N/bfoH9DrTLH065AcAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>MERCURY</strong><span>Language and information</span></span></a>
 </div>
 <a class="node learning" href="#learning"><span><strong>LEARNING PATTERNS</strong><span>What needs to be learned first?</span></span></a>
 <a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From documentation to learning</span></span></a>
