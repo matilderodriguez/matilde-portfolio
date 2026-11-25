@@ -4,6 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!boot) return;
 
+    const sessionKey = "matilde-portfolio:entered";
+    const hideBoot = () => boot.remove();
+
+    try {
+        if (sessionStorage.getItem(sessionKey)) {
+            hideBoot();
+            return;
+        }
+        sessionStorage.setItem(sessionKey, "1");
+    } catch {
+        // Keep navigation usable when browser storage is disabled.
+        hideBoot();
+        return;
+    }
+
+    window.addEventListener("pagehide", hideBoot, {once: true});
+
     const lines = [
         "user@localhost:~$ ssh matilde@career",
         "",
