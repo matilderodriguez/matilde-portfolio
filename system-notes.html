@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Notes | Matilde Rodríguez</title>
+<meta name="description" content="Notes on language, pattern recognition and the design of learning.">
+<link rel="icon" href="favicon.svg">
+<style>
+@font-face{font-family:"IBM Plex Mono";src:url("IBMPlexMono-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("IBMPlexMono-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{color-scheme:dark;--background:#0a0a0a;--surface:#101010;--text:#ededed;--line:#929292}
+*{box-sizing:border-box}
+body{max-width:1240px;margin:auto;padding:35px 20px;background:var(--background);color:var(--text);font:14px/1.6 "IBM Plex Mono",monospace}
+a{color:inherit}
+a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.window{border:1px solid #303030;border-radius:10px;overflow:hidden;background:var(--surface)}
+nav{padding:10px 20px;background:#1b1b1b}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+main{padding:clamp(18px,5vw,55px)}
+h1{font-size:clamp(24px,5vw,42px);line-height:1.1;margin:0 0 30px}
+.map{--gap:40px;display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:center;gap:var(--gap);margin-bottom:44px}
+.sources{display:grid;gap:16px;position:relative}
+.node{display:flex;align-items:center;gap:12px;position:relative;border:1px dotted var(--line);padding:13px;text-decoration:none;min-width:0}
+.node:hover,.node:focus-visible{background:var(--text);color:var(--background)}
+.node strong,.node span span{display:block}
+.node img{width:42px;height:48px;image-rendering:pixelated;flex:none}
+.node:hover img,.node:focus-visible img{filter:invert(1)}
+.learning::after,.learning::before,.sources .node::after{content:"";position:absolute;top:50%;height:1px;background:var(--line)}
+.learning::after,.sources .node::after{left:calc(100% + 1px)}
+.learning::after{width:var(--gap)}
+.sources .node::after,.learning::before{width:calc(var(--gap) / 2)}
+.learning::before{right:calc(100% + 1px)}
+.sources::after{content:"";position:absolute;left:calc(100% + var(--gap) / 2);top:25%;bottom:25%;border-left:1px solid var(--line)}
+article{border-top:1px dotted var(--line);padding:18px 0;max-width:72ch;scroll-margin-top:18px}
+article:target h2{text-decoration:underline;text-underline-offset:.25em}
+article h2{margin:0;font-size:17px}
+article p{margin:8px 0 0}
+@media(max-width:790px){
+    .map{--gap:22px;grid-template-columns:1fr;gap:var(--gap)}
+    .sources{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .sources::after{left:25%;right:25%;top:calc(100% + var(--gap) / 2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
+    .sources .node::after,.learning::after,.learning::before{left:50%;top:calc(100% + 1px);width:1px;height:calc(var(--gap) / 2)}
+    .learning::after{height:var(--gap)}
+    .learning::before{top:auto;bottom:calc(100% + 1px)}
+    .sources .node{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="window">
+<nav aria-label="Portfolio"><a href="./">[ PORTFOLIO ]</a></nav>
+<main>
+<h1>SYSTEM NOTES</h1>
+<section class="map" aria-label="Concept map: Pallas Athena and Mercury connect to Learning Patterns, applied in Pixel to Teach">
+<div class="sources">
+<a class="node" href="#pallas"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABEUlEQVR4nAXBsUsCYQDG4d/33pEnGB5GYRBoIARNTQkRaltL0B7RFDS02SDVcE2tjbWUf0JT5NS1FQ3RFkJwIaSQhEuk+HnX8wDZdRBERAgHk0d4Qwsi56uHWIQIwakNwbzWy4DTvQUU+28WmBoXLCh9tuuBWNjvA4XOuS2innuvbbTcrSUHUMkk40PcjR2shzjmPYfCIs8tMOWkmgTuyXdS+wxcx4uDNILf0REaET/56IXo8RIK2dJMH+39bZWa0DCdpR801M2mjwbuVWQQo8oFqEkSTgDTrlrAuU4skFp9GCBSd1EGMd1fsYhSK+8CZTNoANQtwHzXgmg3AUyctSCtYcG4H5r10ORrzgUpdAL4B3nTXFmCW4PqAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>PALLAS ATHENA</strong><span>Pattern recognition</span></span></a>
+<a class="node" href="#mercury"><span><strong>MERCURY</strong><span>Language and information</span></span></a>
+</div>
+<a class="node learning" href="#learning"><span><strong>LEARNING PATTERNS</strong><span>What needs to be learned first?</span></span></a>
+<a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From documentation to learning</span></span></a>
+</section>
+<article id="pallas" tabindex="-1">
+<h2>Pallas Athena</h2>
+<p>Pallas Athena represents strategic synthesis. When I read a technical manual, I look for ideas that recur and dependencies the manual leaves implicit. Those relationships can show where a learner needs an explanation before attempting a task.</p>
+</article>
+<article id="mercury" tabindex="-1">
+<h2>Mercury</h2>
+<p>Mercury represents language and the movement of information between domains. In technical translation, that can mean finding an explanation a new reader can follow while preserving the distinctions that matter in the source.</p>
+</article>
+<article id="learning" tabindex="-1">
+<h2>Learning Patterns</h2>
+<p>A manual might organise its chapters by component. A learner may need to start with a procedure, or with the concepts that explain why its steps appear in that order. The question I ask is what someone needs to understand before the next step makes sense.</p>
+</article>
+<article id="pixel-to-teach" tabindex="-1">
+<h2>Pixel to Teach</h2>
+<p>Pixel to Teach explores how to turn technical documentation into structured learning material, including glossaries, modules and questions, with links back to the source.</p>
+<p><a href="https://pixel-to-teach.lovable.app/">Open Pixel to Teach</a></p>
+</article>
+</main>
+</div>
+</body>
+</html>
