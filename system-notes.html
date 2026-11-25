@@ -16,6 +16,7 @@ a{color:inherit}
 a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 .window{border:1px solid #303030;border-radius:10px;overflow:hidden;background:var(--surface)}
 nav{padding:10px 20px;background:#1b1b1b}
+.section-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 nav a{text-decoration:none}
 nav a:hover{text-decoration:underline}
 main{padding:clamp(18px,5vw,55px)}
@@ -70,7 +71,7 @@ article p{margin:8px 0 0}
 </head>
 <body>
 <div class="window">
-<nav aria-label="Portfolio"><a href="./">[ PORTFOLIO ]</a></nav>
+<nav class="section-bar" aria-label="Site navigation"><span>PATTERN ATLAS</span><a href="./" aria-label="Return to home page">[ HOME ]</a></nav>
 <main>
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
