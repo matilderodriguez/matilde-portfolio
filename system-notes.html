@@ -68,6 +68,9 @@ article p{margin:8px 0 0}
 @media(max-width:850px){.topics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.topics{grid-template-columns:1fr}}
 .related{list-style:none;padding-left:0}.related li{display:flex;align-items:baseline;gap:.25ch}.branch{white-space:pre;color:var(--line);flex:none}
+.route,.operations>div{border:1px dotted var(--line);padding:14px}
+.route{margin:0 0 28px}.route-start{font-weight:bold}.route ol{list-style:none;margin:12px 0 0;padding:0}.route li{padding:.25em 0}.route li:nth-child(2){margin-left:2ch}.route li:nth-child(3){margin-left:4ch}.route li:nth-child(4){margin-left:6ch}
+.operations{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22ch),1fr));gap:12px;margin:18px 0}.operations h3{margin:0}.note-id{font-size:12px;letter-spacing:.08em}
 </style>
 </head>
 <body>
@@ -85,16 +88,23 @@ article p{margin:8px 0 0}
 <a class="node learning" href="#learning"><span><strong>LEARNING PATTERNS</strong><span>What needs to be learned first?</span></span></a>
 <a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From documentation to learning</span></span></a>
 </section>
+<section class="route" aria-label="Explore the knowledge map">
+<a class="route-start" href="#architecture">SYS.NOTES_001 / THE ARCHITECTURE OF KNOWLEDGE</a>
+<ol><li><span aria-hidden="true">+-- </span><a href="#learning">LEARNING</a></li>
+<li><span aria-hidden="true">+-- </span><a href="#patterns">PATTERN RECOGNITION</a></li>
+<li><span aria-hidden="true">+-- </span><a href="#explanation">ENGINEERING</a></li>
+<li><span aria-hidden="true">+-- </span><a href="#tools">SYSTEMS</a></li></ol>
+</section>
 <h2>FIELD NOTES</h2>
 <div class="topics">
 <section class="topic"><h3>KNOWLEDGE</h3>
-<a class="node" href="#clarity"><span><strong>Complexity to Clarity</strong><span>Reveal the structure behind the explanation.</span></span></a>
-<a class="node" href="#architecture"><span><strong>Knowledge Architecture</strong><span>Organise information so it can guide action.</span></span></a>
+<a class="node" href="#clarity"><span><strong>From Complexity to Clarity</strong><span>Reveal the structure behind the explanation.</span></span></a>
+<a class="node" href="#architecture"><span><strong>The Architecture of Knowledge</strong><span>Organise information so it can guide action.</span></span></a>
 <a class="node" href="#learning-design"><span><strong>Learning as System Design</strong><span>Sequence concepts, examples and practice.</span></span></a>
 <a class="node" href="#before-learning"><span><strong>Before Learning Begins</strong><span>Follow the structure from source to learning activity.</span></span></a>
 </section>
 <section class="topic"><h3>PATTERNS</h3>
-<a class="node" href="#patterns"><span><strong>Pattern Recognition</strong><span>See the structure that different problems share.</span></span></a>
+<a class="node" href="#patterns"><span><strong>Pattern Recognition: Seeing What Connects</strong><span>See the structure that different problems share.</span></span></a>
 <a class="node" href="#bridge"><span><strong>The Bridge Between Domains</strong><span>Connect engineering, language and learning.</span></span></a>
 </section>
 <section class="topic"><h3>SYSTEMS</h3>
@@ -103,8 +113,8 @@ article p{margin:8px 0 0}
 <a class="node" href="#technical-writing"><span><strong>Before the First Sentence</strong><span>Trace the decisions behind a technical explanation.</span></span></a>
 </section>
 <section class="topic"><h3>APPLICATION</h3>
-<a class="node" href="#scale"><span><strong>Designing for Scale</strong><span>Make the same knowledge easier to teach and maintain.</span></span></a>
-<a class="node" href="#tools"><span><strong>From Knowledge to Tools</strong><span>Turn a working explanation into something people can use.</span></span></a>
+<a class="node" href="#scale"><span><strong>Knowledge That Scales</strong><span>Make the same knowledge easier to teach and maintain.</span></span></a>
+<a class="node" href="#tools"><span><strong>From Abstract Thinking to Practical Systems</strong><span>Turn a working explanation into something people can use.</span></span></a>
 <a class="node" href="#knowledge-design"><span><strong>Where Language, Learning and Systems Meet</strong><span>Explore three ways into the same piece of knowledge.</span></span></a>
 </section>
 </div>
@@ -124,8 +134,8 @@ article p{margin:8px 0 0}
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
@@ -146,7 +156,7 @@ article p{margin:8px 0 0}
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
 </ul>
 </article>
 <article class="note" id="learning" tabindex="-1" aria-labelledby="learning-title">
@@ -164,7 +174,7 @@ article p{margin:8px 0 0}
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
@@ -184,13 +194,14 @@ article p{margin:8px 0 0}
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="clarity" tabindex="-1" aria-labelledby="clarity-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
-<h2 id="clarity-title">Complexity to Clarity</h2>
+<p class="note-id">SYSTEM NOTE 003</p>
+<h2 id="clarity-title">From Complexity to Clarity</h2>
 <p class="summary">Reveal the structure behind the explanation.</p>
 <figure><figcaption class="visually-hidden">COMPLEX INFORMATION leads to IDENTIFY RELATIONSHIPS leads to UNDERSTANDABLE STRUCTURE.</figcaption><pre aria-hidden="true">[ COMPLEX INFORMATION ]
   |
@@ -202,14 +213,15 @@ article p{margin:8px 0 0}
 <p>A dense document may contain all the necessary facts and still be difficult to use. Making its structure visible can mean separating a prerequisite from an instruction, or showing how two apparently separate concepts depend on each other. That gives each detail a place in the explanation.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
 </ul>
 </article>
 <article class="note" id="patterns" tabindex="-1" aria-labelledby="patterns-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
-<h2 id="patterns-title">Pattern Recognition</h2>
+<p class="note-id">SYSTEM NOTE 002</p>
+<h2 id="patterns-title">Pattern Recognition: Seeing What Connects</h2>
 <p class="summary">See the structure that different problems share.</p>
 <figure><figcaption class="visually-hidden">OBSERVE leads to COMPARE leads to CONNECT leads to SYNTHESISE.</figcaption><pre aria-hidden="true">[ OBSERVE ]
   |
@@ -225,35 +237,35 @@ article p{margin:8px 0 0}
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="architecture" tabindex="-1" aria-labelledby="architecture-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
-<h2 id="architecture-title">Knowledge Architecture</h2>
+<p class="note-id">SYSTEM NOTE 001</p>
+<h2 id="architecture-title">The Architecture of Knowledge</h2>
 <p class="summary">Organise information so it can guide action.</p>
-<figure><figcaption class="visually-hidden">RAW INFORMATION leads to STRUCTURE leads to UNDERSTANDING leads to ACTION.</figcaption><pre aria-hidden="true">[ RAW INFORMATION ]
-  |
-  v
-[ STRUCTURE ]
-  |
-  v
-[ UNDERSTANDING ]
-  |
-  v
-[ ACTION ]</pre></figure>
+<div class="operations"><div><h3><a href="#mercury">MERCURY / INFORMATION PROCESSING</a></h3><p>What does the source say? I gather the terms, quantities and instructions, keeping each with its context as I move between languages.</p></div><div><h3><a href="#pallas">PALLAS / STRATEGIC SYNTHESIS</a></h3><p>What connects those details? I compare cases, identify dependencies and ask which relationship would help someone decide what to do.</p></div></div>
+<h3>FROM PATTERNS TO SYSTEMS</h3>
+<figure><figcaption class="visually-hidden">Information reveals patterns. Comparing those patterns establishes relationships that can be organised and applied.</figcaption><pre aria-hidden="true">INFORMATION
+  +-- PATTERNS
+       +-- RELATIONSHIPS
+            +-- ARCHITECTURE
+                 +-- APPLICATION</pre></figure>
+<h3>PRACTICAL APPLICATION</h3><p>An engineering drawing can show an assembly in numbered parts. A translator needs to know which label belongs to each part. A new colleague also needs to know which part must be fitted first and why. That dependency gives a trainer the sequence for a demonstration and a technical writer the point at which to place a warning. A team can then reuse the same relationship in a manual, a lesson or a troubleshooting guide.</p>
 <p>A course, a technical manual and a training tool all ask their readers to do something with information. In each case, I look for a structure that helps someone find what matters, see why it matters and decide what to do next. That work connects learning design, documentation and engineering.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="explanation" tabindex="-1" aria-labelledby="explanation-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
+<p class="note-id">SYSTEM NOTE 004</p>
 <h2 id="explanation-title">The Engineering of Explanation</h2>
 <p class="summary">Design the path from a system to its reader.</p>
 <figure><figcaption class="visually-hidden">HOW THE SYSTEM WORKS leads to WHAT THE READER NEEDS leads to A USABLE EXPLANATION.</figcaption><pre aria-hidden="true">[ HOW THE SYSTEM WORKS ]
@@ -291,9 +303,9 @@ article p{margin:8px 0 0}
 <p>When the same question comes up repeatedly, the knowledge may sit with one experienced person or be buried in a hard-to-find document. An ordered checklist or troubleshooting guide can make that knowledge available at the point of use. It can also give a team a shared procedure to review and improve.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Designing for Scale</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Knowledge That Scales</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="learning-design" tabindex="-1" aria-labelledby="learning-design-title">
@@ -335,13 +347,14 @@ article p{margin:8px 0 0}
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
 </ul>
 </article>
 <article class="note" id="scale" tabindex="-1" aria-labelledby="scale-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
-<h2 id="scale-title">Designing for Scale</h2>
+<p class="note-id">SYSTEM NOTE 005</p>
+<h2 id="scale-title">Knowledge That Scales</h2>
 <p class="summary">Make the same knowledge easier to teach and maintain.</p>
 <figure><figcaption class="visually-hidden">SPECIALIST EXPERTISE leads to REUSABLE RESOURCE leads to COHORTS AND TEAMS.</figcaption><pre aria-hidden="true">[ SPECIALIST EXPERTISE ]
   |
@@ -360,7 +373,8 @@ article p{margin:8px 0 0}
 </article>
 <article class="note" id="tools" tabindex="-1" aria-labelledby="tools-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
-<h2 id="tools-title">From Knowledge to Tools</h2>
+<p class="note-id">SYSTEM NOTE 006</p>
+<h2 id="tools-title">From Abstract Thinking to Practical Systems</h2>
 <p class="summary">Turn a working explanation into something people can use.</p>
 <figure><figcaption class="visually-hidden">UNDERSTAND THE PROBLEM leads to CAPTURE THE PROCESS leads to BUILD A RESOURCE OR TOOL.</figcaption><pre aria-hidden="true">[ UNDERSTAND THE PROBLEM ]
   |
@@ -372,8 +386,8 @@ article p{margin:8px 0 0}
 <p>Once an explanation works, I can ask which parts could live in a checklist, a training resource or a digital tool. For example, a documented sequence of checks can become a guided troubleshooting workflow. The form depends on what the person needs to do with the knowledge.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Designing for Scale</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Knowledge That Scales</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
@@ -401,9 +415,9 @@ article p{margin:8px 0 0}
 <p>Engineering adds a third question. Which part depends on which other part? The order that makes sense on a parts list may differ from the order in which someone needs to learn a procedure. In corporate training, that difference matters when a new colleague has the manual open and needs to decide what to do.</p>
 <p>This is the intersection I explore through Pixel to Teach. A bilingual glossary can preserve a distinction between terms. A map can make a dependency visible. A practice task can ask someone to use both. The practical aim is to make expertise easier to find, teach and reuse across a team.</p>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li></ul></article>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li></ul></article>
 </main>
 </div>
 <script>
