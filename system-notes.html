@@ -102,6 +102,11 @@ html:has(.photo-view[open]){overflow:hidden}
 .photo-grid img{display:block;min-width:0;max-width:100%;height:auto;max-height:60vh;object-fit:contain;flex:0 1 auto}
 .photo-view figcaption{margin-top:1rem;max-width:66ch}
 @media(max-width:640px){.photo-grid{flex-direction:column}.photo-grid img{max-height:65vh;max-height:65dvh;flex:none;width:auto}}
+
+/* Additional visual notes: responsive image pairs and video. */
+.photo-grid video{display:block;width:auto;max-width:100%;height:auto;max-height:60vh;max-height:60dvh;object-fit:contain;min-width:0}
+.photo-grid.photo-pair img{max-width:calc((100% - 1rem)/2)}
+@media(max-width:640px){.photo-grid.photo-pair img{max-width:100%}.photo-grid video{max-height:65dvh}}
 </style>
 </head>
 <body>
@@ -181,7 +186,7 @@ html:has(.photo-view[open]){overflow:hidden}
   |
   v
 [ EXPLAIN WITH PRECISION ]</pre></figure>
-<p>Mercury is my image for <a href="visual-notes.html#photo-profiles" class="photo-word" aria-haspopup="dialog" aria-controls="photo-profiles">curiosity and communication</a>. Technical translation often means moving between the language of a specialist and the questions of someone using the material. I want the explanation to travel across that gap with its meaning and technical distinctions intact.</p>
+<p>Mercury is my image for <a href="visual-notes.html#photo-profiles" class="photo-word" aria-haspopup="dialog" aria-controls="photo-profiles">curiosity and communication</a>. Technical translation often means moving between the language of a specialist and the questions of someone using the material. I want the explanation to travel across that gap <a href="visual-notes.html#photo-recognition-scale" class="photo-word" aria-haspopup="dialog" aria-controls="photo-recognition-scale">with its meaning and technical distinctions intact</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
@@ -306,7 +311,7 @@ html:has(.photo-view[open]){overflow:hidden}
   |
   v
 [ A USABLE EXPLANATION ]</pre></figure>
-<p>An explanation is an interface between a system and the person trying to understand it. An accurate account can still be hard to follow when it introduces a term too late or leaves a dependency implicit. Understanding the system helps me decide which of those relationships a reader needs to see and in what order.</p>
+<p>An explanation is <a href="visual-notes.html#photo-transfer" class="photo-word" aria-haspopup="dialog" aria-controls="photo-transfer">an interface between a system and the person trying to understand it</a>. An accurate account can still be hard to follow when it introduces a term too late or leaves a dependency implicit. Understanding the system helps me decide which of those relationships a reader needs to see and in what order.</p>
 <h3>One manual, two ways in</h3>
 <p>A new technician opens a manual to learn how a pump works. A colleague opens the same manual because the pump has stopped. The first reader needs a diagram showing where the liquid goes. The second needs to know what to check first. Both paths can lead to the same drawing, each with a different question in mind.</p>
 <h3>RELATED NOTES</h3>
@@ -331,7 +336,7 @@ html:has(.photo-view[open]){overflow:hidden}
   |
   v
 [ MAKE IT REUSABLE ]</pre></figure>
-<p>When the same question comes up repeatedly, the knowledge may sit with one experienced person or be buried in a hard-to-find document. An ordered checklist or troubleshooting guide can make that knowledge available at the point of use. It can also give a team a shared procedure to review and improve.</p>
+<p><a href="visual-notes.html#photo-recursive" class="photo-word" aria-haspopup="dialog" aria-controls="photo-recursive">When the same question comes up repeatedly</a>, the knowledge may sit with one experienced person or be buried in a hard-to-find document. An ordered checklist or troubleshooting guide can make that knowledge available at the point of use. It can also give a team a shared procedure to review and improve.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
@@ -373,7 +378,7 @@ html:has(.photo-view[open]){overflow:hidden}
   |
   v
 [ APPLICATION ]</pre></figure>
-<p>The person who builds a system and the person learning to use it can approach the same material with <a href="visual-notes.html#photo-cards" class="photo-word" aria-haspopup="dialog" aria-controls="photo-cards">different assumptions</a>. Bridging that gap means understanding the subject, listening to the audience and <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">choosing a form</a> that preserves technical accuracy. Translation, engineering and pedagogy each contribute to that work.</p>
+<p>The person who builds a system and the person learning to use it can approach the same material with <a href="visual-notes.html#photo-cards" class="photo-word" aria-haspopup="dialog" aria-controls="photo-cards">different assumptions</a>. <a href="visual-notes.html#photo-archetypes" class="photo-word" aria-haspopup="dialog" aria-controls="photo-archetypes">Bridging that gap</a> means understanding the subject, listening to the audience and <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">choosing a form</a> that preserves technical accuracy. Translation, engineering and pedagogy each contribute to that work.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
@@ -434,7 +439,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <article class="note" id="technical-writing" tabindex="-1" aria-labelledby="technical-writing-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="technical-writing-title">Before the First Sentence</h2><p class="summary">Trace the decisions behind a technical explanation.</p>
 <p>Imagine a setup guide that says ‘Select the default profile’. The engineer means the profile supplied with the product. The trainer means the one the team uses every morning. On a new colleague’s screen, both are available. A perfectly fluent translation of that sentence would leave the colleague with exactly the same problem.</p>
-<p>Before I write the instruction, I want to see that screen with all three people. Which profile does the task require? What distinguishes it on screen? Does it have the same label in the Spanish interface? Once we agree, I can put the identifying detail before the choice and use the label the reader will actually see. If the interface itself leaves the two profiles indistinguishable, that is a question to take back to the product team.</p>
+<p>Before I write the instruction, I want to see that screen with all three people. Which profile does the task require? What distinguishes it on screen? Does it have the same label in the Spanish interface? Once we agree, I can put the identifying detail before the choice and use <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">the label the reader will actually see</a>. If the interface itself leaves the two profiles indistinguishable, that is a question to take back to the product team.</p>
 <p>This is what product thinking and information architecture look like in a single line of documentation. The work includes listening patiently when two specialists use the same word differently, finding out what each means and giving the next person enough information to act independently.</p>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
@@ -444,7 +449,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="knowledge-design-title">Where Language, Learning and Systems Meet</h2><p class="summary">Explore three ways into the same piece of knowledge.</p>
 <p>Building a Cambridge C2 Proficiency programme from scratch gave me one way into knowledge design. A syllabus has to establish what learners can already do, what comes next and how they can demonstrate the difference. Technical translation gives me another way in. An English term and its Spanish equivalent have to lead the reader back to the same component, action or condition.</p>
 <p>Engineering adds a third question. Which part depends on which other part? The order that makes sense on a parts list may differ from the order in which someone needs to learn a procedure. In corporate training, that difference matters when a new colleague has the manual open and needs to decide what to do.</p>
-<p>This is the intersection I explore through Pixel to Teach. A bilingual glossary can preserve a distinction between terms. A map can make a dependency visible. A practice task can ask someone to use both. The practical aim is to make expertise easier to find, teach and reuse across a team.</p>
+<p><a href="visual-notes.html#photo-world-24" class="photo-word" aria-haspopup="dialog" aria-controls="photo-world-24">This is the intersection I explore</a> through Pixel to Teach. A bilingual glossary can preserve a distinction between terms. A map can make a dependency visible. A practice task can ask someone to use both. The practical aim is to make expertise easier to find, teach and reuse across a team.</p>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
@@ -468,6 +473,12 @@ html:has(.photo-view[open]){overflow:hidden}
 <dialog class="photo-view" id="photo-legacy" aria-labelledby="title-legacy"><header><h2 id="title-legacy">The Legacy and Symbolic Legacy</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="images/notes/the-legacy.webp" loading="lazy" width="667" height="1000" alt="Colourful wheel above two rows of coded letters and numbers."><img src="images/notes/symbolic-legacy.webp" loading="lazy" width="728" height="1000" alt="Gold celestial wheel with two labelled panels showing the codes alongside their readings."></div><figcaption>Find the sequence beginning LWI in both images. The first places it beneath a wheel. The second sets it beside a reading in degrees, minutes and seconds. The sequence stays the same while its context gives the reader more to work with.</figcaption></figure></dialog>
 <dialog class="photo-view" id="photo-i-know" aria-labelledby="title-i-know"><header><h2 id="title-i-know">I Know</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="images/notes/i-know.webp" loading="lazy" width="667" height="1000" alt="A chariot beneath a large eye, with onlookers asking a question at the foot of the card."></div><figcaption>Read the onlookers’ question, then the caption beneath the chariot. The figures ask where the prison was. The caption invites a second look at the structure around them.</figcaption></figure></dialog>
 <dialog class="photo-view" id="photo-cards" aria-labelledby="title-cards"><header><h2 id="title-cards">Reading a card and a collage</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="images/notes/death-card.webp" loading="lazy" width="352" height="598" alt="A skeleton holding a scythe above a dark field, with the number 13 and the word Death beneath."><img src="images/notes/four-card-collage.webp" loading="lazy" width="914" height="1000" alt="A figure holding a sphere, framed by The Star, The Moon, The Sun and The Tower."></div><figcaption>On the red card, the title gives the reader a name for the whole scene. In the collage, four named cards surround a fifth, unlabelled scene. Which card you notice first can change how you read the figure at the centre.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-buen-suceso" aria-labelledby="title-photo-buen-suceso"><header><h2 id="title-photo-buen-suceso">Naming an Entrance</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="IMG_0818.jpeg" loading="lazy" decoding="async" alt="Illuminated Buen Suceso Nº6 street entrance intercom."></div><figcaption>The illuminated name and street number identify the point of access. The label becomes operational at the entrance.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-world-24" aria-labelledby="title-photo-world-24"><header><h2 id="title-photo-world-24">Anatomy of an Intersection</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="0DA08C9E-2099-4EEF-B33A-453B4010E10F.png" loading="lazy" decoding="async" alt="Classical figure with the number 24 and internal circuitry."></div><figcaption>Classical anatomy and technological infrastructure occupy the same body. Different representational systems converge within a single structure.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-archetypes" aria-labelledby="title-photo-archetypes"><header><h2 id="title-photo-archetypes">Archetypes Outside Their Environment</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid photo-pair"><img src="be45d4f6-b9c4-4aba-b193-9abe0fa80521.jpeg" loading="lazy" decoding="async" alt="A figure falling in a supermarket surrounded by tarot cards."><img src="EAB93E50-4E6F-4D4B-9ED9-D58A6DF3C113.png" loading="lazy" decoding="async" alt="A tarot-inspired illustration titled The Devil of Reggaeton."></div><figcaption>A symbolic language changes its environment without losing its recognisable vocabulary. Context transforms interpretation.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-recursive" aria-labelledby="title-photo-recursive"><header><h2 id="title-photo-recursive">Recursive Interference</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="1972AC14-1038-478D-BB6C-10030A82E3EB.png" loading="lazy" decoding="async" alt="A bilingual illustrated card with fragmented imagery and text, titled Stupidified."></div><figcaption>Repetition without resolution creates a loop. Visual fragmentation represents the difficulty of identifying a stable structure.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-transfer" aria-labelledby="title-photo-transfer"><header><h2 id="title-photo-transfer">The Transfer</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><img src="IMG_0810.jpeg" loading="lazy" decoding="async" alt="A performer leaping towards the outstretched hands of an audience."></div><figcaption>The space between sender and receiver becomes the central element of the composition.</figcaption></figure></dialog>
+<dialog class="photo-view" id="photo-recognition-scale" aria-labelledby="title-photo-recognition-scale"><header><h2 id="title-photo-recognition-scale">Recognition Across Scale</h2><form method="dialog"><button autofocus>Close</button></form></header><figure><div class="photo-grid"><video src="IMG_1109.mov" controls playsinline muted loop preload="none" aria-label="Recognition across scale: short video"></video></div><figcaption>A recognisable icon appears at different scales and levels of abstraction within the same moving image. <a href="IMG_1109.mov">Open video file</a>.</figcaption></figure></dialog>
 </main>
 </div>
 <script>
@@ -501,9 +512,10 @@ for (const word of document.querySelectorAll(".photo-word")) {
     word.addEventListener("click", event => {
         if (event.ctrlKey || event.shiftKey || event.metaKey || event.altKey || typeof viewer.showModal !== "function") return;
         viewer.showModal();
+        viewer.querySelectorAll('video').forEach(video => { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) video.play().catch(() => {}); });
         event.preventDefault();
     });
-    viewer.addEventListener("close", () => word.focus({preventScroll: true}));
+    viewer.addEventListener("close", () => { viewer.querySelectorAll("video").forEach(video => video.pause()); word.focus({preventScroll: true}); });
 }
 
 renderView(false);
