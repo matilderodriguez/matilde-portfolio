@@ -14,8 +14,8 @@
 body{max-width:1240px;margin:auto;padding:35px 20px;background:var(--background);color:var(--text);font:14px/1.6 "IBM Plex Mono",monospace}
 a{color:inherit}
 a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-.window{border:1px solid #303030;border-radius:10px;overflow:hidden;background:var(--surface)}
-nav{padding:10px 20px;background:#1b1b1b}
+.window{border:1px solid #303030;border-radius:0;overflow:hidden;background:var(--surface)}
+nav{padding:10px 20px;background:#dedbd3;color:#121212;font-size:13px}
 .section-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 nav a{text-decoration:none}
 nav a:hover{text-decoration:underline}
@@ -53,15 +53,18 @@ article p{margin:8px 0 0}
 .overview h2{font-size:17px}
 .topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .topic{min-width:0;border-top:1px dotted var(--line)}
+.topic h3{display:inline-block;background:#dedbd3;color:#171717;padding:2px 8px}
 .topic h3,.note h3{font-size:13px;letter-spacing:.06em;margin:16px 0 10px}
 .topic .node{margin-bottom:10px;overflow-wrap:anywhere}
 .topic .node span span{margin-top:3px;font-size:12px}
 .note h2{font-size:clamp(22px,4vw,32px);line-height:1.2;overflow-wrap:anywhere}
 .note .back{margin:0 0 18px}
 .note .back a{text-decoration:none}
-.note .summary{color:#ccc}
+.note .summary{color:#dedbd3;font-size:1.08em;line-height:1.65;margin:14px 0 22px}
+.note p{max-width:66ch}
+.note p+p{margin-top:1em}
 .note figure{margin:20px 0}
-.note pre{margin:0;border:1px dotted var(--line);padding:12px;font:inherit;font-size:clamp(9px,2.8vw,13px);line-height:1.45;overflow:auto}
+.note pre{background:#090909;margin:0;border:1px dotted var(--line);padding:12px;font:inherit;font-size:clamp(9px,2.8vw,13px);line-height:1.45;overflow:auto}
 .related{padding-left:20px;margin:0}
 .related li{margin:6px 0}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -75,7 +78,7 @@ article p{margin:8px 0 0}
 </head>
 <body>
 <div class="window">
-<nav class="section-bar" aria-label="Site navigation"><span>KNOWLEDGE ARCHITECTURE ATLAS</span><a href="./" aria-label="Return to home page">[ HOME ]</a></nav>
+<nav class="section-bar" aria-label="Site navigation"><span>KNOWLEDGE ARCHITECTURE ATLAS</span><a href="./" aria-label="Return to home page">HOME</a></nav>
 <main>
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
