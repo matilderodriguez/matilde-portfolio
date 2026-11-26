@@ -67,6 +67,7 @@ article p{margin:8px 0 0}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:850px){.topics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.topics{grid-template-columns:1fr}}
+.related{list-style:none;padding-left:0}.related li{display:flex;align-items:baseline;gap:.25ch}.branch{white-space:pre;color:var(--line);flex:none}
 </style>
 </head>
 <body>
@@ -90,6 +91,7 @@ article p{margin:8px 0 0}
 <a class="node" href="#clarity"><span><strong>Complexity to Clarity</strong><span>Reveal the structure behind the explanation.</span></span></a>
 <a class="node" href="#architecture"><span><strong>Knowledge Architecture</strong><span>Organise information so it can guide action.</span></span></a>
 <a class="node" href="#learning-design"><span><strong>Learning as System Design</strong><span>Sequence concepts, examples and practice.</span></span></a>
+<a class="node" href="#before-learning"><span><strong>Before Learning Begins</strong><span>Follow the structure from source to learning activity.</span></span></a>
 </section>
 <section class="topic"><h3>PATTERNS</h3>
 <a class="node" href="#patterns"><span><strong>Pattern Recognition</strong><span>See the structure that different problems share.</span></span></a>
@@ -98,10 +100,12 @@ article p{margin:8px 0 0}
 <section class="topic"><h3>SYSTEMS</h3>
 <a class="node" href="#explanation"><span><strong>The Engineering of Explanation</strong><span>Design the path from a system to its reader.</span></span></a>
 <a class="node" href="#reusable"><span><strong>From Problems to Reusable Solutions</strong><span>Turn repeated questions into accessible guidance.</span></span></a>
+<a class="node" href="#technical-writing"><span><strong>Before the First Sentence</strong><span>Trace the decisions behind a technical explanation.</span></span></a>
 </section>
 <section class="topic"><h3>APPLICATION</h3>
 <a class="node" href="#scale"><span><strong>Designing for Scale</strong><span>Make the same knowledge easier to teach and maintain.</span></span></a>
 <a class="node" href="#tools"><span><strong>From Knowledge to Tools</strong><span>Turn a working explanation into something people can use.</span></span></a>
+<a class="node" href="#knowledge-design"><span><strong>Where Language, Learning and Systems Meet</strong><span>Explore three ways into the same piece of knowledge.</span></span></a>
 </section>
 </div>
 </div>
@@ -119,9 +123,10 @@ article p{margin:8px 0 0}
 <p>Pallas Athena is my image for strategic synthesis. When several tasks keep getting stuck at the same point, I look for what they have in common. A shared dependency or an unstated assumption can explain why apparently separate problems call for the same change.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#patterns">Pattern Recognition</a></li>
-<li><a href="#architecture">Knowledge Architecture</a></li>
-<li><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="mercury" tabindex="-1" aria-labelledby="mercury-title">
@@ -138,9 +143,10 @@ article p{margin:8px 0 0}
 <p>Mercury is my image for curiosity and communication. Technical translation often means moving between the language of a specialist and the questions of someone using the material. I want the explanation to travel across that gap with its meaning and technical distinctions intact.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#bridge">The Bridge Between Domains</a></li>
-<li><a href="#explanation">The Engineering of Explanation</a></li>
-<li><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
 </ul>
 </article>
 <article class="note" id="learning" tabindex="-1" aria-labelledby="learning-title">
@@ -157,9 +163,9 @@ article p{margin:8px 0 0}
 <p>A manual might describe a machine component by component. A new operator may need to begin with a task and meet each component when it becomes relevant. Putting the material in that order reveals prerequisites the original manual can afford to leave implicit.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#learning-design">Learning as System Design</a></li>
-<li><a href="#patterns">Pattern Recognition</a></li>
-<li><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="pixel-to-teach" tabindex="-1" aria-labelledby="pixel-to-teach-title">
@@ -177,9 +183,9 @@ article p{margin:8px 0 0}
 <p><a href="https://pixel-to-teach.lovable.app/">Open Pixel to Teach</a></p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#learning">Learning Patterns</a></li>
-<li><a href="#architecture">Knowledge Architecture</a></li>
-<li><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
 </ul>
 </article>
 <article class="note" id="clarity" tabindex="-1" aria-labelledby="clarity-title">
@@ -196,9 +202,9 @@ article p{margin:8px 0 0}
 <p>A dense document may contain all the necessary facts and still be difficult to use. Making its structure visible can mean separating a prerequisite from an instruction, or showing how two apparently separate concepts depend on each other. That gives each detail a place in the explanation.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#architecture">Knowledge Architecture</a></li>
-<li><a href="#explanation">The Engineering of Explanation</a></li>
-<li><a href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
 </ul>
 </article>
 <article class="note" id="patterns" tabindex="-1" aria-labelledby="patterns-title">
@@ -218,9 +224,10 @@ article p{margin:8px 0 0}
 <p>Different problems can share the same underlying structure. If two teams repeatedly ask where a procedure starts, their questions may point to a missing prerequisite in the documentation. Recognising the common pattern helps decide where a single change could help both teams.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#architecture">Knowledge Architecture</a></li>
-<li><a href="#explanation">The Engineering of Explanation</a></li>
-<li><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="architecture" tabindex="-1" aria-labelledby="architecture-title">
@@ -240,9 +247,9 @@ article p{margin:8px 0 0}
 <p>A course, a technical manual and a training tool all ask their readers to do something with information. In each case, I look for a structure that helps someone find what matters, see why it matters and decide what to do next. That work connects learning design, documentation and engineering.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#clarity">Complexity to Clarity</a></li>
-<li><a href="#learning-design">Learning as System Design</a></li>
-<li><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
 </ul>
 </article>
 <article class="note" id="explanation" tabindex="-1" aria-labelledby="explanation-title">
@@ -261,9 +268,10 @@ article p{margin:8px 0 0}
 <p>A new technician opens a manual to learn how a pump works. A colleague opens the same manual because the pump has stopped. The first reader needs a diagram showing where the liquid goes. The second needs to know what to check first. Both paths can lead to the same drawing, each with a different question in mind.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#bridge">The Bridge Between Domains</a></li>
-<li><a href="#learning-design">Learning as System Design</a></li>
-<li><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="reusable" tabindex="-1" aria-labelledby="reusable-title">
@@ -283,9 +291,9 @@ article p{margin:8px 0 0}
 <p>When the same question comes up repeatedly, the knowledge may sit with one experienced person or be buried in a hard-to-find document. An ordered checklist or troubleshooting guide can make that knowledge available at the point of use. It can also give a team a shared procedure to review and improve.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#patterns">Pattern Recognition</a></li>
-<li><a href="#scale">Designing for Scale</a></li>
-<li><a href="#tools">From Knowledge to Tools</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Designing for Scale</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li>
 </ul>
 </article>
 <article class="note" id="learning-design" tabindex="-1" aria-labelledby="learning-design-title">
@@ -302,9 +310,10 @@ article p{margin:8px 0 0}
 <p>A learning experience starts with what people already understand and gives them a way to practise what comes next. In staff training, I would connect each explanation to a task the person needs to perform. The sequence then reflects how someone learns to do the work.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#learning">Learning Patterns</a></li>
-<li><a href="#explanation">The Engineering of Explanation</a></li>
-<li><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="bridge" tabindex="-1" aria-labelledby="bridge-title">
@@ -324,9 +333,10 @@ article p{margin:8px 0 0}
 <p>The person who builds a system and the person learning to use it can approach the same material with different assumptions. Bridging that gap means understanding the subject, listening to the audience and choosing a form that preserves technical accuracy. Translation, engineering and pedagogy each contribute to that work.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#mercury">Mercury</a></li>
-<li><a href="#clarity">Complexity to Clarity</a></li>
-<li><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
 </ul>
 </article>
 <article class="note" id="scale" tabindex="-1" aria-labelledby="scale-title">
@@ -343,9 +353,9 @@ article p{margin:8px 0 0}
 <p>A training module can support several cohorts, and a troubleshooting guide can help more than one team. When the structure is explicit, a specialist can also see which part to update when a procedure changes. Reuse makes expertise easier to share and can reduce the time spent repeating the same explanation.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#reusable">From Problems to Reusable Solutions</a></li>
-<li><a href="#learning-design">Learning as System Design</a></li>
-<li><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="tools" tabindex="-1" aria-labelledby="tools-title">
@@ -362,11 +372,38 @@ article p{margin:8px 0 0}
 <p>Once an explanation works, I can ask which parts could live in a checklist, a training resource or a digital tool. For example, a documented sequence of checks can become a guided troubleshooting workflow. The form depends on what the person needs to do with the knowledge.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><a href="#architecture">Knowledge Architecture</a></li>
-<li><a href="#scale">Designing for Scale</a></li>
-<li><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Designing for Scale</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
+<article class="note" id="before-learning" tabindex="-1" aria-labelledby="before-learning-title">
+<p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="before-learning-title">Before Learning Begins</h2><p class="summary">Follow the structure from source to learning activity.</p>
+<p>A table records a value. A diagram connects two points. The author suggests that one might explain the other. When I turn the page into a teaching resource, one of the easiest things to lose is the word <em>might</em>.</p>
+<p>Mercury and Pallas Athena are my images for two stages of reading. With Mercury, I follow the information across words, numbers, diagrams and languages. With Pallas, I ask which relationships those pieces support and which remain open. A line in a diagram might indicate sequence, dependency or the author’s working hypothesis.</p>
+<p>That distinction shaped my thinking about Pixel to Teach. Asking ‘Why does A cause B?’ quietly settles the matter. Asking ‘What led the author to connect A and B?’ gives the learner a reason to return to the evidence. The relationship I identify upstream changes the learning activity downstream.</p>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pallas">Pallas Athena</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li></ul></article>
+<article class="note" id="technical-writing" tabindex="-1" aria-labelledby="technical-writing-title">
+<p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="technical-writing-title">Before the First Sentence</h2><p class="summary">Trace the decisions behind a technical explanation.</p>
+<p>A product specialist knows what a control does. A trainer knows which step a newcomer is likely to miss. The person using the product may describe the same control by its position or colour. Writing the instruction begins with bringing those accounts together.</p>
+<p>I would ask the specialist what changes when the control is used, the trainer where the learner hesitates, and the reader what they expect to happen next. Their answers shape the order of the page, the term I choose in English and Spanish, and the place where a drawing earns its space.</p>
+<p>This is where product thinking, information architecture and the patient work of reaching agreement enter technical writing. A useful test is to hand someone the draft and ask them to point to the control and explain their next decision.</p>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li></ul></article>
+<article class="note" id="knowledge-design" tabindex="-1" aria-labelledby="knowledge-design-title">
+<p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="knowledge-design-title">Where Language, Learning and Systems Meet</h2><p class="summary">Explore three ways into the same piece of knowledge.</p>
+<p>Building a Cambridge C2 Proficiency programme from scratch gave me one way into knowledge design. A syllabus has to establish what learners can already do, what comes next and how they can demonstrate the difference. Technical translation gives me another way in. An English term and its Spanish equivalent have to lead the reader back to the same component, action or condition.</p>
+<p>Engineering adds a third question. Which part depends on which other part? The order that makes sense on a parts list may differ from the order in which someone needs to learn a procedure. In corporate training, that difference matters when a new colleague has the manual open and needs to decide what to do.</p>
+<p>This is the intersection I explore through Pixel to Teach. A bilingual glossary can preserve a distinction between terms. A map can make a dependency visible. A practice task can ask someone to use both. The practical aim is to make expertise easier to find, teach and reuse across a team.</p>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">Knowledge Architecture</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Knowledge to Tools</a></li></ul></article>
 </main>
 </div>
 <script>
