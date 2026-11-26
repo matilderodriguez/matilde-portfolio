@@ -74,6 +74,19 @@ article p{margin:8px 0 0}
 .route,.operations>div{border:1px dotted var(--line);padding:14px}
 .route{margin:0 0 28px}.route-start{font-weight:bold}.route ol{list-style:none;margin:12px 0 0;padding:0}.route li{padding:.25em 0}.route li:nth-child(2){margin-left:2ch}.route li:nth-child(3){margin-left:4ch}.route li:nth-child(4){margin-left:6ch}
 .operations{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22ch),1fr));gap:12px;margin:18px 0}.operations h3{margin:0}.note-id{font-size:12px;letter-spacing:.08em}
+
+.photo-word{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline dotted;text-underline-offset:.22em;cursor:pointer}
+.photo-word:hover,.photo-word:focus-visible{color:#ffd189}
+.photo-view{width:min(90vw,56rem);max-height:88vh;padding:0;background:#0d0d0d;color:var(--text);border:1px solid #bc9558}
+.photo-view::backdrop{background:rgba(0,0,0,.82)}
+.photo-view header{display:flex;align-items:center;justify-content:space-between;padding:.45rem 1rem;background:#181612;color:#ffd189;position:sticky;top:0}
+.photo-view h2{font-size:1rem;margin:0}
+.photo-view button{font:inherit;color:inherit;background:none;border:1px solid currentColor;padding:.35rem .7rem;cursor:pointer}
+.photo-view figure{margin:1rem}
+.photo-grid{display:flex;align-items:center;justify-content:center;gap:1rem}
+.photo-grid img{display:block;min-width:0;max-width:100%;height:auto;max-height:60vh;object-fit:contain;flex:0 1 auto}
+.photo-view figcaption{margin-top:1rem;max-width:66ch}
+@media(max-width:640px){.photo-grid{flex-direction:column}.photo-grid img{max-height:none}}
 </style>
 </head>
 <body>
@@ -133,7 +146,7 @@ article p{margin:8px 0 0}
   |
   v
 [ MAKE THE RELATIONSHIP VISIBLE ]</pre></figure>
-<p>Pallas Athena is my image for strategic synthesis. When several tasks keep getting stuck at the same point, I look for what they have in common. A shared dependency or an unstated assumption can explain why apparently separate problems call for the same change.</p>
+<p>Pallas Athena is my image for strategic synthesis. When several tasks keep getting stuck at the same point, I look for <button type="button" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">what they have in common</button>. A shared dependency or an unstated assumption can explain why apparently separate problems call for the same change.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
@@ -236,7 +249,7 @@ article p{margin:8px 0 0}
   |
   v
 [ SYNTHESISE ]</pre></figure>
-<p>Different problems can share the same underlying structure. If two teams repeatedly ask where a procedure starts, their questions may point to a missing prerequisite in the documentation. Recognising the common pattern helps decide where a single change could help both teams.</p>
+<p>Different problems can share <button type="button" class="photo-word" aria-haspopup="dialog" aria-controls="photo-skulls">the same underlying structure</button>. If two teams repeatedly ask where a procedure starts, their questions may point to a missing prerequisite in the documentation. Recognising the common pattern helps decide where a single change could help both teams.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
@@ -398,7 +411,7 @@ article p{margin:8px 0 0}
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="before-learning-title">Before Learning Begins</h2><p class="summary">Follow the structure from source to learning activity.</p>
 <p>A table records a value. A diagram connects two points. The author suggests that one might explain the other. When I turn the page into a teaching resource, one of the easiest things to lose is the word <em>might</em>.</p>
 <p>Mercury and Pallas Athena are my images for two stages of reading. With Mercury, I follow the information across words, numbers, diagrams and languages. With Pallas, I ask which relationships those pieces support and which remain open. A line in a diagram might indicate sequence, dependency or the author’s working hypothesis.</p>
-<p>That distinction shaped my thinking about Pixel to Teach. Asking ‘Why does A cause B?’ quietly settles the matter. Asking ‘What led the author to connect A and B?’ gives the learner a reason to return to the evidence. The relationship I identify upstream changes the learning activity downstream.</p>
+<p>That distinction shaped my thinking about Pixel to Teach. Asking ‘Why does A cause B?’ quietly settles the matter. Asking ‘What led the author to connect A and B?’ gives the learner a reason to <button type="button" class="photo-word" aria-haspopup="dialog" aria-controls="photo-victoria">return to the evidence</button>. The relationship I identify upstream changes the learning activity downstream.</p>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#pallas">Pallas Athena</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
@@ -421,6 +434,18 @@ article p{margin:8px 0 0}
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li></ul></article>
+<dialog class="photo-view" id="photo-angulo" aria-labelledby="title-angulo">
+<header><h2 id="title-angulo">Angulo</h2><form method="dialog"><button autofocus>Close</button></form></header>
+<figure><div class="photo-grid"><img src="images/notes/angulo-sign.webp" loading="lazy" width="900" height="1200" alt="Street sign reading ANGULO beneath cables and junction boxes."><img src="images/notes/angulo-figure.webp" loading="lazy" width="800" height="1200" alt="Illustrated figure with the same lettering across the chest and exposed wiring below."></div><figcaption>The street sign sits beneath a tangle of cables. In the illustration, the name moves to the chest and the wiring becomes part of the body.</figcaption></figure>
+</dialog>
+<dialog class="photo-view" id="photo-victoria" aria-labelledby="title-victoria">
+<header><h2 id="title-victoria">Calle Victoria</h2><form method="dialog"><button autofocus>Close</button></form></header>
+<figure><div class="photo-grid"><img src="images/notes/calle-victoria.webp" loading="lazy" width="588" height="339" alt="Black-and-white street photograph with children on the pavement, tracks in the road and an archive label in the lower right."></div><figcaption>The tracks are visible in the road. The archive label identifies Calle Victoria and gives an approximate date of 1926–1930.</figcaption></figure>
+</dialog>
+<dialog class="photo-view" id="photo-skulls" aria-labelledby="title-skulls">
+<header><h2 id="title-skulls">Five variations</h2><form method="dialog"><button autofocus>Close</button></form></header>
+<figure><div class="photo-grid"><img src="images/notes/five-skulls.webp" loading="lazy" width="588" height="294" alt="Five illustrated skulls in a row with different hairstyles, hats and headbands."></div><figcaption>Follow the line of teeth from left to right. The faces repeat, while the hair and headwear give each skull its own character.</figcaption></figure>
+</dialog>
 </main>
 </div>
 <script>
@@ -447,6 +472,12 @@ function renderView(moveFocus) {
             window.scrollTo(0, 0);
         }
     }
+}
+
+for (const word of document.querySelectorAll(".photo-word")) {
+    const viewer = document.getElementById(word.getAttribute("aria-controls"));
+    word.addEventListener("click", () => viewer.showModal());
+    viewer.addEventListener("close", () => word.focus({preventScroll: true}));
 }
 
 renderView(false);
