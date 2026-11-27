@@ -181,7 +181,8 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .lab-map-result{border:1px dotted #777;padding:14px;margin:12px 0;text-align:center}.lab-map-node{border:1px solid #ffad47;color:#ffad47;background:#15110c;padding:9px;max-width:250px;margin:auto;font-size:12px}.lab-map-edge{color:#ededed;font-size:12px;padding:10px 0;overflow-wrap:anywhere}.lab-map-result p{font-size:11px;color:#ccc;margin:14px 0 0!important}
 
-.lab-instructions{border-left:2px solid #ffad47;padding:10px 12px;margin:12px 0 18px;background:#141414;font-size:12px;line-height:1.6}.lab-instructions h3,.lab-instructions strong{color:#ffad47;font-size:12px}.lab-instructions ol{margin:8px 0;padding-left:22px}.lab-instructions li{margin:5px 0}.lab-instructions p{margin:6px 0!important}
+
+.lab-brief{font-size:12px;color:#ccc;margin:8px 0 14px!important}
 </style>
 </head>
 <body>
@@ -899,25 +900,25 @@ a.note-link:hover,a.note-link:focus-visible{
 <p class="note-id">DISCOVERY MODE / INTERACTIVE CODE LAB</p>
 <h2 id="code-lab-title">Interactive Code Lab</h2>
 <p class="summary">Think like a knowledge engineer. Three guided challenges, no programming required.</p>
-<p>Imagine you are preparing a training guide from a set of technical records. Before writing the guide, you need to recognise how the information is organised and check what the source actually says. Try these three short challenges.</p><div class="lab-instructions"><h3>HOW TO PLAY</h3><p>Read the example, tap one answer per question and read the feedback underneath. You can change your answer at any time. No typing or programming is needed. The optional experiments are separate.</p></div>
+<p>Imagine you are preparing a training guide from a set of technical records. Before writing the guide, you need to recognise how the information is organised and check what the source actually says. Try these three short challenges.</p>
 <section class="lab-panel" aria-labelledby="lab-structure-title">
-<h3 id="lab-structure-title">MISSION_001 / FIND THE MISSING FIELD</h3><div class="lab-instructions"><strong>WHAT TO DO</strong><ol><li>Look at the Status column in the table.</li><li>Tap RECORD A, B or C to identify the missing status.</li><li>Read the feedback, then choose COPY “READY” or FLAG AS UNKNOWN.</li><li>Read the explanation. Continue to Mission 002 when ready.</li></ol><p>Goal: find missing information without inventing it.</p></div>
+<h3 id="lab-structure-title">MISSION_001 / FIND THE MISSING FIELD</h3><p class="lab-brief">Tap the incomplete record, then choose how to handle its missing status.</p>
 <p><strong>YOUR TASK:</strong> A training team receives three equipment records. Each should contain a device, an inspection interval and a status. One record is incomplete. Which one?</p>
 <div class="lab-records" tabindex="0"><table><caption>Fictional equipment records</caption><thead><tr><th scope="col">Record</th><th scope="col">Device</th><th scope="col">Interval</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">A</th><td>Pump</td><td>30 days</td><td>Ready</td></tr><tr><th scope="row">B</th><td>Valve</td><td>14 days</td><td>—</td></tr><tr><th scope="row">C</th><td>Filter</td><td>7 days</td><td>Ready</td></tr></tbody></table></div>
 <p class="lab-label">01 / SELECT THE INCOMPLETE RECORD</p>
 <div class="lab-controls" role="group" aria-label="Select incomplete record"><button type="button" data-structure-choice="A">RECORD A</button><button type="button" data-structure-choice="B">RECORD B</button><button type="button" data-structure-choice="C">RECORD C</button></div>
 <p class="lab-feedback" id="lab-structure-feedback" role="status">Choose a record to see why it matters.</p>
-<p class="lab-label">02 / HOW SHOULD WE HANDLE THE MISSING STATUS?</p><p>Should we copy the status from another device or explicitly mark it as unknown? Tap one option.</p>
+<p class="lab-label">02 / HOW SHOULD WE HANDLE THE MISSING STATUS?</p>
 <div class="lab-controls" role="group" aria-label="Choose how to handle missing status"><button type="button" data-repair-choice="guess">COPY “READY”</button><button type="button" data-repair-choice="flag">FLAG AS UNKNOWN</button></div>
 <p class="lab-feedback" id="lab-repair-feedback" role="status">Choose how to handle the missing information.</p>
-<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / EDIT THE RAW RECORDS ]</summary><p><strong>Optional experiment:</strong> The box below starts with a missing third field in the Valve row. First read COLUMN COUNTS in the output (3, 2, 3). Tap MARK STATUS UNKNOWN to add the missing field without guessing its value. The counts become 3, 3, 3 and a repeated format is detected. Tap RESET INPUT to return to the original records. You may also edit the text yourself; each | separates fields.</p><label for="lab-rows">INPUT / Device | interval | status</label><textarea id="lab-rows" rows="4" spellcheck="false" maxlength="12000">Pump | 30 days | Ready
+<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / EDIT THE RAW RECORDS ]</summary><p>Tap MARK STATUS UNKNOWN and observe how the column counts change from 3, 2, 3 to 3, 3, 3. RESET INPUT restores the example.</p><label for="lab-rows">INPUT / Device | interval | status</label><textarea id="lab-rows" rows="4" spellcheck="false" maxlength="12000">Pump | 30 days | Ready
 Valve | 14 days
 Filter | 7 days | Ready</textarea><div class="lab-controls"><button type="button" id="lab-change-pattern">MARK STATUS UNKNOWN</button><button type="button" id="lab-reset-structure">RESET INPUT</button></div><pre class="lab-output" id="lab-structure-output" aria-live="polite">JavaScript required for live results.</pre></details>
 <p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> Recognising a repeated structure helps locate missing information. It does not tell us what that information should be.</p>
 <p class="source-ref">+-- <a class="note-link" href="#patterns">Explore Pattern Recognition</a><br>+-- <a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/structure/repeated-columns.ts">Inspect related production excerpt</a></p>
 </section>
 <section class="lab-panel" aria-labelledby="lab-evidence-title">
-<h3 id="lab-evidence-title">MISSION_002 / CHECK THE TRAINING GUIDE</h3><div class="lab-instructions"><strong>WHAT TO DO</strong><ol><li>Read the three sentences in the fictional manual.</li><li>Tap the statement A, B or C that the manual supports.</li><li>Read the feedback, then answer whether a replacement interval is given.</li><li>Continue to Mission 003 when ready.</li></ol><p>Goal: distinguish source information from added assumptions.</p></div>
+<h3 id="lab-evidence-title">MISSION_002 / CHECK THE TRAINING GUIDE</h3><p class="lab-brief">Read the manual, tap the supported statement, then answer the follow-up question.</p>
 <p><strong>YOUR TASK:</strong> A colleague has drafted a training guide from a fictional equipment manual. Which statement is directly supported by the source?</p>
 <div class="lab-document"><p class="lab-label">SOURCE / FICTIONAL MANUAL</p><p>Inspect the seal before startup.<br>Record the pressure after startup.<br>Report any visible leaks.</p></div>
 <p class="lab-label">01 / SELECT THE SUPPORTED STATEMENT</p>
@@ -926,14 +927,14 @@ Filter | 7 days | Ready</textarea><div class="lab-controls"><button type="button
 <p class="lab-label">02 / CHECK THE LIMIT OF THE EVIDENCE</p>
 <div class="lab-controls" role="group" aria-label="Does the source establish frequency?"><button type="button" data-limit-choice="yes">THE MANUAL SPECIFIES A REPLACEMENT INTERVAL</button><button type="button" data-limit-choice="no">NO REPLACEMENT INTERVAL IS GIVEN</button></div>
 <p class="lab-feedback" id="lab-limit-feedback" role="status">What can you actually conclude from the text?</p>
-<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / CHECK YOUR OWN PASSAGE ]</summary><p><strong>Optional experiment:</strong> Read TEXT MATCH below. The initial passage occurs in the source. Tap TRY UNSUPPORTED TEXT to replace it with a sentence absent from the source; observe NOT FOUND. Tap RESET INPUT to restore the example. You can also type a passage yourself. This literal matcher ignores whitespace differences but does not understand paraphrases or validate conclusions.</p><label for="lab-source">SOURCE / Synthetic training example</label><textarea id="lab-source" rows="4" spellcheck="false" maxlength="12000">Inspect the seal before startup.
+<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / CHECK YOUR OWN PASSAGE ]</summary><p>Tap TRY UNSUPPORTED TEXT and observe the change from FOUND to NOT FOUND. RESET INPUT restores the example. This checks literal text, not meaning.</p><label for="lab-source">SOURCE / Synthetic training example</label><textarea id="lab-source" rows="4" spellcheck="false" maxlength="12000">Inspect the seal before startup.
 Record the pressure after startup.
 Report any visible leaks.</textarea><label for="lab-quote">PASSAGE TO FIND</label><textarea id="lab-quote" rows="2" spellcheck="false" maxlength="2000">Inspect the seal before startup.</textarea><div class="lab-controls"><button type="button" id="lab-change-claim">TRY UNSUPPORTED TEXT</button><button type="button" id="lab-reset-evidence">RESET INPUT</button></div><pre class="lab-output" id="lab-evidence-output" aria-live="polite">JavaScript required for live results.</pre></details>
 <p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> A training statement needs evidence. Even a matching quotation does not automatically validate every interpretation attached to it.</p>
 <p class="source-ref">+-- <a class="note-link" href="#before-learning">Explore Evidence / Inference</a><br>+-- <a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/evidence/verify-source.ts">Inspect related production excerpt</a></p>
 </section>
 <section class="lab-panel" aria-labelledby="lab-map-title">
-<h3 id="lab-map-title">MISSION_003 / BUILD THE KNOWLEDGE MAP</h3><div class="lab-instructions"><strong>WHAT TO DO</strong><ol><li>Read the fictional brief and identify who sends readings to whom.</li><li>Tap one arrow direction for each of the two relationships.</li><li>Watch the two arrows appear in YOUR KNOWLEDGE MAP when the directions are supported.</li><li>Answer the final question about temperature control, then read the explanation. RESET MAP lets you try again.</li></ol><p>Goal: build a map using only relationships supported by the text.</p></div>
+<h3 id="lab-map-title">MISSION_003 / BUILD THE KNOWLEDGE MAP</h3><p class="lab-brief">Choose the direction of each relationship and watch the map take shape.</p>
 <p><strong>YOUR TASK:</strong> A fictional training brief describes how three components work together. Turn its information into a map that another learner can understand.</p>
 <div class="lab-document"><p class="lab-label">SOURCE / FICTIONAL TRAINING BRIEF</p><p>The sensor measures temperature. The controller receives readings from the sensor. The display presents readings from the controller.</p></div>
 <p class="lab-label">01 / CONNECT THE SENSOR TO THE CONTROLLER</p>
