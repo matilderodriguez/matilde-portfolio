@@ -1,0 +1,174 @@
+@font-face{font-family:RetroBIOS;src:url(../fonts/retro-bios.ttf) format("truetype");font-display:swap}
+@font-face{font-family:RetroVGA;src:url(../fonts/retro-vga.ttf) format("truetype");font-display:swap}
+@font-face{font-family:RetroCRT;src:url(../fonts/retro-crt.ttf) format("truetype");font-display:swap}
+@font-face{font-family:Anton;src:url(Anton-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:Plex;src:url(../IBMPlexMono-Regular.ttf) format("truetype");font-display:swap}
+:root{color-scheme:dark;--black:#0c0a07;--amber:#ffac4b;--light:#f0d3aa;--line:#aa6734}
+*{box-sizing:border-box}
+body{margin:0;background:var(--black);color:var(--amber);font:16px/1.5 Plex,monospace}
+[hidden]{display:none!important}
+h1,h2,h3,p,figure{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+button{color:inherit;font:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.mode-shell{width:min(100%,1380px);margin:auto;padding:clamp(14px,3.4vw,48px)}
+.masthead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin-bottom:clamp(14px,3.4vw,38px)}
+.wordmark{font:clamp(23px,3vw,40px)/.91 RetroVGA,monospace;text-decoration:none;white-space:nowrap}
+.wordmark span{margin-left:.25em}
+.modes{display:flex;flex-wrap:wrap;gap:0 15px;font:18px/1 RetroCRT,monospace}
+.modes a{display:grid;place-items:center;min-height:44px;text-transform:uppercase;text-decoration:none}
+.modes [aria-current],.modes a:hover{text-decoration:underline;text-underline-offset:5px}
+.pixel-icon{image-rendering:pixelated;filter:sepia(1) saturate(6)}
+.reader-bar{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;justify-content:space-between;border-block:1px solid var(--line);margin-bottom:12px}
+.reader-bar a,.reader-bar button{display:inline-flex;align-items:center;min-height:44px;font:16px Plex,monospace}
+.reader-bar button{background:none;border:0;cursor:pointer;padding:0}
+#original-reader{width:100%;height:73vh;height:73dvh;min-height:360px;display:block;border:1px solid var(--line);background:#0d0d0d}
+body:has(#record-reader:not([hidden])) .mode-shell{max-width:1480px}
+
+/* BIOS: pane pairs on desktop, compact browser and preview on phones. */
+.bios{--black:#050402;--amber:#ffc254;--light:#ffce72;background:var(--black);font-family:RetroBIOS,monospace;font-size:clamp(13px,2vw,22px);line-height:1.12}
+.bios .mode-shell{max-width:1210px;padding:clamp(10px,2.4vw,30px)}
+.bios .masthead{margin-bottom:12px}
+.bios .modes{font:18px/1 RetroCRT,monospace}
+.bios-title{font:inherit;font-size:1.35em;letter-spacing:.05em}
+.bios-menu,.bios-command{display:flex;flex-wrap:wrap;gap:0 12px;padding:2px 10px;border:2px solid currentColor}
+.bios-menu button,.bios-command button,.bios-command a{min-height:44px;background:none;border:0;padding:4px 6px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.bios button:hover,.bios-command a:hover{background:var(--amber);color:var(--black)}
+.bios-workspace{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin:16px 0}
+.bios-panel{border:2px solid var(--amber);min-width:0}
+.bios-dirs,.bios-files{grid-column:span 6}
+.bios-index{grid-column:span 4}
+.bios-preview{grid-column:span 8}
+.bios-panel h2,.bios-columns{font:inherit;padding:7px 10px;border-bottom:2px solid var(--amber);overflow-wrap:anywhere}
+.bios-columns,.bios-list button{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.bios-list{padding:6px}
+.bios-list button{width:100%;min-height:44px;background:none;border:0;text-align:left;padding:5px 6px;cursor:pointer}
+.bios-list button span:first-child{overflow-wrap:anywhere;min-width:0}
+.bios-list button[aria-pressed=true]{background:var(--amber);color:var(--black)}
+.bios-preview-body{display:flex;align-items:center;gap:clamp(12px,4vw,48px);padding:clamp(12px,3vw,36px);min-height:160px}
+.bios-preview-body .pixel-icon{width:clamp(42px,11vw,126px);height:auto;flex:none}
+.bios-preview-body h3{font:inherit;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid}
+.bios-preview-body p{font:clamp(.875rem,2.2vw,1.05rem)/1.5 Plex,monospace;margin-top:12px}
+.bios-command{border-width:2px 0}
+.bios kbd{font:inherit;background:var(--amber);color:var(--black);padding:4px}
+.bios dialog{border:2px solid var(--amber);background:var(--black);color:var(--amber);max-width:min(540px,90vw);padding:20px}
+.bios dialog p{margin:14px 0;font:16px/1.5 Plex,monospace}
+.bios dialog button{min-height:44px;background:none;border:1px solid;cursor:pointer}
+
+/* Editorial: oversized type, a cut-in portrait and a lower discovery panel. */
+.editorial .mode-shell{max-width:1240px}
+.editorial-spread{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(10px,2vw,26px);align-items:start}
+.editorial h1{grid-column:1/10;grid-row:1;z-index:1;justify-self:start;font:clamp(3.2rem,11.4vw,10.5rem)/.9 Anton,sans-serif;letter-spacing:-.015em}
+.orbital-mark{grid-column:9/13;grid-row:1;align-self:start;justify-self:center;position:relative;display:grid;place-items:center;width:min(100%,280px);aspect-ratio:1.4;color:var(--amber)}
+.orbital-mark i{position:absolute;inset:26% 4%;border:2px dotted;border-radius:50%;transform:rotate(-30deg)}
+.orbital-mark b{font:clamp(24px,6vw,74px)/1 RetroVGA,monospace}
+.editorial-symbols{grid-column:1/3;grid-row:2;display:grid;gap:12px}
+.editorial-symbols a{min-height:44px;width:max-content;max-width:100%;text-decoration:none;font:18px/1 RetroVGA,monospace}
+.editorial-symbols .pixel-icon{width:clamp(46px,8vw,88px);height:auto;border:1px solid;padding:6px;margin-bottom:6px}
+.editorial-lexicon{grid-column:3/5;grid-row:2;border-left:1px solid var(--line);padding-left:12px;display:grid}
+.editorial-lexicon a{font:clamp(13px,1.6vw,20px)/1 RetroCRT,monospace;display:flex;align-items:center;min-height:44px;text-decoration:none}
+.editorial-portrait{grid-column:5/13;grid-row:2;margin-top:clamp(-130px,-9vw,-48px);overflow:hidden}
+.editorial-portrait img{width:100%;aspect-ratio:1.28;object-fit:cover;object-position:55% 30%;transform:scale(1.19);transform-origin:50% 34%;filter:grayscale(1) sepia(.44) brightness(1.27)}
+.editorial-signal{grid-column:1/7;grid-row:3;align-self:stretch}
+.editorial-signal img{width:100%;height:100%;max-height:310px;object-fit:cover;object-position:center;filter:sepia(.3)}
+.editorial-discovery{grid-column:8/13;grid-row:3;align-self:center}
+.editorial-discovery h2,.atlas-discovery h2{font:clamp(18px,2.4vw,31px)/1 RetroVGA,monospace;background:var(--amber);color:var(--black);padding:8px 10px;margin-bottom:8px}
+.editorial-discovery nav,.atlas-discovery nav,.atlas-index{display:grid;gap:6px}
+.editorial-discovery a,.atlas-discovery a,.atlas-index a{display:flex;align-items:center;min-height:44px;border:1px solid;padding:5px 10px;text-decoration:none;font:clamp(17px,2vw,25px)/1 RetroCRT,monospace}
+.editorial-discovery a:hover,.atlas-index a:hover,.atlas-discovery a:hover{background:var(--amber);color:var(--black)}
+.signal-field{background:radial-gradient(circle,var(--amber) 1px,transparent 1.5px) 0 0/7px 7px;clip-path:polygon(0 54%,12% 17%,25% 36%,41% 10%,59% 61%,72% 42%,87% 70%,100% 49%,100% 100%,0 100%);min-height:130px;opacity:.68}
+.editorial .signal-field{grid-column:1/9;grid-row:4;align-self:stretch}
+.editorial-detail{grid-column:9/13;grid-row:4;border:1px solid var(--line);padding:8px}
+.editorial-detail img{width:100%;aspect-ratio:2;object-fit:cover;filter:sepia(.4)}
+.editorial-footer{display:flex;gap:4px 20px;flex-wrap:wrap;margin-top:20px;border-top:1px solid var(--line)}
+.editorial-symbols a:hover,.editorial-lexicon a:hover,.atlas-heading nav a:hover{text-decoration:underline;text-underline-offset:3px}
+.editorial-footer a{display:grid;place-items:center;min-height:44px;font:18px RetroCRT,monospace}
+
+/* Atlas: equal sightlines for the three records; index framed by instrument graphics. */
+.atlas .masthead{border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:20px}
+.atlas-heading{display:flex;justify-content:space-between;align-items:start;gap:18px;margin-bottom:18px}
+.atlas-heading h1{font:clamp(2rem,6.2vw,6.3rem)/.9 RetroVGA,monospace;letter-spacing:-.05em}
+.atlas-heading nav{display:grid;flex:none}
+.atlas-heading nav a{font:18px/1.15 RetroCRT,monospace;min-height:28px;text-decoration:none}
+.historical-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(7px,1.8vw,24px)}
+.historical-triptych figure{min-width:0;border:1px solid var(--line);display:flex;flex-direction:column}
+.artwork-frame{display:grid;place-items:center;aspect-ratio:.75;background:#17110a}
+.artwork-frame img{width:100%;height:100%;object-fit:contain;min-height:0}
+.historical-triptych figcaption{border-top:1px solid var(--line);flex:1}
+.historical-triptych figcaption a{height:100%;display:flex;gap:9px;align-items:center;justify-content:center;min-height:55px;padding:8px;text-decoration:none}
+.historical-triptych figcaption a:hover{text-decoration:underline;text-underline-offset:3px}
+.historical-triptych .pixel-icon{width:clamp(18px,4vw,52px);height:auto;flex:none}
+.historical-triptych strong,.historical-triptych small{display:block}
+.historical-triptych strong{font:clamp(17px,3.1vw,38px)/1 RetroVGA,monospace;overflow-wrap:anywhere}
+.historical-triptych small{font:clamp(16px,1.5vw,20px)/1.05 RetroCRT,monospace;color:var(--light);margin-top:4px}
+.alliance figcaption{background:var(--amber);color:var(--black);text-align:center}
+.alliance figcaption small{color:inherit}
+.atlas-console{display:grid;grid-template-columns:minmax(90px,.7fr) minmax(0,1.15fr) minmax(0,1.3fr);gap:clamp(12px,3vw,35px);align-items:stretch;margin:clamp(20px,5vw,48px) 0}
+.armillary{align-self:center;position:relative;border:1px solid var(--line);aspect-ratio:1;display:grid;place-items:center}
+.armillary i,.armillary b,.armillary em{position:absolute;border:1px solid var(--amber);border-radius:50%;inset:10%}
+.armillary b{inset:10% 31%;transform:rotate(23deg)}
+.armillary em{inset:32% 9%;transform:rotate(-26deg)}
+.armillary::after{content:"";position:absolute;inset:42% 9%;border:1px solid var(--line);border-radius:50%;transform:rotate(-26deg)}
+.atlas-console .signal-field{align-self:stretch}
+.atlas-index a:first-child{background:var(--amber);color:var(--black)}
+.atlas-reading{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);gap:20px 34px;align-items:start;border-top:1px solid var(--line);padding:24px 0;color:var(--light);scroll-margin-top:12px}
+.atlas-reading h2{font:clamp(24px,3.2vw,42px)/1 RetroVGA,monospace;color:var(--amber)}
+.atlas-reading header p{font:16px RetroCRT,monospace;margin-bottom:5px}
+.atlas-reading nav{margin:8px 0}
+.atlas-reading a{color:var(--amber);display:inline-block;padding-block:7px}
+.atlas-reading summary{min-height:44px;padding:9px 0;cursor:pointer;color:var(--amber)}
+.atlas-reading details p{margin:0 0 7px}
+.comparative-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comparative-pair img{width:100%;height:clamp(125px,27vw,260px);object-fit:contain;object-position:left}
+.comparative-pair figcaption{font-size:.875rem}
+.atlas-discovery{max-width:650px}
+.atlas-discovery nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+@media(max-width:680px){
+    .bios .masthead{gap:4px 14px}
+    .bios .modes{font-size:17px}
+    .bios-dirs .bios-list button,.bios-dirs h2,.bios-files h2{font:19px/1 RetroCRT,monospace}
+    .bios-dirs .bios-list button span:first-child{overflow-wrap:normal}
+    .bios-menu button,.bios-command button,.bios-command a{font:17px/1 RetroCRT,monospace}
+    .bios-menu,.bios-command{gap:0 2px;padding-inline:3px}
+    .bios-menu button,.bios-command button,.bios-command a{padding-inline:4px}
+    .bios-workspace{gap:7px;margin:10px 0}
+    .bios-dirs{grid-column:span 5}
+    .bios-files{grid-column:span 7}
+    .bios-preview{grid-column:1/-1;grid-row:2}
+    .bios-index{grid-column:1/-1}
+    .bios-index .bios-list{display:flex;flex-wrap:wrap}
+    .bios-index button{width:auto}
+    .bios .bios-columns span:last-child,.bios-list button span:nth-child(2){display:none}
+    .bios-list{padding:3px}
+    .bios-list button{min-height:44px}
+    .bios-panel h2,.bios-columns{padding:6px}
+    .bios-preview-body{min-height:105px}
+    .editorial h1{font-size:clamp(2.1rem,11.5vw,5rem);grid-column:1/-1}
+    .editorial-spread{gap:10px}
+    .editorial-portrait{grid-column:4/13;margin-top:0}
+    .editorial-symbols{grid-column:1/4;gap:8px}
+    .editorial-symbols a{font-size:14px}
+    .editorial-symbols .pixel-icon{width:clamp(40px,12vw,62px)}
+    .editorial-lexicon{grid-column:1/-1;grid-row:3;grid-template-columns:repeat(3,minmax(0,1fr));border:0;padding:0;gap:0 8px}
+    .editorial-signal{grid-column:1/6;grid-row:4;align-self:stretch}
+    .editorial-discovery{grid-column:6/13;grid-row:4}
+    .editorial .signal-field,.editorial-detail{grid-row:5}
+    .editorial .signal-field{min-height:75px}
+    .orbital-mark{grid-column:10/13;align-self:end}
+    .atlas-heading nav{display:none}
+    .atlas-console{grid-template-columns:minmax(52px,.45fr) minmax(0,1.55fr)}
+    .atlas-console .signal-field{display:none}
+    .historical-triptych figcaption a{min-height:66px;padding:4px;gap:2px;flex-direction:column;text-align:center}
+    .historical-triptych strong{font-size:clamp(13px,4.1vw,24px)}
+    .historical-triptych .pixel-icon{width:22px}
+    .atlas-reading{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:370px){
+    .modes{gap:0 11px}
+    .bios{font-size:12px}
+    .bios-list button{padding-inline:3px}
+    .editorial-discovery h2{font-size:15px}
+    .editorial-discovery a{font-size:16px;padding-inline:5px}
+}
