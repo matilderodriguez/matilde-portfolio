@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!boot) return;
 
     const sessionKey = "matilde-portfolio:entered";
-    let timer;
-    const hideBoot = () => {clearTimeout(timer);boot.remove();};
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {hideBoot();return;}
+    const hideBoot = () => boot.remove();
 
     try {
         if (sessionStorage.getItem(sessionKey)) {
@@ -22,11 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("pagehide", hideBoot, {once: true});
-    boot.hidden=false;
-    boot.removeAttribute("aria-hidden");
-    const skip=document.createElement("button");
-    skip.id="boot-skip";skip.type="button";skip.textContent="[ SKIP ]";
-    skip.addEventListener("click",hideBoot);boot.appendChild(skip);
 
     const lines = [
         "user@localhost:~$ ssh matilde@career",
@@ -44,10 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showNextLine() {
 
-        if (!boot.isConnected) return;
         if (lineIndex >= lines.length) {
 
-            timer=setTimeout(hideBoot, 350);
+            setTimeout(() => {
+                boot.classList.add("boot-hidden");
+            }, 900);
 
             return;
         }
@@ -59,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lineIndex++;
 
-        timer=setTimeout(showNextLine, line.textContent === "" ? 100 : 230);
+        setTimeout(showNextLine, line.textContent === "" ? 350 : 650);
     }
 
     showNextLine();
