@@ -37,7 +37,7 @@ a{color:inherit}
 .section-bar a:hover{text-decoration:underline}
 .section-bar a:focus-visible{outline-color:currentColor}
 main{padding:clamp(32px,6vw,84px) var(--gutter) var(--section-space)}
-h1{font-size:clamp(2.375rem,6vw,5.25rem);line-height:1;letter-spacing:-.055em;margin:0 0 24px}
+h1{font-size:clamp(2.625rem,calc(21px + 5.1vw),5.25rem);line-height:1;letter-spacing:-.055em;margin:0 0 20px}
 .map{--gap:24px;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:var(--gap);margin-bottom:var(--section-space)}
 .sources{display:grid;gap:16px;position:relative}
 .node{display:flex;align-items:center;gap:12px;position:relative;border:1px dotted var(--line);padding:13px;text-decoration:none;min-width:0}
@@ -246,12 +246,17 @@ a.note-link:hover,a.note-link:focus-visible{
 
 /* Overview: technical manual columns, indexed actions and image preview. */
 .intro{max-width:46ch;margin:0;color:var(--text);font-size:clamp(1.0625rem,1.55vw,1.375rem);line-height:1.55;text-wrap:pretty}
-.discovery-intro{margin-top:24px;padding-left:16px;border-left:1px solid var(--rule);font-size:.875rem;color:var(--muted)}
+.discovery-intro{margin-top:12px;font-size:.875rem;color:var(--muted)}
+.discovery-intro>summary{cursor:pointer;list-style:none;min-height:44px;padding:11px 0}
+.discovery-intro>summary::-webkit-details-marker{display:none}
+.discovery-intro>summary::before{content:"▸";display:inline-block;width:1.5ch;color:var(--amber)}
+.discovery-intro[open]>summary::before{content:"▾"}
+.discovery-copy{padding:4px 0 4px 14px;border-left:1px solid var(--rule)}
 .discovery-intro p{margin:0 0 8px}
 .discovery-intro p:last-child{margin:0}
 .discovery-mode{color:var(--muted);margin-left:.65ch}
 .discovery-foot{font-size:var(--caption)}
-.link-key{display:grid;gap:4px;margin:28px 0;color:var(--muted);font-size:var(--caption)}
+.link-key{display:grid;gap:4px;margin:16px 0 22px;color:var(--muted);font-size:var(--caption)}
 .key-separator{display:none}
 .activity-shortcuts,.entry-directory{margin-bottom:var(--section-space)}
 .activity-shortcuts h2,.entry-directory h2{font-size:clamp(1.125rem,2vw,1.5rem);line-height:1.25;letter-spacing:-.025em;margin:0 0 16px}
@@ -291,7 +296,7 @@ a.note-link:hover,a.note-link:focus-visible{
     .overview{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:clamp(40px,8vw,112px)}
     .overview>*{grid-column:1/-1;min-width:0}
     .overview>.intro{grid-column:1}
-    .overview>.discovery-intro{grid-column:2;margin-top:0}
+    .overview>.discovery-intro{grid-column:2;margin-top:0;align-self:start}
     .activity-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 }
 @media(min-width:1280px){.section-bar{margin-top:28px}}
@@ -304,7 +309,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
 <p class="intro">Explore how the same way of thinking connects everyday observations, learning design and technical work.</p>
-<aside class="discovery-intro" aria-label="Optional discovery mode"><p class="signal-label">[ SYSTEM READY ] <span class="discovery-mode">DISCOVERY MODE</span></p><p>Observe.<br>Follow the connections.<br>Recognise what persists.</p><p>The pattern is yours to discover.</p><p class="discovery-foot">NO FIXED ROUTE. NO SINGLE INTERPRETATION.</p><p class="discovery-foot">TECHNICAL TRACES / Follow an idea into its practical implementation.</p></aside><p class="link-key" aria-label="Link style key"><span class="key-line"><span class="key-media">AMBER</span> / media &amp; original documents</span> <span class="key-separator" aria-hidden="true">·</span> <span class="key-line"><span class="key-note">WHITE DOTTED</span> / related notes &amp; references</span></p>
+<details class="discovery-intro"><summary class="signal-label">[ SYSTEM READY ] <span class="discovery-mode">DISCOVERY MODE</span></summary><div class="discovery-copy"><p>Observe.<br>Follow the connections.<br>Recognise what persists.</p><p>The pattern is yours to discover.</p><p class="discovery-foot">NO FIXED ROUTE. NO SINGLE INTERPRETATION.</p><p class="discovery-foot">TECHNICAL TRACES / Follow an idea into its practical implementation.</p></div></details><p class="link-key" aria-label="Link style key"><span class="key-line"><span class="key-media">AMBER</span> / media &amp; original documents</span> <span class="key-separator" aria-hidden="true">·</span> <span class="key-line"><span class="key-note">WHITE DOTTED</span> / related notes &amp; references</span></p>
 <section class="map" aria-label="Concept map: Pallas Athena and Mercury connect to Learning Patterns, applied in Pixel to Teach">
 <div class="sources">
 <a class="node" href="#pallas"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABEUlEQVR4nAXBsUsCYQDG4d/33pEnGB5GYRBoIARNTQkRaltL0B7RFDS02SDVcE2tjbWUf0JT5NS1FQ3RFkJwIaSQhEuk+HnX8wDZdRBERAgHk0d4Qwsi56uHWIQIwakNwbzWy4DTvQUU+28WmBoXLCh9tuuBWNjvA4XOuS2innuvbbTcrSUHUMkk40PcjR2shzjmPYfCIs8tMOWkmgTuyXdS+wxcx4uDNILf0REaET/56IXo8RIK2dJMH+39bZWa0DCdpR801M2mjwbuVWQQo8oFqEkSTgDTrlrAuU4skFp9GCBSd1EGMd1fsYhSK+8CZTNoANQtwHzXgmg3AUyctSCtYcG4H5r10ORrzgUpdAL4B3nTXFmCW4PqAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>PALLAS ATHENA</strong><span>Pattern recognition</span></span></a>
