@@ -132,6 +132,22 @@ html:has(.photo-view[open]){overflow:hidden}
 .key-note{color:var(--text);text-decoration:underline dotted #c8c8c8;text-underline-offset:.25em}
 .key-separator{padding:0 .6ch}
 @media(forced-colors:active){.pattern-trail a.photo-word{color:LinkText;text-decoration:underline;text-shadow:none}}
+
+/* Explicit link roles, independent of the surrounding paragraph or section. */
+a.note-link,a.note-link:visited{
+ color:#fff!important;
+ text-decoration:underline dotted #fff!important;
+ text-decoration-thickness:1.5px!important;
+ text-underline-offset:.28em!important;
+ text-shadow:none!important;
+ font-weight:400;
+}
+a.note-link:hover,a.note-link:focus-visible{
+ color:#fff!important;
+ text-decoration-style:solid!important;
+}
+.trail-reference{font-size:.92em;color:#aaa;margin-top:.85em!important}
+.key-note{color:#fff;text-decoration:underline dotted #fff;text-decoration-thickness:1.5px;text-underline-offset:.28em}
 </style>
 </head>
 <body>
@@ -150,13 +166,13 @@ html:has(.photo-view[open]){overflow:hidden}
 <a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From patterns to structured learning</span></span></a>
 </section>
 <section class="route" aria-label="Explore the knowledge map">
-<a class="route-start" href="#architecture">SYS.NOTES_001 / THE ARCHITECTURE OF KNOWLEDGE</a>
-<ol><li><span aria-hidden="true">+-- </span><a href="#learning">LEARNING</a></li>
-<li><span aria-hidden="true">+-- </span><a href="#patterns">PATTERN RECOGNITION</a></li>
-<li><span aria-hidden="true">+-- </span><a href="#explanation">ENGINEERING</a></li>
-<li><span aria-hidden="true">+-- </span><a href="#tools">SYSTEMS</a></li></ol>
+<a class="route-start note-link" href="#architecture">SYS.NOTES_001 / THE ARCHITECTURE OF KNOWLEDGE</a>
+<ol><li><span aria-hidden="true">+-- </span><a class="note-link" href="#learning">LEARNING</a></li>
+<li><span aria-hidden="true">+-- </span><a class="note-link" href="#patterns">PATTERN RECOGNITION</a></li>
+<li><span aria-hidden="true">+-- </span><a class="note-link" href="#explanation">ENGINEERING</a></li>
+<li><span aria-hidden="true">+-- </span><a class="note-link" href="#tools">SYSTEMS</a></li></ol>
 </section>
-<section class="pattern-index" aria-labelledby="pattern-index-title"><h2 id="pattern-index-title">CROSS-REFERENCES / PATTERN TRAILS</h2><p>Follow a relationship across different notes. These paths distinguish visual analogies from documented cultural connections.</p><div class="pattern-index-grid"><a href="#patterns">FORM / INVARIANCE</a><a href="#mercury">SIGNAL / INTERPRETATION</a><a href="#technical-writing">ACCESS / IDENTIFICATION</a><a href="#before-learning">EVIDENCE / INFERENCE</a><a href="#scale">LOAD / REUSE</a><a href="#architecture">NOTATION / STRUCTURE</a><a href="#bridge">RECONTEXTUALISATION / TRANSFER</a><a href="#explanation">INTERFACE / BOUNDARY</a></div></section>
+<section class="pattern-index" aria-labelledby="pattern-index-title"><h2 id="pattern-index-title">CROSS-REFERENCES / PATTERN TRAILS</h2><p>Follow a relationship across different notes. These paths distinguish visual analogies from documented cultural connections.</p><div class="pattern-index-grid"><a class="note-link" href="#patterns">FORM / INVARIANCE</a><a class="note-link" href="#mercury">SIGNAL / INTERPRETATION</a><a class="note-link" href="#technical-writing">ACCESS / IDENTIFICATION</a><a class="note-link" href="#before-learning">EVIDENCE / INFERENCE</a><a class="note-link" href="#scale">LOAD / REUSE</a><a class="note-link" href="#architecture">NOTATION / STRUCTURE</a><a class="note-link" href="#bridge">RECONTEXTUALISATION / TRANSFER</a><a class="note-link" href="#explanation">INTERFACE / BOUNDARY</a></div></section>
 <h2>FIELD NOTES</h2>
 <div class="topics">
 <section class="topic"><h3>KNOWLEDGE</h3>
@@ -194,14 +210,14 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ MAKE THE RELATIONSHIP VISIBLE ]</pre></figure>
 <p>Pallas Athena is my image for strategic synthesis. When several tasks keep getting stuck at the same point, I look for <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">what they have in common</a>. A shared dependency or <a href="visual-notes.html#photo-i-know" class="photo-word" aria-haspopup="dialog" aria-controls="photo-i-know">an unstated assumption</a> can explain why apparently separate problems call for the same change.</p>
-<p>In Raphael’s <em>The School of Athens</em>, <a href="visual-notes.html#photo-raphael-scribe" class="photo-word" aria-haspopup="dialog" aria-controls="photo-raphael-scribe">a figure bends over a page</a> while another looks on. I read the gesture as knowledge taking visible form: observation, inscription and interpretation. The same gesture reappears in a radically different medium, as explored in <a href="#patterns">Pattern Recognition</a>.</p>
+<p>In Raphael’s <em>The School of Athens</em>, <a href="visual-notes.html#photo-raphael-scribe" class="photo-word" aria-haspopup="dialog" aria-controls="photo-raphael-scribe">a figure bends over a page</a> while another looks on. I read the gesture as knowledge taking visible form: observation, inscription and interpretation. The same gesture reappears in a radically different medium, as explored in <a class="note-link" href="#patterns">Pattern Recognition</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route">Failure to Communicate</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#before-learning">Before Learning Begins</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="mercury" tabindex="-1" aria-labelledby="mercury-title">
@@ -216,17 +232,17 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ EXPLAIN WITH PRECISION ]</pre></figure>
 <p>Mercury is my image for <a href="visual-notes.html#photo-profiles" class="photo-word" aria-haspopup="dialog" aria-controls="photo-profiles">curiosity and communication</a>. Technical translation often means moving between the language of a specialist and the questions of someone using the material. I want the explanation to travel across that gap <a href="visual-notes.html#photo-recognition-scale" class="photo-word" aria-haspopup="dialog" aria-controls="photo-recognition-scale">with its meaning and technical distinctions intact</a>.</p>
-<p>Information can reach its destination without producing shared understanding. The opening sample of Guns N’ Roses’ <em>Civil War</em>, taken from <em>Cool Hand Luke</em>, makes <a href="visual-notes.html#photo-failure-communication" class="photo-word" aria-haspopup="dialog" aria-controls="photo-failure-communication">failure to communicate</a> audible. In the film the phrase comes from a figure of authority; in the song it becomes part of a wider critique of conflict. The words survive the transfer, while their function changes.</p><p>Communication is not only the transmission of information. It requires a shared interpretation, and sometimes the freedom to challenge it. Before replacing a component, examine the interface. See also <a href="#patterns">Pattern Recognition</a>.</p>
+<p>Information can reach its destination without producing shared understanding. The opening sample of Guns N’ Roses’ <em>Civil War</em>, taken from <em>Cool Hand Luke</em>, makes <a href="visual-notes.html#photo-failure-communication" class="photo-word" aria-haspopup="dialog" aria-controls="photo-failure-communication">failure to communicate</a> audible. In the film the phrase comes from a figure of authority; in the song it becomes part of a wider critique of conflict. The words survive the transfer, while their function changes.</p><p>Communication is not only the transmission of information. It requires a shared interpretation, and sometimes the freedom to challenge it. Before replacing a component, examine the interface. See also <a class="note-link" href="#patterns">Pattern Recognition</a>.</p>
 <p>Music recognition offers another instance of <a href="visual-notes.html#photo-sound-to-symbol" class="photo-word" aria-haspopup="dialog" aria-controls="photo-sound-to-symbol">recognition across modalities</a>. A recording is matched through acoustic features to a title and an artist. An added handwritten mark introduces a separate visual layer: it can carry a personal association without becoming part of the track’s verified identity.</p>
-<aside class="pattern-trail"><h3>SIGNAL / INTERPRETATION</h3><p>The winged profiles, the changing scale of the crocodile emblem and music recognition all invite questions about what makes a signal recognisable. <a href="#failure-to-communicate">Failure to Communicate</a> adds a further distinction: recognising a signal does not guarantee agreement about its meaning.</p></aside>
-<p class="implementation-note"><strong>IN PRACTICE / </strong>The English–Spanish glossary associates specialist terms with translations, definitions and source excerpts. A contextual definition is not necessarily a statement made by the original document. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<aside class="pattern-trail"><h3>SIGNAL / INTERPRETATION</h3><p>The winged profiles, the changing scale of the crocodile emblem and music recognition all invite questions about what makes a signal recognisable. <a class="note-link" href="#failure-to-communicate">Failure to Communicate</a> adds a further distinction: recognising a signal does not guarantee agreement about its meaning.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The English–Spanish glossary associates specialist terms with translations, definitions and source excerpts. A contextual definition is not necessarily a statement made by the original document. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route">Failure to Communicate</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#before-learning">Before Learning Begins</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#before-learning">Before Learning Begins</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#clarity">From Complexity to Clarity</a></li>
 </ul>
 </article>
 <article class="note" id="learning" tabindex="-1" aria-labelledby="learning-title">
@@ -243,9 +259,9 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>A manual might describe a machine component by component. A new operator may need to begin with a task and meet each component when it becomes relevant. Putting the material in that order reveals prerequisites the original manual can afford to leave implicit.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="pixel-to-teach" tabindex="-1" aria-labelledby="pixel-to-teach-title">
@@ -276,9 +292,9 @@ html:has(.photo-view[open]){overflow:hidden}
 [ SOURCE + STRUCTURE CHECKS ]</pre></figure><h3>MERCURY / LANGUAGE AND EVIDENCE</h3><p>The analysis schema defines an EN–ES glossary, summaries and source-linked learning materials. The verification code matches excerpts against extracted text and records page numbers where available. It distinguishes a literal term occurrence from evidence for a generated definition. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/analysis-schema.ts" target="_blank" rel="noopener noreferrer">Inspect evidence verification</a>.</p><h3>PALLAS ATHENA / STRUCTURE AND RELATIONSHIPS</h3><p>A local experimental engine represents text blocks, symbols and candidate repeated columns. The generated knowledge map uses concepts and labelled directed relationships. The analysis instructions request a common inventory of evidence-linked knowledge units, distinguishing observation from inference. Candidate structural patterns and generated relationships are not independently validated facts. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/structural-engine.ts" target="_blank" rel="noopener noreferrer">Inspect structural engine</a> · <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/analyze.server.ts" target="_blank" rel="noopener noreferrer">Inspect analysis instructions</a>.</p><h3>INSTRUCTIONAL DESIGN / APPLICATION</h3><p>The interface provides a summary, knowledge map, glossary, objectives, module and quiz. The analysis instructions ask that objectives, explanations, practice and assessment be aligned with the source. Quiz candidates are checked for structure and source matching; up to five passing questions are shown, and fewer may be available. Those checks do not prove semantic correctness or learning effectiveness. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/routes/index.tsx" target="_blank" rel="noopener noreferrer">Inspect application interface</a>.</p><p class="implementation-note"><strong>LIMITS / </strong>These descriptions reflect the repository implementation, not a live end-to-end test. PDF extraction can lose layout; the local structural engine does not recover missing coordinates from flattened matrices. Human review remains necessary.</p><p><a href="https://github.com/matilderodriguez/pixel-to-teach" target="_blank" rel="noopener noreferrer">View Pixel to Teach source code</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning">Learning Patterns</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="clarity" tabindex="-1" aria-labelledby="clarity-title">
@@ -296,9 +312,9 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>A dense document may contain all the necessary facts and still be difficult to use. <a href="visual-notes.html#photo-terminal" class="photo-word" aria-haspopup="dialog" aria-controls="photo-terminal">Making its structure visible</a> can mean separating a prerequisite from an instruction, or showing how two apparently separate concepts depend on each other. That gives each detail a place in the explanation.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#bridge">The Bridge Between Domains</a></li>
 </ul>
 </article>
 <article class="note" id="patterns" tabindex="-1" aria-labelledby="patterns-title">
@@ -317,16 +333,16 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ SYNTHESISE ]</pre></figure>
 <p>Different problems can share <a href="visual-notes.html#photo-skulls" class="photo-word" aria-haspopup="dialog" aria-controls="photo-skulls">the same underlying structure</a>. If two teams repeatedly ask where a procedure starts, their questions may point to a missing prerequisite in the documentation. Recognising the common pattern helps decide where a single change could help both teams.</p>
-<p>A pattern can survive a change of medium, century and purpose. <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">From Raphael to Hard Rock</a>, the gesture of writing remains recognisable in Mark Kostabi’s artwork for <em>Use Your Illusion II</em>. The colours and surrounding context change; the underlying relationship remains visible. The same album carries a second kind of transformation, explored in <a href="#mercury">Mercury</a>: a cinematic voice becomes a musical sample.</p>
-<aside class="pattern-trail"><h3>FORM / INVARIANCE</h3><p>Compare the <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">Ángulo inscriptions</a>, the <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">Buen Suceso entrances</a> and the <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">athletic pose</a>. Each invites a different comparison: repeated lettering, a shared name at different scales, or a bodily gesture reworked in another medium. Similarity is a starting point for investigation, not proof of a shared origin.</p></aside>
-<p class="implementation-note"><strong>IN PRACTICE / </strong>The application includes an experimental local structural engine that identifies candidate repeated columns in extracted text. Candidates are not established semantic relationships; their interpretation requires evidence. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<p>A pattern can survive a change of medium, century and purpose. <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">From Raphael to Hard Rock</a>, the gesture of writing remains recognisable in Mark Kostabi’s artwork for <em>Use Your Illusion II</em>. The colours and surrounding context change; the underlying relationship remains visible. The same album carries a second kind of transformation, explored in <a class="note-link" href="#mercury">Mercury</a>: a cinematic voice becomes a musical sample.</p>
+<aside class="pattern-trail"><h3>FORM / INVARIANCE</h3><p>Compare the <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">Ángulo inscriptions</a>, the <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">Buen Suceso entrances</a> and the <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">athletic pose</a>. Each invites a different comparison: repeated lettering, a shared name at different scales, or a bodily gesture reworked in another medium. Similarity is a starting point for investigation, not proof of a shared origin.</p><p class="trail-reference">+-- Related note: <a class="note-link" href="#pallas">Pallas Athena</a></p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The application includes an experimental local structural engine that identifies candidate repeated columns in extracted text. Candidates are not established semantic relationships; their interpretation requires evidence. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route">Failure to Communicate</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="architecture" tabindex="-1" aria-labelledby="architecture-title">
@@ -334,7 +350,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <p class="note-id">SYSTEM NOTE 001</p>
 <h2 id="architecture-title">The Architecture of Knowledge</h2>
 <p class="summary"><a href="visual-notes.html#photo-information-architecture" class="photo-word" aria-haspopup="dialog" aria-controls="photo-information-architecture">Organise information so it can guide action</a>.</p>
-<div class="operations"><div><h3><a href="#mercury">MERCURY / INFORMATION PROCESSING</a></h3><p>What does the source say? I gather the terms, quantities and instructions, <a href="visual-notes.html#photo-legacy" class="photo-word" aria-haspopup="dialog" aria-controls="photo-legacy">keeping each with its context</a> as I move between languages.</p></div><div><h3><a href="#pallas">PALLAS / STRATEGIC SYNTHESIS</a></h3><p>What connects those details? I compare cases, identify dependencies and ask which relationship would help someone decide what to do.</p></div></div>
+<div class="operations"><div><h3><a class="note-link" href="#mercury">MERCURY / INFORMATION PROCESSING</a></h3><p>What does the source say? I gather the terms, quantities and instructions, <a href="visual-notes.html#photo-legacy" class="photo-word" aria-haspopup="dialog" aria-controls="photo-legacy">keeping each with its context</a> as I move between languages.</p></div><div><h3><a class="note-link" href="#pallas">PALLAS / STRATEGIC SYNTHESIS</a></h3><p>What connects those details? I compare cases, identify dependencies and ask which relationship would help someone decide what to do.</p></div></div>
 <h3>FROM PATTERNS TO SYSTEMS</h3>
 <figure><figcaption class="visually-hidden">Information reveals patterns. Comparing those patterns establishes relationships that can be organised and applied.</figcaption><pre aria-hidden="true">INFORMATION
   +-- PATTERNS
@@ -344,12 +360,12 @@ html:has(.photo-view[open]){overflow:hidden}
 <h3>PRACTICAL APPLICATION</h3><p>An engineering drawing can show an assembly in numbered parts. A translator needs to know which label belongs to each part. A new colleague also needs to know which part must be fitted first and why. That dependency gives a trainer the sequence for a demonstration and a technical writer the point at which to place a warning. A team can then reuse the same relationship in a manual, a lesson or a troubleshooting guide.</p>
 <p>A course, a technical manual and a training tool all ask their readers to do something with information. In each case, I look for a structure that helps someone find what matters, see why it matters and decide what to do next. That work connects learning design, documentation and engineering.</p>
 <aside class="pattern-trail"><h3>NOTATION / STRUCTURE</h3><p>The Legacy images and the public dashboard schematic bring different kinds of notation into view. The <a href="visual-notes.html#photo-terminal" class="photo-word" aria-haspopup="dialog" aria-controls="photo-terminal">amber terminal</a> demonstrates how alignment can expose relationships; the <a href="visual-notes.html#photo-arrows" class="photo-word" aria-haspopup="dialog" aria-controls="photo-arrows">diagram of arrows</a> demonstrates why an explicit key is still necessary. Organisation makes information navigable, but does not by itself validate its meaning.</p></aside>
-<p class="implementation-note"><strong>IN PRACTICE / </strong>Concepts and labelled relationships form a knowledge map, while a shared internal inventory of evidence-linked knowledge units is requested to organise the generated outputs. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>Concepts and labelled relationships form a knowledge map, while a shared internal inventory of evidence-linked knowledge units is requested to organise the generated outputs. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#clarity">From Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="explanation" tabindex="-1" aria-labelledby="explanation-title">
@@ -371,10 +387,10 @@ html:has(.photo-view[open]){overflow:hidden}
 <aside class="pattern-trail"><h3>INTERFACE / BOUNDARY</h3><p>The stage-dive image foregrounds the relationship between performer and audience; El Encuentro foregrounds a threshold. The <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">Buen Suceso entrances</a> offer a concrete counterpart. These are analogies for the design of access, not claims that the images share a common historical source.</p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#technical-writing">Before the First Sentence</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#reusable">From Problems to Reusable Solutions</a></li>
 </ul>
 </article>
 <article class="note" id="reusable" tabindex="-1" aria-labelledby="reusable-title">
@@ -394,9 +410,9 @@ html:has(.photo-view[open]){overflow:hidden}
 <p><a href="visual-notes.html#photo-recursive" class="photo-word" aria-haspopup="dialog" aria-controls="photo-recursive">When the same question comes up repeatedly</a>, the knowledge may sit with one experienced person or be buried in a hard-to-find document. An ordered checklist or troubleshooting guide can make that knowledge available at the point of use. It can also give a team a shared procedure to review and improve.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Knowledge That Scales</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#scale">Knowledge That Scales</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#tools">From Abstract Thinking to Practical Systems</a></li>
 </ul>
 </article>
 <article class="note" id="learning-design" tabindex="-1" aria-labelledby="learning-design-title">
@@ -411,13 +427,13 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ PRACTICE AND APPLICATION ]</pre></figure>
 <p>A learning experience starts with what people already understand and gives them a way to practise what comes next. In staff training, I would <a href="visual-notes.html#photo-performance" class="photo-word" aria-haspopup="dialog" aria-controls="photo-performance">connect each explanation to a task</a> the person needs to perform. The sequence then reflects how someone learns to do the work.</p>
-<p class="implementation-note"><strong>IN PRACTICE / </strong>The analysis instructions ask for document-specific learning objectives, worked explanations, practice activities and aligned assessments. These are design requirements for generated content, not a guarantee of pedagogical quality. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The analysis instructions ask for document-specific learning objectives, worked explanations, practice activities and aligned assessments. These are design requirements for generated content, not a guarantee of pedagogical quality. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning">Learning Patterns</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="bridge" tabindex="-1" aria-labelledby="bridge-title">
@@ -438,10 +454,10 @@ html:has(.photo-view[open]){overflow:hidden}
 <aside class="pattern-trail"><h3>RECONTEXTUALISATION / TRANSFER</h3><p>The tarot collages and the athletic imagery change the setting in which familiar visual elements appear. Compare this with <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">Raphael and the album artwork</a>: a recognisable motif may acquire a different cultural function. In technical translation and training, the equivalent challenge is to change the representation without losing a distinction that matters to the task.</p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#technical-writing">Before the First Sentence</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#technical-writing">Before the First Sentence</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#clarity">From Complexity to Clarity</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
 </ul>
 </article>
 <article class="note" id="scale" tabindex="-1" aria-labelledby="scale-title">
@@ -457,12 +473,12 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ COHORTS AND TEAMS ]</pre></figure>
 <p>A training module can support several cohorts, and a troubleshooting guide can help more than one team. When the structure is explicit, a specialist can also see which part to update when a procedure changes. Reuse makes expertise easier to share and can reduce <a href="visual-notes.html#photo-cost-repetition" class="photo-word" aria-haspopup="dialog" aria-controls="photo-cost-repetition">the time spent repeating the same explanation</a>.</p>
-<aside class="pattern-trail"><h3>LOAD / REUSE</h3><p>The Ten of Wands illustration makes accumulated work visible. The fragmented imagery in <a href="#reusable">From Problems to Reusable Solutions</a> suggests a different form of friction: repetition without a stable resolution. In <a href="#learning-design">Learning as System Design</a>, the practical response is to organise knowledge around tasks rather than continually reproduce the same explanation.</p></aside>
+<aside class="pattern-trail"><h3>LOAD / REUSE</h3><p>The Ten of Wands illustration makes accumulated work visible. The fragmented imagery in <a class="note-link" href="#reusable">From Problems to Reusable Solutions</a> suggests a different form of friction: repetition without a stable resolution. In <a class="note-link" href="#learning-design">Learning as System Design</a>, the practical response is to organise knowledge around tasks rather than continually reproduce the same explanation.</p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#reusable">From Problems to Reusable Solutions</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="tools" tabindex="-1" aria-labelledby="tools-title">
@@ -480,9 +496,9 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>Once an explanation works, I can ask which parts could live in a checklist, a training resource or a digital tool. For example, a documented sequence of checks can become a guided troubleshooting workflow. The form depends on what the person needs to do with the knowledge.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#scale">Knowledge That Scales</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#scale">Knowledge That Scales</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a></li>
 </ul>
 </article>
 <article class="note" id="before-learning" tabindex="-1" aria-labelledby="before-learning-title">
@@ -491,12 +507,12 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>Mercury and Pallas Athena are my images for two stages of reading. With Mercury, I follow the information across words, numbers, diagrams and languages. With Pallas, I ask which relationships those pieces support and which remain open. <a href="visual-notes.html#photo-arrows" class="photo-word" aria-haspopup="dialog" aria-controls="photo-arrows">A line in a diagram</a> might indicate sequence, dependency or the author’s working hypothesis.</p>
 <p>That distinction shaped my thinking about Pixel to Teach. Asking ‘Why does A cause B?’ quietly settles the matter. Asking ‘What led the author to connect A and B?’ gives the learner a reason to <a href="visual-notes.html#photo-victoria" class="photo-word" aria-haspopup="dialog" aria-controls="photo-victoria">return to the evidence</a>. The relationship I identify upstream changes the learning activity downstream.</p>
 <p>An archival photograph illustrates the importance of separating observation from inference: <a href="visual-notes.html#photo-historical-evidence" class="photo-word" aria-haspopup="dialog" aria-controls="photo-historical-evidence">what the evidence actually establishes</a>. Visible damage, buildings, people and power lines provide clues, but the image alone cannot establish the date, location or cause of the damage.</p>
-<aside class="pattern-trail"><h3>EVIDENCE / INFERENCE</h3><p>The street photographs and the historical landscape distinguish what is visible from what still needs documentary support. The same discipline applies to <a href="#patterns">visual similarities</a> and to <a href="#pixel-to-teach">learning materials derived from technical sources</a>: retain the distinction between an observation, an interpretation and an established claim.</p></aside>
-<p class="implementation-note"><strong>IN PRACTICE / </strong>Source excerpts are matched against the extracted document, with page references where available. Finding a passage establishes its presence, not the truth of every interpretation attached to it. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
-<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pallas">Pallas Athena</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#pixel-to-teach">Pixel to Teach</a></li></ul></article>
+<aside class="pattern-trail"><h3>EVIDENCE / INFERENCE</h3><p>The street photographs and the historical landscape distinguish what is visible from what still needs documentary support. The same discipline applies to <a class="note-link" href="#patterns">visual similarities</a> and to <a class="note-link" href="#pixel-to-teach">learning materials derived from technical sources</a>: retain the distinction between an observation, an interpretation and an established claim.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>Source excerpts are matched against the extracted document, with page references where available. Finding a passage establishes its presence, not the truth of every interpretation attached to it. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pallas">Pallas Athena</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a></li></ul></article>
 <article class="note" id="technical-writing" tabindex="-1" aria-labelledby="technical-writing-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="technical-writing-title">Before the First Sentence</h2><p class="summary">Trace the decisions behind a technical explanation.</p>
 <p>Imagine a setup guide that says ‘Select the default profile’. The engineer means the profile supplied with the product. The trainer means the one the team uses every morning. On a new colleague’s screen, both are available. A perfectly fluent translation of that sentence would leave the colleague with exactly the same problem.</p>
@@ -504,19 +520,19 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>This is what product thinking and information architecture look like in a single line of documentation. The work includes listening patiently when two specialists use the same word differently, finding out what each means and giving the next person enough information to act independently.</p>
 <p>A street sign can also reveal <a href="visual-notes.html#photo-language-context" class="photo-word" aria-haspopup="dialog" aria-controls="photo-language-context">the difference between a name and a description</a>. ‘Niños Luchando’ functions as a place name, while its literal wording evokes an action. Recognising which function the words serve is essential before translating them.</p>
 <aside class="pattern-trail"><h3>ACCESS / IDENTIFICATION</h3><p>The Buen Suceso photographs show two ways of presenting a name at an entrance. The Niños Luchando sign adds a linguistic question: a label can designate a place without functioning as a literal instruction. The doorway in <a href="visual-notes.html#photo-system-boundary" class="photo-word" aria-haspopup="dialog" aria-controls="photo-system-boundary">El Encuentro</a> extends the comparison from identification to access, as a visual metaphor rather than evidence of a historical relationship.</p></aside>
-<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#bridge">The Bridge Between Domains</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#explanation">The Engineering of Explanation</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#reusable">From Problems to Reusable Solutions</a></li></ul></article>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#bridge">The Bridge Between Domains</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#reusable">From Problems to Reusable Solutions</a></li></ul></article>
 <article class="note" id="knowledge-design" tabindex="-1" aria-labelledby="knowledge-design-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><h2 id="knowledge-design-title">Where Language, Learning and Systems Meet</h2><p class="summary">Explore three ways into the same piece of knowledge.</p>
 <p>Building a Cambridge C2 Proficiency programme from scratch gave me one way into knowledge design. A syllabus has to establish what learners can already do, what comes next and how they can demonstrate the difference. Technical translation gives me another way in. An English term and its Spanish equivalent have to lead the reader back to the same component, action or condition.</p>
 <p>Engineering adds a third question. Which part depends on which other part? The order that makes sense on a parts list may differ from the order in which someone needs to learn a procedure. In corporate training, that difference matters when a new colleague has the manual open and needs to decide what to do.</p>
 <p><a href="visual-notes.html#photo-world-24" class="photo-word" aria-haspopup="dialog" aria-controls="photo-world-24">This is the intersection I explore</a> through Pixel to Teach. A bilingual glossary can preserve a distinction between terms. A map can make a dependency visible. A practice task can ask someone to use both. The practical aim is to make expertise easier to find, teach and reuse across a team.</p>
-<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#architecture">The Architecture of Knowledge</a></li>
-<li><span class="branch" aria-hidden="true">+-- </span><a href="#tools">From Abstract Thinking to Practical Systems</a></li></ul></article>
+<h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition: Seeing What Connects</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li>
+<li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#tools">From Abstract Thinking to Practical Systems</a></li></ul></article>
 <article class="note" id="failure-to-communicate" tabindex="-1" aria-labelledby="failure-to-communicate-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
 <p class="note-id">SYSTEM NOTES / CULTURAL PATTERNS</p>
@@ -553,9 +569,9 @@ html:has(.photo-view[open]){overflow:hidden}
 <p class="culture-principle">Before replacing a component, examine the interface.</p>
 <h3>04 / KNOWLEDGE TRANSFORMATION</h3>
 <p>What must remain invariant when information moves between languages, formats or domains? That question connects technical translation, instructional design, documentation and artificial intelligence. The aim is not merely to reproduce the source, but to preserve its meaningful distinctions in a form that supports understanding and action.</p>
-<p><a href="#pixel-to-teach">Pixel to Teach</a> explores a practical application of this principle: moving from visual documentation to learning materials while retaining the source’s meaningful structure.</p>
+<p><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a> explores a practical application of this principle: moving from visual documentation to learning materials while retaining the source’s meaningful structure.</p>
 <h3>THREE CONNECTED PILLARS</h3>
-<ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#pallas">Pallas Athena — strategic synthesis</a></li><li><span class="branch" aria-hidden="true">+-- </span><a href="#patterns">Pattern Recognition — structural relationships</a></li><li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury — language and communication</a></li></ul>
+<ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pallas">Pallas Athena — strategic synthesis</a></li><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition — structural relationships</a></li><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury — language and communication</a></li></ul>
 </article>
 <dialog class="photo-view" id="photo-angulo" aria-labelledby="title-angulo">
 <header><h2 id="title-angulo">Angulo</h2><form method="dialog"><button autofocus>Close</button></form></header>
