@@ -27,8 +27,37 @@ function boot(){
  quote.addEventListener("input",runEvidence);
  q("lab-reset-structure").addEventListener("click",()=>{data.value=defaults.rows;runStructure();data.focus()});
  q("lab-reset-evidence").addEventListener("click",()=>{src.value=defaults.source;quote.value=defaults.quote;runEvidence();quote.focus()});
- q("lab-change-pattern").addEventListener("click",()=>{data.value="A | 10 | ACTIVE\nB | 20\nC | 30 | INACTIVE";runStructure()});
- q("lab-change-claim").addEventListener("click",()=>{quote.value="The pump is safe at 80 bar.";runEvidence()});
+ q("lab-change-pattern").addEventListener("click",()=>{data.value="Pump | 30 days | Ready\nValve | 14 days | Unknown\nFilter | 7 days | Ready";runStructure()});
+ q("lab-change-claim").addEventListener("click",()=>{quote.value="Replace the seal before every startup.";runEvidence()});
+ function bindChoices(attribute, output, messages){
+  const buttons=[...root.querySelectorAll("["+attribute+"]")];
+  buttons.forEach(button=>{
+   button.setAttribute("aria-pressed","false");
+   button.addEventListener("click",()=>{
+    buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+    const choice=button.getAttribute(attribute);
+    q(output).textContent=messages[choice];
+   });
+  });
+ }
+ bindChoices("data-structure-choice","lab-structure-feedback",{
+  A:"NOT THIS ONE / Record A contains all three required fields. Compare the status column again.",
+  B:"PATTERN DETECTED / Record B has no status. The repeated format reveals the missing field.",
+  C:"NOT THIS ONE / Record C contains all three required fields. Compare the status column again."
+ });
+ bindChoices("data-repair-choice","lab-repair-feedback",{
+  guess:"NOT SUPPORTED / Other devices being ready does not establish the valve's status. Copying that value invents information.",
+  flag:"GOOD DECISION / Mark the status as unknown and request evidence if it is needed. The structure is restored without inventing a fact."
+ });
+ bindChoices("data-evidence-choice","lab-evidence-feedback",{
+  a:"SOURCE MATCH / The manual explicitly instructs the reader to inspect the seal before startup.",
+  b:"NOT SUPPORTED / Inspecting a seal and replacing it are different actions. The source does not require replacement.",
+  c:"NOT SUPPORTED / Recording pressure is an instruction, not a guarantee of safe operation."
+ });
+ bindChoices("data-limit-choice","lab-limit-feedback",{
+  yes:"NOT ESTABLISHED / The manual gives an inspection instruction, but no replacement interval.",
+  no:"EVIDENCE LIMIT IDENTIFIED / No replacement interval is given. Do not invent one."
+ });
  runStructure();runEvidence();
 }
 if(typeof document!=="undefined"){if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot()}

@@ -176,6 +176,8 @@ a.note-link:hover,a.note-link:focus-visible{
 .curriculum-index-mini{margin-top:10px;font-size:12px;color:#ccc}.curriculum-index-mini summary{cursor:pointer;color:#ededed;text-decoration:underline dotted;text-underline-offset:.25em}.curriculum-index-mini li{margin:4px 0}#curriculum-design details[id]{scroll-margin-top:16px}
 
 .entry-directory{margin:0 0 22px}.entry-directory h2{font-size:15px;letter-spacing:.07em;margin:0 0 6px;color:#ffad47}.directory-intro{font-size:12px;color:#aaa;margin:0 0 14px}.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.directory-branch{border:1px dotted #777;padding:14px;min-width:0}.directory-branch h3{margin:0 0 8px;color:#ffad47;font-size:12px;letter-spacing:.045em}.directory-branch p{color:#aaa;font-size:12px;margin:0 0 8px}.directory-branch a{display:block;padding:7px 0;overflow-wrap:anywhere;font-size:12px}.directory-more{border:1px dotted #555;margin:12px 0;padding:12px 14px}.directory-more>summary{cursor:pointer;color:#ededed;font-size:12px;letter-spacing:.035em;min-height:28px;display:list-item;padding:4px 0}.directory-more>summary:focus-visible{outline:2px solid #fff;outline-offset:3px}.directory-more .pattern-index,.directory-more .route{margin:12px 0 0;border:0;padding:0}.directory-more .topics{margin-top:12px}.overview .map{margin-bottom:28px}@media(max-width:700px){.directory-grid{grid-template-columns:1fr;gap:8px}.directory-branch{padding:10px 12px}.directory-branch a{padding:8px 0}}
+
+.lab-records{overflow-x:auto;margin:14px 0}.lab-records table{width:100%;border-collapse:collapse;font-size:12px}.lab-records caption{text-align:left;color:#aaa;margin-bottom:8px;font-size:11px}.lab-records th,.lab-records td{text-align:left;padding:9px 6px;border-bottom:1px dotted #555}.lab-records thead th{color:#ffad47}.lab-feedback{padding:10px 12px;border-left:2px solid #ffad47;background:#151515;color:#ededed;min-height:3em;font-size:12px;line-height:1.55}.lab-controls button[aria-pressed="true"]{border:1px solid #ffad47;color:#ffad47;background:#20180e}.lab-choice-stack{flex-direction:column;align-items:stretch}.lab-choice-stack button{text-align:left;white-space:normal}.lab-document{border:1px dotted #777;padding:12px;margin:12px 0}.lab-document .lab-label{margin-top:0!important}.lab-takeaway{border-top:1px dotted #777;padding-top:12px;font-size:12px}.lab-takeaway strong{color:#ffad47}.lab-extra{margin-top:20px}
 </style>
 </head>
 <body>
@@ -892,37 +894,42 @@ a.note-link:hover,a.note-link:focus-visible{
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p>
 <p class="note-id">DISCOVERY MODE / INTERACTIVE CODE LAB</p>
 <h2 id="code-lab-title">Interactive Code Lab</h2>
-<p class="summary">Explore the difference between detecting structure and establishing meaning.</p>
-<p>These small, independent browser demonstrations illustrate two principles of Pixel to Teach. They do not run the production engine or use AI. The examples are synthetic; entered text stays in this page and is not transmitted by the lab.</p>
+<p class="summary">Think like a knowledge engineer. Two guided challenges, no programming required.</p>
+<p>Imagine you are preparing a training guide from a set of technical records. Before writing the guide, you need to recognise how the information is organised and check what the source actually says. Try these two short challenges.</p>
 <section class="lab-panel" aria-labelledby="lab-structure-title">
-<h3 id="lab-structure-title">DEMO_001 / STRUCTURAL RECOGNITION</h3>
-<p>Change the records. Can a repeated format be recognised even when the meaning of its fields is unknown?</p>
-<label for="lab-rows">INPUT / Pipe-separated records</label>
-<textarea id="lab-rows" rows="5" spellcheck="false" maxlength="12000">A | 10 | ACTIVE
-B | 20 | ACTIVE
-C | 30 | INACTIVE</textarea>
-<div class="lab-controls"><button type="button" id="lab-change-pattern">BREAK THE PATTERN</button><button type="button" id="lab-reset-structure">RESET INPUT</button></div>
-<p class="lab-label">OUTPUT / STRUCTURE</p><pre class="lab-output" id="lab-structure-output" aria-live="polite">JavaScript required for live results.</pre>
-<p>Equal field counts suggest a repeated format. They do not establish the units, meanings or relationships of the fields.</p>
-<p class="source-ref">+-- <a class="note-link" href="#patterns">Explore Pattern Recognition</a><br>+-- <a href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/structure/repeated-columns.ts">Inspect related production excerpt</a></p>
+<h3 id="lab-structure-title">MISSION_001 / FIND THE MISSING FIELD</h3>
+<p><strong>YOUR TASK:</strong> A training team receives three equipment records. Each should contain a device, an inspection interval and a status. One record is incomplete. Which one?</p>
+<div class="lab-records" tabindex="0"><table><caption>Fictional equipment records</caption><thead><tr><th scope="col">Record</th><th scope="col">Device</th><th scope="col">Interval</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">A</th><td>Pump</td><td>30 days</td><td>Ready</td></tr><tr><th scope="row">B</th><td>Valve</td><td>14 days</td><td>—</td></tr><tr><th scope="row">C</th><td>Filter</td><td>7 days</td><td>Ready</td></tr></tbody></table></div>
+<p class="lab-label">01 / SELECT THE INCOMPLETE RECORD</p>
+<div class="lab-controls" role="group" aria-label="Select incomplete record"><button type="button" data-structure-choice="A">RECORD A</button><button type="button" data-structure-choice="B">RECORD B</button><button type="button" data-structure-choice="C">RECORD C</button></div>
+<p class="lab-feedback" id="lab-structure-feedback" role="status">Choose a record to see why it matters.</p>
+<p class="lab-label">02 / WHAT SHOULD THE SYSTEM DO?</p>
+<div class="lab-controls" role="group" aria-label="Choose how to handle missing status"><button type="button" data-repair-choice="guess">COPY “READY”</button><button type="button" data-repair-choice="flag">FLAG AS UNKNOWN</button></div>
+<p class="lab-feedback" id="lab-repair-feedback" role="status">Choose how to handle the missing information.</p>
+<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / EDIT THE RAW RECORDS ]</summary><p>The simple detector compares the number of fields separated by vertical bars. Remove or add a field and observe the result.</p><label for="lab-rows">INPUT / Device | interval | status</label><textarea id="lab-rows" rows="4" spellcheck="false" maxlength="12000">Pump | 30 days | Ready
+Valve | 14 days
+Filter | 7 days | Ready</textarea><div class="lab-controls"><button type="button" id="lab-change-pattern">MARK STATUS UNKNOWN</button><button type="button" id="lab-reset-structure">RESET INPUT</button></div><pre class="lab-output" id="lab-structure-output" aria-live="polite">JavaScript required for live results.</pre></details>
+<p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> Recognising a repeated structure helps locate missing information. It does not tell us what that information should be.</p>
+<p class="source-ref">+-- <a class="note-link" href="#patterns">Explore Pattern Recognition</a><br>+-- <a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/structure/repeated-columns.ts">Inspect related production excerpt</a></p>
 </section>
 <section class="lab-panel" aria-labelledby="lab-evidence-title">
-<h3 id="lab-evidence-title">DEMO_002 / EVIDENCE VERIFICATION</h3>
-<p>Change the passage to look for. A literal text match is different from proving a claim.</p>
-<label for="lab-source">SOURCE / Synthetic training example</label>
-<textarea id="lab-source" rows="4" spellcheck="false" maxlength="12000">Maximum operating pressure: 40 bar.
-Inspect the seal before startup.
-Record the pressure after startup.</textarea>
-<label for="lab-quote">PASSAGE TO FIND</label>
-<textarea id="lab-quote" rows="2" spellcheck="false" maxlength="2000">Maximum operating pressure: 40 bar.</textarea>
-<div class="lab-controls"><button type="button" id="lab-change-claim">TRY UNSUPPORTED TEXT</button><button type="button" id="lab-reset-evidence">RESET INPUT</button></div>
-<p class="lab-label">OUTPUT / EVIDENCE</p><pre class="lab-output" id="lab-evidence-output" aria-live="polite">JavaScript required for live results.</pre>
-<p>A match only establishes text occurrence in this simplified demonstration. It is not a safety assessment or proof that a generated interpretation is correct.</p>
-<p class="source-ref">+-- <a class="note-link" href="#before-learning">Explore Evidence / Inference</a><br>+-- <a href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/evidence/verify-source.ts">Inspect related production excerpt</a></p>
+<h3 id="lab-evidence-title">MISSION_002 / CHECK THE TRAINING GUIDE</h3>
+<p><strong>YOUR TASK:</strong> A colleague has drafted a training guide from a fictional equipment manual. Which statement is directly supported by the source?</p>
+<div class="lab-document"><p class="lab-label">SOURCE / FICTIONAL MANUAL</p><p>Inspect the seal before startup.<br>Record the pressure after startup.<br>Report any visible leaks.</p></div>
+<p class="lab-label">01 / SELECT THE SUPPORTED STATEMENT</p>
+<div class="lab-controls lab-choice-stack" role="group" aria-label="Select supported statement"><button type="button" data-evidence-choice="a">A / Inspect the seal before startup.</button><button type="button" data-evidence-choice="b">B / Replace the seal before every startup.</button><button type="button" data-evidence-choice="c">C / Recording pressure guarantees safe operation.</button></div>
+<p class="lab-feedback" id="lab-evidence-feedback" role="status">Compare each statement with the manual.</p>
+<p class="lab-label">02 / CHECK THE LIMIT OF THE EVIDENCE</p>
+<div class="lab-controls" role="group" aria-label="Does the source establish frequency?"><button type="button" data-limit-choice="yes">THE MANUAL SPECIFIES A REPLACEMENT INTERVAL</button><button type="button" data-limit-choice="no">NO REPLACEMENT INTERVAL IS GIVEN</button></div>
+<p class="lab-feedback" id="lab-limit-feedback" role="status">What can you actually conclude from the text?</p>
+<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / CHECK YOUR OWN PASSAGE ]</summary><p>This simplified text matcher searches for the literal passage, ignoring differences in whitespace. It does not understand paraphrases or validate conclusions.</p><label for="lab-source">SOURCE / Synthetic training example</label><textarea id="lab-source" rows="4" spellcheck="false" maxlength="12000">Inspect the seal before startup.
+Record the pressure after startup.
+Report any visible leaks.</textarea><label for="lab-quote">PASSAGE TO FIND</label><textarea id="lab-quote" rows="2" spellcheck="false" maxlength="2000">Inspect the seal before startup.</textarea><div class="lab-controls"><button type="button" id="lab-change-claim">TRY UNSUPPORTED TEXT</button><button type="button" id="lab-reset-evidence">RESET INPUT</button></div><pre class="lab-output" id="lab-evidence-output" aria-live="polite">JavaScript required for live results.</pre></details>
+<p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> A training statement needs evidence. Even a matching quotation does not automatically validate every interpretation attached to it.</p>
+<p class="source-ref">+-- <a class="note-link" href="#before-learning">Explore Evidence / Inference</a><br>+-- <a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/evidence/verify-source.ts">Inspect related production excerpt</a></p>
 </section>
-<aside class="discovery-signal"><p class="signal-label">[ PATTERN FOUND / MEANING PENDING ]</p><p>Recognition is not yet understanding.</p><p class="signal-route">+-- <a class="note-link" href="#pixel-to-teach">Explore the implementation</a></p></aside>
-<h3>RELATED NOTES</h3><ul class="related"><li>+-- <a class="note-link" href="#mercury">Mercury</a></li><li>+-- <a class="note-link" href="#architecture">The Architecture of Knowledge</a></li></ul>
-</article>
+<aside class="discovery-signal"><p class="signal-label">[ STRUCTURE → EVIDENCE → LEARNING ]</p><p>These are two of the design problems explored in <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p><p>Independent teaching demonstrations, not the production engine. All examples are fictional and not operational guidance. The lab runs locally without AI or transmitting entered text.</p></aside>
+<h3>RELATED NOTES</h3><ul class="related"><li>+-- <a class="note-link" href="#mercury">Mercury</a></li><li>+-- <a class="note-link" href="#architecture">The Architecture of Knowledge</a></li></ul></article>
 <article class="note" id="curriculum-design" tabindex="-1" aria-labelledby="curriculum-title">
 <p class="back"><a href="#map">[ BACK TO MAP ]</a></p><p class="note-id">INSTRUCTIONAL DESIGN / CURRICULUM ARCHITECTURE</p><h2 id="curriculum-title">C1 &amp; C2 Programme Design</h2><p class="summary">From language content and assessment requirements to a structured learning programme.</p>
 <p>Two programme documents illustrate complementary aspects of curriculum design: the C1 syllabus sequences teaching and assessment over eleven weeks; the C2 programme combines an examination reference with a language-focus inventory. These are planning artefacts, not evidence of measured learning outcomes.</p>
