@@ -118,6 +118,8 @@ html:has(.photo-view[open]){overflow:hidden}
 .culture-comparison>div{min-width:0}.culture-comparison img{max-height:none;width:100%;height:auto;object-fit:contain}.culture-comparison>div:nth-child(2) img{aspect-ratio:1/1;object-fit:contain}.photo-view .culture-comparison{align-items:start}@media(max-width:520px){.culture-comparison{gap:1.2rem}.culture-comparison img{max-height:none!important}.culture-comparison>div{flex-shrink:0}}
 
 .pattern-trail{border-left:1px dotted #b68b47;margin:1.75rem 0;padding:0 0 .25rem 1rem}.pattern-trail h3,.pattern-index h2{color:#ffad47;font-size:13px;letter-spacing:.06em}.pattern-trail a,.pattern-index a{color:#ffad47;text-decoration:none}.pattern-trail a:hover,.pattern-index a:hover{text-decoration:underline}.pattern-index{border:1px dotted #705738;padding:14px;margin:0 0 28px}.pattern-index p{color:#ccc;font-size:12px}.pattern-index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24ch),1fr));gap:8px 18px}.pattern-index-grid a{padding:.35rem 0}
+
+.implementation-note{border-left:1px dotted #b68b47;padding-left:1rem;margin:1.4rem 0!important}.implementation-note strong{color:#ffad47;font-size:12px}.implementation-note a{color:#ffad47;text-decoration:none}
 </style>
 </head>
 <body>
@@ -133,7 +135,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <a class="node" href="#mercury"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAAAzElEQVR4nGXQP0oDYRyE4Wd/uxCQQGKhlbBpBQtLu2zpDfQAXsLGbCHBI1ik8Bp2doJewHILwVIF/ySwyWfxgU2mGYZ3mhm21WR7CCgERE7DjGag6DP7FlzFD8r0mDBKb70wNrzGNP3m5kfPIKV34oSuZVOmBTSjJay6Daz7uqWYH5Sdyv3exYvK6fHhkXA+WHyJmDw3BGdPRGV3n2Bn3YqVco4iLWuYfoKUhjBLtwTdBFLdEi4nDeEmDy9SJw/LNv5PFD1CvGZ2t/XdH1KmOyZ8kWh7AAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>MERCURY</strong><span>Language and information</span></span></a>
 </div>
 <a class="node learning" href="#learning"><span><strong>LEARNING PATTERNS</strong><span>What needs to be learned first?</span></span></a>
-<a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From documentation to learning</span></span></a>
+<a class="node" href="#pixel-to-teach"><span><strong>PIXEL TO TEACH</strong><span>From patterns to structured learning</span></span></a>
 </section>
 <section class="route" aria-label="Explore the knowledge map">
 <a class="route-start" href="#architecture">SYS.NOTES_001 / THE ARCHITECTURE OF KNOWLEDGE</a>
@@ -205,6 +207,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>Information can reach its destination without producing shared understanding. The opening sample of Guns N’ Roses’ <em>Civil War</em>, taken from <em>Cool Hand Luke</em>, makes <a href="visual-notes.html#photo-failure-communication" class="photo-word" aria-haspopup="dialog" aria-controls="photo-failure-communication">failure to communicate</a> audible. In the film the phrase comes from a figure of authority; in the song it becomes part of a wider critique of conflict. The words survive the transfer, while their function changes.</p><p>Communication is not only the transmission of information. It requires a shared interpretation, and sometimes the freedom to challenge it. Before replacing a component, examine the interface. See also <a href="#patterns">Pattern Recognition</a>.</p>
 <p>Music recognition offers another instance of <a href="visual-notes.html#photo-sound-to-symbol" class="photo-word" aria-haspopup="dialog" aria-controls="photo-sound-to-symbol">recognition across modalities</a>. A recording is matched through acoustic features to a title and an artist. An added handwritten mark introduces a separate visual layer: it can carry a personal association without becoming part of the track’s verified identity.</p>
 <aside class="pattern-trail"><h3>SIGNAL / INTERPRETATION</h3><p>The winged profiles, the changing scale of the crocodile emblem and music recognition all invite questions about what makes a signal recognisable. <a href="#failure-to-communicate">Failure to Communicate</a> adds a further distinction: recognising a signal does not guarantee agreement about its meaning.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The English–Spanish glossary associates specialist terms with translations, definitions and source excerpts. A contextual definition is not necessarily a statement made by the original document. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route">Failure to Communicate</a></li>
@@ -246,6 +249,19 @@ html:has(.photo-view[open]){overflow:hidden}
 [ TRAINING RESOURCES ]</pre></figure>
 <p>Pixel to Teach explores how technical documentation can become structured learning material. A source can inform a bilingual glossary, a training module or an assessment question. Keeping the source visible lets someone review whether the learning material preserves the original meaning.</p>
 <p><a href="https://pixel-to-teach.lovable.app/">Open Pixel to Teach</a></p>
+<h3>FROM RECOGNISING PATTERNS TO ENGINEERING KNOWLEDGE</h3><p>System Notes explores the principles. Pixel to Teach puts them into practice.</p><figure><figcaption class="visually-hidden">Source document, evidence and structural candidates, knowledge representation, learning resources and verification.</figcaption><pre aria-hidden="true">[ SOURCE DOCUMENT ]
+  |
+  v
+[ EVIDENCE + STRUCTURAL CANDIDATES ]
+  |
+  v
+[ KNOWLEDGE REPRESENTATION ]
+  |
+  v
+[ LEARNING RESOURCES ]
+  |
+  v
+[ SOURCE + STRUCTURE CHECKS ]</pre></figure><h3>MERCURY / LANGUAGE AND EVIDENCE</h3><p>The analysis schema defines an EN–ES glossary, summaries and source-linked learning materials. The verification code matches excerpts against extracted text and records page numbers where available. It distinguishes a literal term occurrence from evidence for a generated definition. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/analysis-schema.ts" target="_blank" rel="noopener noreferrer">Inspect evidence verification</a>.</p><h3>PALLAS ATHENA / STRUCTURE AND RELATIONSHIPS</h3><p>A local experimental engine represents text blocks, symbols and candidate repeated columns. The generated knowledge map uses concepts and labelled directed relationships. The analysis instructions request a common inventory of evidence-linked knowledge units, distinguishing observation from inference. Candidate structural patterns and generated relationships are not independently validated facts. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/structural-engine.ts" target="_blank" rel="noopener noreferrer">Inspect structural engine</a> · <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/lib/analyze.server.ts" target="_blank" rel="noopener noreferrer">Inspect analysis instructions</a>.</p><h3>INSTRUCTIONAL DESIGN / APPLICATION</h3><p>The interface provides a summary, knowledge map, glossary, objectives, module and quiz. The analysis instructions ask that objectives, explanations, practice and assessment be aligned with the source. Quiz candidates are checked for structure and source matching; up to five passing questions are shown, and fewer may be available. Those checks do not prove semantic correctness or learning effectiveness. <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/main/src/routes/index.tsx" target="_blank" rel="noopener noreferrer">Inspect application interface</a>.</p><p class="implementation-note"><strong>LIMITS / </strong>These descriptions reflect the repository implementation, not a live end-to-end test. PDF extraction can lose layout; the local structural engine does not recover missing coordinates from flattened matrices. Human review remains necessary.</p><p><a href="https://github.com/matilderodriguez/pixel-to-teach" target="_blank" rel="noopener noreferrer">View Pixel to Teach source code</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning">Learning Patterns</a></li>
@@ -291,6 +307,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>Different problems can share <a href="visual-notes.html#photo-skulls" class="photo-word" aria-haspopup="dialog" aria-controls="photo-skulls">the same underlying structure</a>. If two teams repeatedly ask where a procedure starts, their questions may point to a missing prerequisite in the documentation. Recognising the common pattern helps decide where a single change could help both teams.</p>
 <p>A pattern can survive a change of medium, century and purpose. <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">From Raphael to Hard Rock</a>, the gesture of writing remains recognisable in Mark Kostabi’s artwork for <em>Use Your Illusion II</em>. The colours and surrounding context change; the underlying relationship remains visible. The same album carries a second kind of transformation, explored in <a href="#mercury">Mercury</a>: a cinematic voice becomes a musical sample.</p>
 <aside class="pattern-trail"><h3>FORM / INVARIANCE</h3><p>Compare the <a href="#pallas">Ángulo inscriptions</a>, the <a href="#technical-writing">Buen Suceso entrances</a> and the <a href="#bridge">athletic pose</a>. Each invites a different comparison: repeated lettering, a shared name at different scales, or a bodily gesture reworked in another medium. Similarity is a starting point for investigation, not proof of a shared origin.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The application includes an experimental local structural engine that identifies candidate repeated columns in extracted text. Candidates are not established semantic relationships; their interpretation requires evidence. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route">Failure to Communicate</a></li>
@@ -315,6 +332,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <h3>PRACTICAL APPLICATION</h3><p>An engineering drawing can show an assembly in numbered parts. A translator needs to know which label belongs to each part. A new colleague also needs to know which part must be fitted first and why. That dependency gives a trainer the sequence for a demonstration and a technical writer the point at which to place a warning. A team can then reuse the same relationship in a manual, a lesson or a troubleshooting guide.</p>
 <p>A course, a technical manual and a training tool all ask their readers to do something with information. In each case, I look for a structure that helps someone find what matters, see why it matters and decide what to do next. That work connects learning design, documentation and engineering.</p>
 <aside class="pattern-trail"><h3>NOTATION / STRUCTURE</h3><p>The Legacy images and the public dashboard schematic bring different kinds of notation into view. The <a href="#clarity">amber terminal</a> demonstrates how alignment can expose relationships; the <a href="#before-learning">diagram of arrows</a> demonstrates why an explicit key is still necessary. Organisation makes information navigable, but does not by itself validate its meaning.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>Concepts and labelled relationships form a knowledge map, while a shared internal inventory of evidence-linked knowledge units is requested to organise the generated outputs. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#clarity">From Complexity to Clarity</a></li>
@@ -381,6 +399,7 @@ html:has(.photo-view[open]){overflow:hidden}
   v
 [ PRACTICE AND APPLICATION ]</pre></figure>
 <p>A learning experience starts with what people already understand and gives them a way to practise what comes next. In staff training, I would <a href="visual-notes.html#photo-performance" class="photo-word" aria-haspopup="dialog" aria-controls="photo-performance">connect each explanation to a task</a> the person needs to perform. The sequence then reflects how someone learns to do the work.</p>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>The analysis instructions ask for document-specific learning objectives, worked explanations, practice activities and aligned assessments. These are design requirements for generated content, not a guarantee of pedagogical quality. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
@@ -461,6 +480,7 @@ html:has(.photo-view[open]){overflow:hidden}
 <p>That distinction shaped my thinking about Pixel to Teach. Asking ‘Why does A cause B?’ quietly settles the matter. Asking ‘What led the author to connect A and B?’ gives the learner a reason to <a href="visual-notes.html#photo-victoria" class="photo-word" aria-haspopup="dialog" aria-controls="photo-victoria">return to the evidence</a>. The relationship I identify upstream changes the learning activity downstream.</p>
 <p>An archival photograph illustrates the importance of separating observation from inference: <a href="visual-notes.html#photo-historical-evidence" class="photo-word" aria-haspopup="dialog" aria-controls="photo-historical-evidence">what the evidence actually establishes</a>. Visible damage, buildings, people and power lines provide clues, but the image alone cannot establish the date, location or cause of the damage.</p>
 <aside class="pattern-trail"><h3>EVIDENCE / INFERENCE</h3><p>The street photographs and the historical landscape distinguish what is visible from what still needs documentary support. The same discipline applies to <a href="#patterns">visual similarities</a> and to <a href="#pixel-to-teach">learning materials derived from technical sources</a>: retain the distinction between an observation, an interpretation and an established claim.</p></aside>
+<p class="implementation-note"><strong>IN PRACTICE / </strong>Source excerpts are matched against the extracted document, with page references where available. Finding a passage establishes its presence, not the truth of every interpretation attached to it. See <a href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a href="#mercury">Mercury</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#pallas">Pallas Athena</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#learning-design">Learning as System Design</a></li>
