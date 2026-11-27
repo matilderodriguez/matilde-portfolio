@@ -1,0 +1,1 @@
+VGA and BIOS: unmodified PxPlus fonts by VileR (https://int10h.org/oldschool-pc-fonts/), CC BY-SA 4.0, copied from https://github.com/KiwiGeek/Faerie/tree/master/src/Faerie.Terminal.Avalonia/Assets/Fonts . VT323 by Peter Hull, SIL OFL 1.1, from https://github.com/google/fonts/tree/main/ofl/vt323 . License files included.

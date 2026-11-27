@@ -1,0 +1,24 @@
+@font-face{font-family:RetroVGA;src:url("fonts/retro-vga.ttf") format("truetype");font-display:swap}
+@font-face{font-family:RetroBIOS;src:url("fonts/retro-bios.ttf") format("truetype");font-display:swap}
+@font-face{font-family:RetroCRT;src:url("fonts/retro-crt.ttf") format("truetype");font-display:swap}
+.display-selector{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 24px;font:13px/1.4 "IBM Plex Mono",monospace}
+.display-selector button{font:inherit;min-height:44px;min-width:60px;padding:8px 14px;border:1px dotted var(--amber);background:transparent;color:var(--amber);cursor:pointer}
+.display-selector button[aria-pressed=true]{background:var(--amber);color:#101010;border-style:solid}
+html[data-display] .activity-tile{border:1px dotted var(--amber);padding:16px;min-height:150px;aspect-ratio:auto}
+html[data-display] .activity-grid{align-items:stretch}
+html[data-display=vga]{--retro:RetroVGA,"IBM Plex Mono",monospace}
+html[data-display=bios]{--retro:RetroBIOS,"IBM Plex Mono",monospace}
+html[data-display=crt]{--retro:RetroCRT,"IBM Plex Mono",monospace}
+html[data-display] h1,html[data-display] .note h2,html[data-display] .activity-shortcuts h2,html[data-display] .entry-directory h2,html[data-display] .node strong,html[data-display] .activity-tile strong,html[data-display] .section-bar,html[data-display] .display-selector button{font-family:var(--retro);font-weight:400;letter-spacing:0}
+html[data-display=vga] h1{font-size:clamp(42px,8vw,96px);color:var(--amber)}
+html[data-display=bios] h1{font-size:clamp(30px,5.8vw,68px);color:var(--amber);line-height:1.35}
+html[data-display=bios] .activity-tile{border-style:solid;min-height:128px;padding:12px}
+html[data-display=bios] .activity-grid{gap:8px}
+html[data-display=crt] h1{font-size:clamp(54px,9vw,104px);color:var(--amber);line-height:.9}
+html[data-display=crt] .activity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-display=crt] .activity-tile{min-height:100px;padding:12px}
+html[data-display=crt] .activity-tile strong{font-size:26px}
+html[data-display=crt] .directory-grid{grid-template-columns:1fr}
+html[data-display=crt] .directory-branch{display:grid;grid-template-columns:1fr;gap:4px}
+@media(min-width:800px){html[data-display=bios] .overview{column-gap:32px}html[data-display=crt] .overview{grid-template-columns:1fr}html[data-display=crt] .overview>.discovery-intro{grid-column:1;margin-top:16px}}
+@media(max-width:480px){html[data-display] .activity-tile{padding:10px;overflow-wrap:anywhere}html[data-display=bios] .activity-tile strong{font-size:14px}html[data-display] .node img{width:84px;max-width:100%}}
