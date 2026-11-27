@@ -151,6 +151,19 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .protocol-ascii{font-family:"IBM Plex Mono",ui-monospace,"DejaVu Sans Mono",monospace!important;color:#ffad47;background:#090909!important;border:1px dotted #b68b47!important;padding:clamp(8px,2vw,18px)!important;font-size:clamp(9px,2.4vw,13px)!important;line-height:1.55!important;white-space:pre;overflow-x:auto;max-width:100%;margin:16px 0 28px!important;font-variant-ligatures:none;text-shadow:0 0 3px rgba(255,160,48,.12)}
 #response-systems h3{margin-top:28px;color:#ededed}
+
+/* Optional discovery layer: no progress tracking, locks or forced route. */
+.discovery-intro{margin:0 0 24px;padding:13px 15px;border-left:1px dotted #777;color:#dedbd3;font-size:12px;line-height:1.55}
+.discovery-intro p{margin:0 0 8px}
+.discovery-intro p:last-child{margin:0}
+.signal-label{color:#ffad47;font-size:11px;letter-spacing:.07em}
+.discovery-mode{color:#aaa;margin-left:1ch}
+.discovery-foot{color:#aaa;font-size:10px;letter-spacing:.035em}
+.discovery-signal{margin:1.6rem 0;padding:.65rem .85rem;border-left:1px dotted #777;color:#dedbd3;font-size:12px}
+.discovery-signal p{margin:.25rem 0!important}
+.discovery-signal .signal-route{color:#aaa;margin-top:.5rem!important}
+.discovery-reveal summary{cursor:pointer;color:#ededed;text-decoration:underline dotted;text-underline-offset:.25em}
+.discovery-reveal summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -159,7 +172,8 @@ a.note-link:hover,a.note-link:focus-visible{
 <main>
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
-<p class="intro">A study of patterns, knowledge and systems.</p><p class="link-key" aria-label="Link style key"><span class="key-media">AMBER</span> / images &amp; video <span class="key-separator" aria-hidden="true">·</span> <span class="key-note">WHITE DOTTED</span> / related notes &amp; references</p>
+<p class="intro">A study of patterns, knowledge and systems.</p>
+<aside class="discovery-intro" aria-label="Optional discovery mode"><p class="signal-label">[ SYSTEM READY ] <span class="discovery-mode">DISCOVERY MODE</span></p><p>Observe.<br>Follow the connections.<br>Recognise what persists.</p><p>The pattern is yours to discover.</p><p class="discovery-foot">NO FIXED ROUTE. NO SINGLE INTERPRETATION.</p></aside><p class="link-key" aria-label="Link style key"><span class="key-media">AMBER</span> / images &amp; video <span class="key-separator" aria-hidden="true">·</span> <span class="key-note">WHITE DOTTED</span> / related notes &amp; references</p>
 <section class="map" aria-label="Concept map: Pallas Athena and Mercury connect to Learning Patterns, applied in Pixel to Teach">
 <div class="sources">
 <a class="node" href="#pallas"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABEUlEQVR4nAXBsUsCYQDG4d/33pEnGB5GYRBoIARNTQkRaltL0B7RFDS02SDVcE2tjbWUf0JT5NS1FQ3RFkJwIaSQhEuk+HnX8wDZdRBERAgHk0d4Qwsi56uHWIQIwakNwbzWy4DTvQUU+28WmBoXLCh9tuuBWNjvA4XOuS2innuvbbTcrSUHUMkk40PcjR2shzjmPYfCIs8tMOWkmgTuyXdS+wxcx4uDNILf0REaET/56IXo8RIK2dJMH+39bZWa0DCdpR801M2mjwbuVWQQo8oFqEkSTgDTrlrAuU4skFp9GCBSd1EGMd1fsYhSK+8CZTNoANQtwHzXgmg3AUyctSCtYcG4H5r10ORrzgUpdAL4B3nTXFmCW4PqAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>PALLAS ATHENA</strong><span>Pattern recognition</span></span></a>
@@ -215,6 +229,7 @@ a.note-link:hover,a.note-link:focus-visible{
 [ MAKE THE RELATIONSHIP VISIBLE ]</pre></figure>
 <p>Pallas Athena is my image for strategic synthesis. When several tasks keep getting stuck at the same point, I look for <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">what they have in common</a>. A shared dependency or <a href="visual-notes.html#photo-i-know" class="photo-word" aria-haspopup="dialog" aria-controls="photo-i-know">an unstated assumption</a> can explain why apparently separate problems call for the same change.</p>
 <p>In Raphael’s <em>The School of Athens</em>, <a href="visual-notes.html#photo-raphael-scribe" class="photo-word" aria-haspopup="dialog" aria-controls="photo-raphael-scribe">a figure bends over a page</a> while another looks on. I read the gesture as knowledge taking visible form: observation, inscription and interpretation. The same gesture reappears in a radically different medium, as explored in <a class="note-link" href="#patterns">Pattern Recognition</a>.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ SIGNAL DETECTED ]</p><p>Different form. Same underlying structure.</p><p class="signal-route">+-- <a class="note-link" href="#patterns">Follow the form</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
@@ -240,6 +255,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>Music recognition offers another instance of <a href="visual-notes.html#photo-sound-to-symbol" class="photo-word" aria-haspopup="dialog" aria-controls="photo-sound-to-symbol">recognition across modalities</a>. A recording is matched through acoustic features to a title and an artist. An added handwritten mark introduces a separate visual layer: it can carry a personal association without becoming part of the track’s verified identity.</p>
 <aside class="pattern-trail"><h3>SIGNAL / INTERPRETATION</h3><p>The winged profiles, the changing scale of the crocodile emblem and music recognition all invite questions about what makes a signal recognisable. <a class="note-link" href="#failure-to-communicate">Failure to Communicate</a> adds a further distinction: recognising a signal does not guarantee agreement about its meaning.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>The English–Spanish glossary associates specialist terms with translations, definitions and source excerpts. A contextual definition is not necessarily a statement made by the original document. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ SIGNAL RECEIVED ]</p><p>Recognition is not yet understanding.</p><p class="signal-route">+-- <a class="note-link" href="#failure-to-communicate">Follow the signal</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
@@ -340,6 +356,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>A pattern can survive a change of medium, century and purpose. <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">From Raphael to Hard Rock</a>, the gesture of writing remains recognisable in Mark Kostabi’s artwork for <em>Use Your Illusion II</em>. The colours and surrounding context change; the underlying relationship remains visible. The same album carries a second kind of transformation, explored in <a class="note-link" href="#mercury">Mercury</a>: a cinematic voice becomes a musical sample.</p>
 <aside class="pattern-trail"><h3>FORM / INVARIANCE</h3><p>Compare the <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">Ángulo inscriptions</a>, the <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">Buen Suceso entrances</a> and the <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">athletic pose</a>. Each invites a different comparison: repeated lettering, a shared name at different scales, or a bodily gesture reworked in another medium. Similarity is a starting point for investigation, not proof of a shared origin.</p><p class="trail-reference">+-- Related note: <a class="note-link" href="#pallas">Pallas Athena</a></p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>The application includes an experimental local structural engine that identifies candidate repeated columns in extracted text. Candidates are not established semantic relationships; their interpretation requires evidence. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ PATTERN INCOMPLETE ]</p><p>What persists when the medium changes?</p><p class="signal-route">+-- <a class="note-link" href="#bridge">Follow the transformation</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a href="#failure-to-communicate" class="culture-route note-link">Failure to Communicate</a></li>
@@ -366,6 +383,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <aside class="pattern-trail"><h3>NOTATION / STRUCTURE</h3><p>The Legacy images and the public dashboard schematic bring different kinds of notation into view. The <a href="visual-notes.html#photo-terminal" class="photo-word" aria-haspopup="dialog" aria-controls="photo-terminal">amber terminal</a> demonstrates how alignment can expose relationships; the <a href="visual-notes.html#photo-arrows" class="photo-word" aria-haspopup="dialog" aria-controls="photo-arrows">diagram of arrows</a> demonstrates why an explicit key is still necessary. Organisation makes information navigable, but does not by itself validate its meaning.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>Concepts and labelled relationships form a knowledge map, while a shared internal inventory of evidence-linked knowledge units is requested to organise the generated outputs. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
 <h3>SYMBOLIC LEGACY / RESPONSE SYSTEMS</h3><p>Explore a separate collection of personal symbolic and decision maps: <a class="note-link" href="#response-systems">Response Systems</a>. These maps illustrate notation and decision structure without claiming to model psychological outcomes scientifically.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ STRUCTURE DETECTED ]</p><p>A notation is a map, not the territory.</p><p class="signal-route">+-- <a class="note-link" href="#response-systems">Follow the notation</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#clarity">From Complexity to Clarity</a></li>
@@ -457,6 +475,7 @@ a.note-link:hover,a.note-link:focus-visible{
 [ APPLICATION ]</pre></figure>
 <p>The person who builds a system and the person learning to use it can approach the same material with <a href="visual-notes.html#photo-cards" class="photo-word" aria-haspopup="dialog" aria-controls="photo-cards">different assumptions</a>. <a href="visual-notes.html#photo-archetypes" class="photo-word" aria-haspopup="dialog" aria-controls="photo-archetypes">Bridging that gap</a> means understanding the subject, listening to the audience and <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">choosing a form</a> that preserves technical accuracy. Translation, engineering and pedagogy each contribute to that work.</p>
 <aside class="pattern-trail"><h3>RECONTEXTUALISATION / TRANSFER</h3><p>The tarot collages and the athletic imagery change the setting in which familiar visual elements appear. Compare this with <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">Raphael and the album artwork</a>: a recognisable motif may acquire a different cultural function. In technical translation and training, the equivalent challenge is to change the representation without losing a distinction that matters to the task.</p></aside>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ TRANSFER COMPLETE? ]</p><p>Something changes. Something remains.</p><p class="signal-route">+-- <a class="note-link" href="#failure-to-communicate">Follow the cultural trace</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#technical-writing">Before the First Sentence</a></li>
@@ -514,6 +533,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>An archival photograph illustrates the importance of separating observation from inference: <a href="visual-notes.html#photo-historical-evidence" class="photo-word" aria-haspopup="dialog" aria-controls="photo-historical-evidence">what the evidence actually establishes</a>. Visible damage, buildings, people and power lines provide clues, but the image alone cannot establish the date, location or cause of the damage.</p>
 <aside class="pattern-trail"><h3>EVIDENCE / INFERENCE</h3><p>The street photographs and the historical landscape distinguish what is visible from what still needs documentary support. The same discipline applies to <a class="note-link" href="#patterns">visual similarities</a> and to <a class="note-link" href="#pixel-to-teach">learning materials derived from technical sources</a>: retain the distinction between an observation, an interpretation and an established claim.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>Source excerpts are matched against the extracted document, with page references where available. Finding a passage establishes its presence, not the truth of every interpretation attached to it. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ EVIDENCE REQUIRED ]</p><p>A resemblance is a clue, not a conclusion.</p><p class="signal-route">+-- <a class="note-link" href="#patterns">Compare the patterns</a></p></aside>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pallas">Pallas Athena</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#learning-design">Learning as System Design</a></li>
@@ -525,6 +545,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>This is what product thinking and information architecture look like in a single line of documentation. The work includes listening patiently when two specialists use the same word differently, finding out what each means and giving the next person enough information to act independently.</p>
 <p>A street sign can also reveal <a href="visual-notes.html#photo-language-context" class="photo-word" aria-haspopup="dialog" aria-controls="photo-language-context">the difference between a name and a description</a>. ‘Niños Luchando’ functions as a place name, while its literal wording evokes an action. Recognising which function the words serve is essential before translating them.</p>
 <aside class="pattern-trail"><h3>ACCESS / IDENTIFICATION</h3><p>The Buen Suceso photographs show two ways of presenting a name at an entrance. The Niños Luchando sign adds a linguistic question: a label can designate a place without functioning as a literal instruction. The doorway in <a href="visual-notes.html#photo-system-boundary" class="photo-word" aria-haspopup="dialog" aria-controls="photo-system-boundary">El Encuentro</a> extends the comparison from identification to access, as a visual metaphor rather than evidence of a historical relationship.</p></aside>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ CONTEXT REQUIRED ]</p><p>The same words can perform different functions.</p><p class="signal-route">+-- <a class="note-link" href="#mercury">Follow the meaning</a></p></aside>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#bridge">The Bridge Between Domains</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#explanation">The Engineering of Explanation</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
@@ -793,6 +814,7 @@ a.note-link:hover,a.note-link:focus-visible{
 | [EXIT]                               |
 +--------------------------------------+</pre>
 <p>Use any part that is helpful, or leave the maps aside. No repeated checking or perfect completion is required.</p>
+<aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ XVII ]</p><p>INTERESTING.</p><p class="signal-route">+-- <a class="note-link" href="#architecture">Return to structure</a></p></aside>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#architecture">The Architecture of Knowledge</a></li><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#patterns">Pattern Recognition</a></li></ul></article>
 <dialog class="photo-view" id="photo-angulo" aria-labelledby="title-angulo">
 <header><h2 id="title-angulo">Angulo</h2><form method="dialog"><button autofocus>Close</button></form></header>
