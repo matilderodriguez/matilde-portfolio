@@ -166,6 +166,8 @@ a.note-link:hover,a.note-link:focus-visible{
 .discovery-reveal summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
 .source-inspection{margin:2rem 0}.source-fragment{border:1px dotted #777;margin:12px 0;padding:10px 12px}.source-fragment summary{cursor:pointer;color:#ededed;font-size:12px;line-height:1.6}.source-fragment summary::marker{color:#aaa}.source-fragment pre{color:#ffad47;font-size:clamp(10px,2.5vw,12px);white-space:pre;overflow-x:auto;margin:12px 0!important}.source-fragment code{font:inherit}.source-ref{font-size:11px;overflow-wrap:anywhere;color:#aaa}.source-fragment summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+.technical-trace{border-color:#555;margin:12px 0 22px}.technical-trace summary{font-size:11px;letter-spacing:.025em}.technical-trace summary::marker{color:#aaa}.technical-trace p{font-size:12px}.technical-trace pre{max-width:100%;overflow-x:auto}
 </style>
 </head>
 <body>
@@ -175,7 +177,7 @@ a.note-link:hover,a.note-link:focus-visible{
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
 <p class="intro">A study of patterns, knowledge and systems.</p>
-<aside class="discovery-intro" aria-label="Optional discovery mode"><p class="signal-label">[ SYSTEM READY ] <span class="discovery-mode">DISCOVERY MODE</span></p><p>Observe.<br>Follow the connections.<br>Recognise what persists.</p><p>The pattern is yours to discover.</p><p class="discovery-foot">NO FIXED ROUTE. NO SINGLE INTERPRETATION.</p></aside><p class="link-key" aria-label="Link style key"><span class="key-media">AMBER</span> / images &amp; video <span class="key-separator" aria-hidden="true">·</span> <span class="key-note">WHITE DOTTED</span> / related notes &amp; references</p>
+<aside class="discovery-intro" aria-label="Optional discovery mode"><p class="signal-label">[ SYSTEM READY ] <span class="discovery-mode">DISCOVERY MODE</span></p><p>Observe.<br>Follow the connections.<br>Recognise what persists.</p><p>The pattern is yours to discover.</p><p class="discovery-foot">NO FIXED ROUTE. NO SINGLE INTERPRETATION.</p><p class="discovery-foot">TECHNICAL TRACES / Selected notes also reveal source code.</p></aside><p class="link-key" aria-label="Link style key"><span class="key-media">AMBER</span> / images &amp; video <span class="key-separator" aria-hidden="true">·</span> <span class="key-note">WHITE DOTTED</span> / related notes &amp; references</p>
 <section class="map" aria-label="Concept map: Pallas Athena and Mercury connect to Learning Patterns, applied in Pixel to Teach">
 <div class="sources">
 <a class="node" href="#pallas"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwAQAAAABP9dULAAABEUlEQVR4nAXBsUsCYQDG4d/33pEnGB5GYRBoIARNTQkRaltL0B7RFDS02SDVcE2tjbWUf0JT5NS1FQ3RFkJwIaSQhEuk+HnX8wDZdRBERAgHk0d4Qwsi56uHWIQIwakNwbzWy4DTvQUU+28WmBoXLCh9tuuBWNjvA4XOuS2innuvbbTcrSUHUMkk40PcjR2shzjmPYfCIs8tMOWkmgTuyXdS+wxcx4uDNILf0REaET/56IXo8RIK2dJMH+39bZWa0DCdpR801M2mjwbuVWQQo8oFqEkSTgDTrlrAuU4skFp9GCBSd1EGMd1fsYhSK+8CZTNoANQtwHzXgmg3AUyctSCtYcG4H5r10ORrzgUpdAL4B3nTXFmCW4PqAAAAAElFTkSuQmCC" width="42" height="48" alt=""><span><strong>PALLAS ATHENA</strong><span>Pattern recognition</span></span></a>
@@ -257,6 +259,23 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>Music recognition offers another instance of <a href="visual-notes.html#photo-sound-to-symbol" class="photo-word" aria-haspopup="dialog" aria-controls="photo-sound-to-symbol">recognition across modalities</a>. A recording is matched through acoustic features to a title and an artist. An added handwritten mark introduces a separate visual layer: it can carry a personal association without becoming part of the track’s verified identity.</p>
 <aside class="pattern-trail"><h3>SIGNAL / INTERPRETATION</h3><p>The winged profiles, the changing scale of the crocodile emblem and music recognition all invite questions about what makes a signal recognisable. <a class="note-link" href="#failure-to-communicate">Failure to Communicate</a> adds a further distinction: recognising a signal does not guarantee agreement about its meaning.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>The English–Spanish glossary associates specialist terms with translations, definitions and source excerpts. A contextual definition is not necessarily a statement made by the original document. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<details class="source-fragment technical-trace"><summary>[ TECHNICAL TRACE / 02 ] TERM / SOURCE</summary><p>The glossary verification helper checks whether the term occurs in a source excerpt. An occurrence is not proof of the generated definition.</p><pre tabindex="0"><code>export function quoteContainsTerm(quote: string, term: string): boolean {
+  const t = tokens(term, true);
+  const q = tokens(quote, true);
+  if (!t.length) return false;
+  for (let i = 0; i + t.length &lt;= q.length; i++) {
+    let ok = true;
+    for (let j = 0; j &lt; t.length; j++) {
+      const qw = q[i + j] ?? "";
+      const tw = t[j] ?? "";
+      const last = j === t.length - 1;
+      if (qw !== tw &amp;&amp; !(last &amp;&amp; /^(s|es|ed|d|ing)$/.test(qw.slice(tw.length)) &amp;&amp; qw.startsWith(tw))) {
+        ok = false;
+        break;
+      }
+    }
+    if (ok) return true;
+  }</code></pre><p class="source-ref">+-- <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/b31a4b7060b6a0d3b22479d1fd39c8c69e6eac31/src/lib/analysis-schema.ts#L199-L215" target="_blank" rel="noopener noreferrer">Inspect source / analysis-schema.ts : 199-215</a></p><p class="source-ref">+-- <a class="note-link" href="#pixel-to-teach">Full implementation notes</a></p></details>
 <aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ SIGNAL RECEIVED ]</p><p>Recognition is not yet understanding.</p><p class="signal-route">+-- <a class="note-link" href="#failure-to-communicate">Follow the signal</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
@@ -371,6 +390,11 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>A pattern can survive a change of medium, century and purpose. <a href="visual-notes.html#photo-illusion-pattern" class="photo-word" aria-haspopup="dialog" aria-controls="photo-illusion-pattern">From Raphael to Hard Rock</a>, the gesture of writing remains recognisable in Mark Kostabi’s artwork for <em>Use Your Illusion II</em>. The colours and surrounding context change; the underlying relationship remains visible. The same album carries a second kind of transformation, explored in <a class="note-link" href="#mercury">Mercury</a>: a cinematic voice becomes a musical sample.</p>
 <aside class="pattern-trail"><h3>FORM / INVARIANCE</h3><p>Compare the <a href="visual-notes.html#photo-angulo" class="photo-word" aria-haspopup="dialog" aria-controls="photo-angulo">Ángulo inscriptions</a>, the <a href="visual-notes.html#photo-buen-suceso" class="photo-word" aria-haspopup="dialog" aria-controls="photo-buen-suceso">Buen Suceso entrances</a> and the <a href="visual-notes.html#photo-pose" class="photo-word" aria-haspopup="dialog" aria-controls="photo-pose">athletic pose</a>. Each invites a different comparison: repeated lettering, a shared name at different scales, or a bodily gesture reworked in another medium. Similarity is a starting point for investigation, not proof of a shared origin.</p><p class="trail-reference">+-- Related note: <a class="note-link" href="#pallas">Pallas Athena</a></p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>The application includes an experimental local structural engine that identifies candidate repeated columns in extracted text. Candidates are not established semantic relationships; their interpretation requires evidence. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<details class="source-fragment technical-trace"><summary>[ TECHNICAL TRACE / 01 ] PATTERN / CANDIDATE</summary><p>Repeated column groups are marked as candidates. A visual resemblance starts an investigation; it does not establish a semantic relationship.</p><pre tabindex="0"><code>  let run: Block[] = [];
+  function flush() {
+    if (run.length &gt;= 2) patterns.push({kind:"repeated-columns", members:run.map(b=&gt;b.id), columns:run[0]!.atoms.filter(a=&gt;a.kind==="cell").length, status:"candidate"});
+    run = [];
+  }</code></pre><p class="source-ref">+-- <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/b31a4b7060b6a0d3b22479d1fd39c8c69e6eac31/src/lib/structural-engine.ts#L12-L16" target="_blank" rel="noopener noreferrer">Inspect source / structural-engine.ts : 12-16</a></p><p class="source-ref">+-- <a class="note-link" href="#pixel-to-teach">Full implementation notes</a></p></details>
 <aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ PATTERN INCOMPLETE ]</p><p>What persists when the medium changes?</p><p class="signal-route">+-- <a class="note-link" href="#bridge">Follow the transformation</a></p></aside>
 <h3>RELATED NOTES</h3>
 <ul class="related">
@@ -397,6 +421,10 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>A course, a technical manual and a training tool all ask their readers to do something with information. In each case, I look for a structure that helps someone find what matters, see why it matters and decide what to do next. That work connects learning design, documentation and engineering.</p>
 <aside class="pattern-trail"><h3>NOTATION / STRUCTURE</h3><p>The Legacy images and the public dashboard schematic bring different kinds of notation into view. The <a href="visual-notes.html#photo-terminal" class="photo-word" aria-haspopup="dialog" aria-controls="photo-terminal">amber terminal</a> demonstrates how alignment can expose relationships; the <a href="visual-notes.html#photo-arrows" class="photo-word" aria-haspopup="dialog" aria-controls="photo-arrows">diagram of arrows</a> demonstrates why an explicit key is still necessary. Organisation makes information navigable, but does not by itself validate its meaning.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>Concepts and labelled relationships form a knowledge map, while a shared internal inventory of evidence-linked knowledge units is requested to organise the generated outputs. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<details class="source-fragment technical-trace"><summary>[ TECHNICAL TRACE / 03 ] KNOWLEDGE / REPRESENTATION</summary><p>Patterns, interpretations and evidence identifiers have separate fields in the generation schema. Representation is not validation.</p><pre tabindex="0"><code>export const generationSchema = analysisSchema.extend({
+  knowledge_units: z.array(z.object({ id:z.string(), pattern:z.string(), interpretation:z.string(), evidence_ids:z.array(z.string()) })),
+  summary: z.array(analysisSchema.shape.summary.element.extend({source:evidenceSource})),
+  glossary: z.array(analysisSchema.shape.glossary.element.extend({source:evidenceSource})),</code></pre><p class="source-ref">+-- <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/b31a4b7060b6a0d3b22479d1fd39c8c69e6eac31/src/lib/analysis-schema.ts#L69-L72" target="_blank" rel="noopener noreferrer">Inspect source / analysis-schema.ts : 69-72</a></p><p class="source-ref">+-- <a class="note-link" href="#pixel-to-teach">Full implementation notes</a></p></details>
 <h3>SYMBOLIC LEGACY / RESPONSE SYSTEMS</h3><p>Explore a separate collection of personal symbolic and decision maps: <a class="note-link" href="#response-systems">Response Systems</a>. These maps illustrate notation and decision structure without claiming to model psychological outcomes scientifically.</p>
 <aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ STRUCTURE DETECTED ]</p><p>A notation is a map, not the territory.</p><p class="signal-route">+-- <a class="note-link" href="#response-systems">Follow the notation</a></p></aside>
 <h3>RELATED NOTES</h3>
@@ -466,6 +494,9 @@ a.note-link:hover,a.note-link:focus-visible{
 [ PRACTICE AND APPLICATION ]</pre></figure>
 <p>A learning experience starts with what people already understand and gives them a way to practise what comes next. In staff training, I would <a href="visual-notes.html#photo-performance" class="photo-word" aria-haspopup="dialog" aria-controls="photo-performance">connect each explanation to a task</a> the person needs to perform. The sequence then reflects how someone learns to do the work.</p>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>The analysis instructions ask for document-specific learning objectives, worked explanations, practice activities and aligned assessments. These are design requirements for generated content, not a guarantee of pedagogical quality. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<details class="source-fragment technical-trace"><summary>[ TECHNICAL TRACE / 05 ] ASSESSMENT / FILTER</summary><p>Quiz candidates pass structural and source-matching checks before up to five are selected. These checks do not guarantee pedagogical alignment or semantic correctness.</p><pre tabindex="0"><code>  const structured = raw.quiz.filter(isStructurallyValidQuiz);
+  const verified = structured.map(v).filter(q =&gt; q.source.verified);
+  const quiz = verified.slice(0, 5);</code></pre><p class="source-ref">+-- <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/b31a4b7060b6a0d3b22479d1fd39c8c69e6eac31/src/lib/analysis-schema.ts#L239-L241" target="_blank" rel="noopener noreferrer">Inspect source / analysis-schema.ts : 239-241</a></p><p class="source-ref">+-- <a class="note-link" href="#pixel-to-teach">Full implementation notes</a></p></details>
 <h3>RELATED NOTES</h3>
 <ul class="related">
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#knowledge-design">Where Language, Learning and Systems Meet</a></li>
@@ -549,6 +580,9 @@ a.note-link:hover,a.note-link:focus-visible{
 <p>An archival photograph illustrates the importance of separating observation from inference: <a href="visual-notes.html#photo-historical-evidence" class="photo-word" aria-haspopup="dialog" aria-controls="photo-historical-evidence">what the evidence actually establishes</a>. Visible damage, buildings, people and power lines provide clues, but the image alone cannot establish the date, location or cause of the damage.</p>
 <aside class="pattern-trail"><h3>EVIDENCE / INFERENCE</h3><p>The street photographs and the historical landscape distinguish what is visible from what still needs documentary support. The same discipline applies to <a class="note-link" href="#patterns">visual similarities</a> and to <a class="note-link" href="#pixel-to-teach">learning materials derived from technical sources</a>: retain the distinction between an observation, an interpretation and an established claim.</p></aside>
 <p class="implementation-note"><strong>IN PRACTICE / </strong>Source excerpts are matched against the extracted document, with page references where available. Finding a passage establishes its presence, not the truth of every interpretation attached to it. See <a class="note-link" href="#pixel-to-teach">Pixel to Teach</a>.</p>
+<details class="source-fragment technical-trace"><summary>[ TECHNICAL TRACE / 04 ] EVIDENCE / TRACE</summary><p>The verification function checks the quoted text against the extracted document. It cannot independently establish whether the attached interpretation is correct.</p><pre tabindex="0"><code>export function verifySource(doc: string, quote: string | null): VerifiedSource {
+  return verifyIndexed([docTokens(doc, true), docTokens(doc, false)], quote, doc);
+}</code></pre><p class="source-ref">+-- <a href="https://github.com/matilderodriguez/pixel-to-teach/blob/b31a4b7060b6a0d3b22479d1fd39c8c69e6eac31/src/lib/analysis-schema.ts#L194-L196" target="_blank" rel="noopener noreferrer">Inspect source / analysis-schema.ts : 194-196</a></p><p class="source-ref">+-- <a class="note-link" href="#pixel-to-teach">Full implementation notes</a></p></details>
 <aside class="discovery-signal" aria-label="Optional discovery clue"><p class="signal-label">[ EVIDENCE REQUIRED ]</p><p>A resemblance is a clue, not a conclusion.</p><p class="signal-route">+-- <a class="note-link" href="#patterns">Compare the patterns</a></p></aside>
 <h3>RELATED NOTES</h3><ul class="related"><li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#mercury">Mercury</a></li>
 <li><span class="branch" aria-hidden="true">+-- </span><a class="note-link" href="#pallas">Pallas Athena</a></li>
