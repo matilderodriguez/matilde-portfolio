@@ -1,0 +1,83 @@
+@font-face{font-family:RetroVGA;src:url("fonts/retro-vga.ttf") format("truetype");font-display:swap}
+@font-face{font-family:RetroBIOS;src:url("fonts/retro-bios.ttf") format("truetype");font-display:swap}
+@font-face{font-family:RetroCRT;src:url("fonts/retro-crt.ttf") format("truetype");font-display:swap}
+.display-selector{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 24px;font:13px/1.4 "IBM Plex Mono",monospace}
+.display-selector button{font:inherit;min-height:44px;min-width:60px;padding:8px 14px;border:1px dotted var(--amber);background:transparent;color:var(--amber);cursor:pointer}
+.display-selector button[aria-pressed=true]{background:var(--amber);color:#101010;border-style:solid}
+html[data-display] .activity-tile{border:1px dotted var(--amber);padding:16px;min-height:150px;aspect-ratio:auto}
+html[data-display] .activity-grid{align-items:stretch}
+html[data-display=vga]{--retro:RetroVGA,"IBM Plex Mono",monospace}
+html[data-display=bios]{--retro:RetroBIOS,"IBM Plex Mono",monospace}
+html[data-display=crt]{--retro:RetroCRT,"IBM Plex Mono",monospace}
+html[data-display] h1,html[data-display] .note h2,html[data-display] .activity-shortcuts h2,html[data-display] .entry-directory h2,html[data-display] .node strong,html[data-display] .activity-tile strong,html[data-display] .section-bar,html[data-display] .display-selector button{font-family:var(--retro);font-weight:400;letter-spacing:0}
+html[data-display=vga] h1{font-size:clamp(42px,8vw,96px);color:var(--amber)}
+html[data-display=bios] h1{font-size:clamp(30px,5.8vw,68px);color:var(--amber);line-height:1.35}
+html[data-display=bios] .activity-tile{border-style:solid;min-height:128px;padding:12px}
+html[data-display=bios] .activity-grid{gap:8px}
+html[data-display=crt] h1{font-size:clamp(54px,9vw,104px);color:var(--amber);line-height:.9}
+html[data-display=crt] .activity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-display=crt] .activity-tile{min-height:100px;padding:12px}
+html[data-display=crt] .activity-tile strong{font-size:26px}
+html[data-display=crt] .directory-grid{grid-template-columns:1fr}
+html[data-display=crt] .directory-branch{display:grid;grid-template-columns:1fr;gap:4px}
+@media(min-width:800px){html[data-display=bios] .overview{column-gap:32px}html[data-display=crt] .overview{grid-template-columns:1fr}html[data-display=crt] .overview>.discovery-intro{grid-column:1;margin-top:16px}}
+@media(max-width:480px){html[data-display] .activity-tile{padding:10px;overflow-wrap:anywhere}html[data-display=bios] .activity-tile strong{font-size:14px}html[data-display] .node img{width:84px;max-width:100%}}
+
+/* Three distinct compositions. DOM order and all content remain unchanged. */
+html[data-display] .activity-tile{min-width:0}
+html[data-display] .activity-tile strong{font-size:clamp(17px,2.1vw,25px);overflow-wrap:anywhere}
+html[data-display] .activity-command,html[data-display] .activity-launch,html[data-display] .directory-branch h3{font-family:var(--retro);font-size:18px}
+html[data-display] .note h2{line-height:1.25}
+html[data-display] .photo-view figcaption{line-height:1.75}
+html[data-display] .map .node img{width:84px;max-width:100%;height:auto}
+html[data-display] .display-selector{position:sticky;top:0;z-index:5;background:var(--background);padding:8px 0;border-bottom:1px solid var(--rule)}
+/* 01: graphical atlas, large modules, spacious editorial reading. */
+html[data-display=vga] main{padding-block-start:32px}
+html[data-display=vga] .overview{display:block}
+html[data-display=vga] .intro{max-width:66ch;font-size:clamp(17px,2vw,24px)}
+html[data-display=vga] .discovery-intro{margin:24px 0;border:1px dotted var(--amber);padding:12px 20px}
+html[data-display=vga] .map .node{border:1px solid #96703b;padding:20px;min-height:110px}
+html[data-display=vga] .map .sources .node{align-items:center;text-align:center;flex-direction:column}
+html[data-display=vga] .activity-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+html[data-display=vga] .activity-tile{min-height:176px;padding:20px}
+html[data-display=vga] .directory-branch{border:1px dotted var(--rule);padding:16px}
+html[data-display=vga] .note{max-width:76ch;padding-block:36px}
+html[data-display=vga] .note figure{margin-block:28px}
+html[data-display=vga] .photo-view{width:min(94vw,68rem)}
+/* 02: compact technical console with a strong modular grid. */
+html[data-display=bios] .section-bar{background:var(--amber);color:#101010}
+html[data-display=bios] main{padding:24px clamp(14px,3vw,40px)}
+html[data-display=bios] .intro{font-size:16px}
+html[data-display=bios] .discovery-intro{border:1px solid var(--rule);padding:8px 14px}
+html[data-display=bios] .map{gap:var(--gap);margin-bottom:32px}
+html[data-display=bios] .map .node{border:1px solid var(--line);padding:10px}
+html[data-display=bios] .activity-grid{gap:6px}
+html[data-display=bios] .activity-tile{min-height:120px;padding:12px}
+html[data-display=bios] .activity-tile strong{font-size:clamp(13px,1.3vw,17px)}
+html[data-display=bios] .activity-command,html[data-display=bios] .activity-launch{font-size:12px}
+html[data-display=bios] .directory-branch{padding:12px;border:1px solid var(--rule)}
+html[data-display=bios] .note{max-width:88ch;padding-block:20px;font-size:15px;line-height:1.6}
+html[data-display=bios] .note h2{font-size:clamp(18px,2.7vw,28px)}
+html[data-display=bios] .photo-view{width:min(94vw,54rem)}
+/* 03: vertical CRT terminal, command rows and generous text scale. */
+html[data-display=crt] body{max-width:980px}
+html[data-display=crt] main{padding-inline:clamp(16px,5vw,56px)}
+html[data-display=crt] .overview{display:block}
+html[data-display=crt] .intro{font-family:var(--retro);font-size:clamp(24px,3.8vw,32px);line-height:1.15;max-width:56ch}
+html[data-display=crt] .discovery-intro{border-left:3px solid var(--amber);padding:8px 16px;margin:20px 0}
+html[data-display=crt] .map{grid-template-columns:minmax(0,1fr);max-width:640px;margin-inline:auto;--gap:24px}
+html[data-display=crt] .map .sources{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+html[data-display=crt] .map .sources .node{flex-direction:column;align-items:center;text-align:center;min-height:140px}
+html[data-display=crt] .map .sources::after{left:calc(25% - 3px);right:calc(25% - 3px);top:calc(100% + var(--gap)/2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
+html[data-display=crt] .map .sources .node::after,html[data-display=crt] .map .learning::after,html[data-display=crt] .map .learning::before{left:50%;right:auto;top:calc(100% + 1px);width:1px;height:calc(var(--gap)/2)}
+html[data-display=crt] .map .learning::before{top:auto;bottom:calc(100% + 1px)}
+html[data-display=crt] .map .learning::after{height:var(--gap)}
+html[data-display=crt] .map>.node{justify-content:center;text-align:center}
+html[data-display=crt] .activity-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+html[data-display=crt] .activity-tile{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;min-height:0;padding:16px}
+html[data-display=crt] .activity-tile .activity-command,html[data-display=crt] .activity-tile strong,html[data-display=crt] .activity-tile small{grid-column:1}
+html[data-display=crt] .activity-tile .activity-launch{grid-column:2;grid-row:1/span 3;align-self:center;margin:0;padding:0}
+html[data-display=crt] .note{max-width:68ch;font-size:16px;line-height:1.8}
+html[data-display=crt] .note h2{font-size:clamp(32px,5vw,52px)}
+html[data-display=crt] .photo-view{width:min(96vw,48rem)}
+@media(max-width:480px){html[data-display=vga] .activity-tile{padding:12px;min-height:160px}html[data-display=bios] .activity-command,html[data-display=bios] .activity-launch{font-size:11px}html[data-display=crt] .activity-tile{padding:10px}html[data-display=crt] .activity-tile .activity-launch{font-size:13px}html[data-display] .display-selector{gap:5px}html[data-display] .display-selector button{padding:6px 8px;min-width:48px}}
