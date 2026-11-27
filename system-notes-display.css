@@ -113,3 +113,31 @@ html[data-display=crt] .pattern-index-grid{grid-template-columns:repeat(2,minmax
 html[data-display=crt] .note h2{letter-spacing:.02em}
 @media(min-width:1000px){html[data-display=bios] main{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,2.7fr);gap:14px 22px;align-items:start}html[data-display=bios] main>.display-selector,html[data-display=bios] main>h1{grid-column:1/-1}html[data-display=bios] .bios-index{grid-column:1;grid-row:3;position:sticky;top:80px;max-height:calc(100vh - 100px);overflow:auto}html[data-display=bios] .bios-index ol{columns:1}html[data-display=bios] main>.overview,html[data-display=bios] main>.note{grid-column:2}html[data-display=vga] .atlas-works{grid-template-columns:1.2fr 1fr .65fr;align-items:start}html[data-display=vga] .atlas-mercury{grid-column:auto}}
 @media(max-width:550px){html[data-display=bios] .bios-index ol{columns:1}html[data-display=vga] .atlas-works figcaption{font-size:18px}}
+
+/* Local historical archive — same authentic files, three presentations. */
+html[data-display] .atlas-secondary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+html[data-display] .atlas-secondary figure{margin:0;min-width:0}
+html[data-display] .atlas-secondary img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;object-position:top}
+html[data-display] .atlas-secondary figcaption{font-size:12px;color:var(--muted);padding:8px 0}
+html[data-display] .atlas-comparisons{margin-top:24px;border:1px dotted var(--rule);padding:12px}
+html[data-display] .atlas-full{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--amber)}
+html[data-display=vga] .atlas-works{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+html[data-display=vga] .atlas-works figure:first-child{grid-row:span 2}
+html[data-display=vga] .atlas-mercury{grid-column:2;padding:0;border:0;border-bottom:1px solid var(--rule)}
+html[data-display=vga] .atlas-works figure:first-child img{max-height:760px}
+html[data-display=vga] .atlas-works figure:not(:first-child) img{max-height:340px}
+html[data-display=vga] .atlas-works figure img{background:#101010;object-position:center}
+html[data-display=bios] .atlas-intro,html[data-display=crt] .atlas-intro{display:block;border:1px solid var(--rule);padding:14px;margin:0 0 24px;min-width:0}
+html[data-display=bios] .atlas-kicker,html[data-display=crt] .atlas-kicker{font-family:var(--retro);color:var(--amber)}
+html[data-display=bios] .atlas-works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+html[data-display=bios] .atlas-works figure,html[data-display=crt] .atlas-works figure{margin:0;min-width:0}
+html[data-display=bios] .atlas-works img{width:100%;height:100px;object-fit:contain;background:#090909}
+html[data-display=bios] .atlas-works figcaption{font-size:12px;overflow-wrap:anywhere}
+html[data-display=bios] .atlas-works small,html[data-display=crt] .atlas-works small{display:block;font:12px/1.5 "IBM Plex Mono",monospace;color:var(--muted)}
+html[data-display=crt] .atlas-works{display:flex;flex-direction:column;gap:16px}
+html[data-display=crt] .atlas-works figure{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:12px;border-bottom:1px dotted var(--rule);padding:10px 0}
+html[data-display=crt] .atlas-works img{width:100%;height:auto;max-height:240px;object-fit:contain}
+html[data-display=crt] .atlas-works figcaption{font:24px/1.1 RetroCRT,monospace;color:var(--amber)}
+html[data-display] #hermathena{scroll-margin-top:100px}
+@media(min-width:1000px){html[data-display=bios] main>.atlas-intro{grid-column:2;grid-row:3}html[data-display=bios] main>.overview{grid-row:4}html[data-display=vga] .atlas-works{grid-template-columns:1.35fr 1fr}.atlas-works figure:first-child{align-self:start}}
+@media(max-width:550px){html[data-display=vga] .atlas-works{grid-template-columns:1fr 1fr}html[data-display=vga] .atlas-works figure:first-child{grid-column:1/-1;grid-row:auto}html[data-display=vga] .atlas-works figure:first-child img{max-height:560px}html[data-display=vga] .atlas-mercury{grid-column:2}html[data-display=bios] .atlas-works figcaption{font-size:11px}}
