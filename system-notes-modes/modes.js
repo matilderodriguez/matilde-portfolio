@@ -112,7 +112,7 @@ async function initialiseBIOS() {
             title: originalDocument.querySelector('#entry-directory-title').textContent,
             summary: originalDocument.querySelector('.directory-intro').textContent
         };
-        fileList.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', button.dataset.item === id));
+        fileList.querySelectorAll('a[data-item]').forEach(link => { if (link.dataset.item === id) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current'); });
         document.getElementById('bios-preview-title').textContent = 'PREVIEW: ' + filename(id);
         const copy = document.createElement('div');
         const title = document.createElement('h3');
@@ -123,7 +123,6 @@ async function initialiseBIOS() {
         const icon = article.icon?.cloneNode();
         if (icon) icon.className = 'pixel-icon';
         preview.replaceChildren(...(icon ? [icon, copy] : [copy]));
-        open.dataset.record = id;
         open.href = recordURL(id);
     }
 
@@ -152,7 +151,19 @@ async function initialiseBIOS() {
             list.querySelectorAll('button[data-item]').forEach(button =>
                 button.setAttribute('aria-pressed', Number(button.dataset.item) === position));
         }
-        fileList.replaceChildren(...directory.records.map(id => selectionButton(filename(id), 'TXT', id, () => drawRecord(id))));
+        fileList.replaceChildren(...directory.records.map(id => {
+            const link = document.createElement('a');
+            link.dataset.item = id;
+            link.href = recordURL(id);
+            const name = document.createElement('span');
+            name.textContent = filename(id);
+            const type = document.createElement('span');
+            type.textContent = 'TXT';
+            link.append(name, type);
+            link.addEventListener('focus', () => drawRecord(id));
+            link.addEventListener('pointerenter', () => drawRecord(id));
+            return link;
+        }));
         drawRecord(directory.records[0]);
     }
 
@@ -163,16 +174,17 @@ async function initialiseBIOS() {
     for (const list of [directoryList, fileList, index]) {
         list.addEventListener('keydown', event => {
             if (!['ArrowDown', 'ArrowUp'].includes(event.key)) return;
-            const buttons = [...list.querySelectorAll('button')];
+            const buttons = [...list.querySelectorAll('button, a[data-item]')];
+            if (!buttons.length) return;
             const next = (buttons.indexOf(event.target) + (event.key === 'ArrowDown' ? 1 : -1) + buttons.length) % buttons.length;
             event.preventDefault();
             buttons[next].focus();
-            buttons[next].click();
+            if (list !== fileList) buttons[next].click();
         });
     }
     const actions = {
         directories: () => directoryList.querySelector('[aria-pressed="true"]').focus(),
-        records: () => fileList.querySelector('[aria-pressed="true"]').focus(),
+        records: () => fileList.querySelector('[aria-current="true"]')?.focus(),
         index: () => index.querySelector('[aria-pressed="true"]').focus(),
         preview: () => { preview.parentElement.scrollIntoView({block:'nearest'}); open.focus({preventScroll:true}); },
         help: () => help.showModal()
@@ -183,9 +195,9 @@ async function initialiseBIOS() {
         if (landing.hidden || help.open || !['F1', 'F2', 'F3', 'F4'].includes(event.key)) return;
         event.preventDefault();
         if (event.key === 'F1') actions.help();
-        if (event.key === 'F2') openRecord(currentRecord, open);
+        if (event.key === 'F2') location.assign(recordURL(currentRecord));
         if (event.key === 'F3') actions.preview();
-        if (event.key === 'F4') openRecord('map', open);
+        if (event.key === 'F4') location.assign(recordURL('map'));
     });
     drawDirectory(currentDirectory);
 }

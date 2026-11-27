@@ -35,16 +35,16 @@
     </section>
     <section class="bios-panel bios-preview" aria-labelledby="bios-preview-title">
         <h2 id="bios-preview-title">PREVIEW: MERCURY.TXT</h2>
-        <div class="bios-preview-body" id="bios-preview" aria-live="polite"></div>
+        <div class="bios-preview-body" id="bios-preview" aria-live="polite"></div><p class="bios-open-hint">Tap a file name to open its full record.</p>
     </section>
 </div>
 <nav class="bios-command" aria-label="Record commands">
 <button type="button" data-bios-action="help"><kbd>F1</kbd> Help</button>
-<a id="bios-open" data-record="mercury" href="system-notes.html#mercury"><kbd>F2</kbd> Open</a>
+<a id="bios-open" href="system-notes.html#mercury"><kbd>F2</kbd> Open</a>
 <button type="button" data-bios-action="preview"><kbd>F3</kbd> Preview</button>
-<a data-record="map" href="system-notes.html#map"><kbd>F4</kbd> Atlas</a>
+<a href="system-notes.html#map"><kbd>F4</kbd> Atlas</a>
 </nav>
-<dialog id="bios-help"><h2>FILE MANAGER HELP</h2><p>Choose a directory, then select a record to read its preview. Use the arrow keys within a list. Open the selected record with F2.</p><form method="dialog"><button>Close</button></form></dialog>
+<dialog id="bios-help"><h2>FILE MANAGER HELP</h2><p>Choose a directory, then tap a file name to open the full record. Use arrow keys or focus a file to see its preview. F2 also opens the selected record. Use your browser’s Back button to return to BIOS.</p><form method="dialog"><button>Close</button></form></dialog>
 <p id="bios-error" hidden>Records could not be loaded. <a href="system-notes.html">Open Original</a>.</p>
 <noscript><p><a href="system-notes.html">Open Original to browse all records.</a></p></noscript>
 

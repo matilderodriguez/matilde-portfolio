@@ -168,3 +168,13 @@ body:has(#record-reader:not([hidden])) .mode-shell{max-width:1480px}
     .editorial-discovery h2{font-size:15px}
     .editorial-discovery a{font-size:16px;padding-inline:5px}
 }
+
+/* BIOS: file names are real links; keyboard focus still previews the record. */
+.bios-list a[data-item]{display:flex;align-items:center;justify-content:space-between;gap:5px;width:100%;min-height:44px;text-decoration:none;padding:5px 6px;cursor:pointer}
+.bios-list a[data-item] span:first-child{min-width:0;overflow-wrap:anywhere}
+.bios-list a[data-item][aria-current=true],.bios-list a[data-item]:hover{background:var(--amber);color:var(--black)}
+.bios-open-hint{padding:0 12px 12px;font:14px/1.3 Plex,monospace}
+/* Align the entire Mercury print to the upper frame edge without cropping it. */
+.atlas .mercurius-artwork .artwork-frame{background:#e8e0cb;align-items:start;overflow:hidden}
+.atlas .mercurius-artwork .artwork-frame img{object-position:center top}
+@media(max-width:600px){.bios-list a[data-item] span:nth-child(2){display:none}.bios-list a[data-item]{padding-inline:3px}}
