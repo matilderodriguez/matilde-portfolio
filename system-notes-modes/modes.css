@@ -60,9 +60,6 @@ body:has(#record-reader:not([hidden])) .mode-shell{max-width:1480px}
 .editorial .mode-shell{max-width:1240px}
 .editorial-spread{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(10px,2vw,26px);align-items:start}
 .editorial h1{grid-column:1/10;grid-row:1;z-index:1;justify-self:start;font:clamp(3.2rem,11.4vw,10.5rem)/.9 Anton,sans-serif;letter-spacing:-.015em}
-.orbital-mark{grid-column:9/13;grid-row:1;align-self:start;justify-self:center;position:relative;display:grid;place-items:center;width:min(100%,280px);aspect-ratio:1.4;color:var(--amber)}
-.orbital-mark i{position:absolute;inset:26% 4%;border:2px dotted;border-radius:50%;transform:rotate(-30deg)}
-.orbital-mark b{font:clamp(24px,6vw,74px)/1 RetroVGA,monospace}
 .editorial-symbols{grid-column:1/3;grid-row:2;display:grid;gap:12px}
 .editorial-symbols a{min-height:44px;width:max-content;max-width:100%;text-decoration:none;font:18px/1 RetroVGA,monospace}
 .editorial-symbols .pixel-icon{width:clamp(46px,8vw,88px);height:auto;border:1px solid;padding:6px;margin-bottom:6px}
@@ -156,7 +153,6 @@ body:has(#record-reader:not([hidden])) .mode-shell{max-width:1480px}
     .editorial-discovery{grid-column:6/13;grid-row:4}
     .editorial .signal-field,.editorial-detail{grid-row:5}
     .editorial .signal-field{min-height:75px}
-    .orbital-mark{grid-column:10/13;align-self:end}
     .atlas-heading nav{display:none}
     .atlas-console{grid-template-columns:minmax(52px,.45fr) minmax(0,1.55fr)}
     .atlas-console .signal-field{display:none}
