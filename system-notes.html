@@ -9,24 +9,41 @@
 <style>
 @font-face{font-family:"IBM Plex Mono";src:url("IBMPlexMono-Regular.ttf") format("truetype");font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url("IBMPlexMono-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
-:root{color-scheme:dark;--background:#0a0a0a;--surface:#101010;--text:#ededed;--line:#929292}
+/* Page grid and reading scale */
+:root{
+    color-scheme:dark;
+    --background:#0d0d0d;
+    --surface:#151515;
+    --text:#f0eee9;
+    --muted:#bdbab2;
+    --line:#92908a;
+    --rule:#45423c;
+    --amber:#ffad47;
+    --gutter:clamp(20px,5vw,64px);
+    --section-space:clamp(40px,6vw,80px);
+    --caption:.8125rem;
+}
 *{box-sizing:border-box}
-body{max-width:1240px;margin:auto;padding:35px 20px;background:var(--background);color:var(--text);font:14px/1.6 "IBM Plex Mono",monospace}
+body{max-width:1280px;margin:auto;background:var(--background);color:var(--text);font:1rem/1.65 "IBM Plex Mono",monospace}
 a{color:inherit}
-a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-.window{border:1px solid #303030;border-radius:0;overflow:hidden;background:var(--surface)}
-nav{padding:10px 20px;background:#dedbd3;color:#121212;font-size:13px}
-.section-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-nav a{text-decoration:none}
-nav a:hover{text-decoration:underline}
-main{padding:clamp(18px,5vw,55px)}
-h1{font-size:clamp(24px,5vw,42px);line-height:1.1;margin:0 0 30px}
-.map{--gap:40px;display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:center;gap:var(--gap);margin-bottom:44px}
+:where(a,button,summary):focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.window{min-width:0}
+.section-bar{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:4px var(--gutter);background:var(--text);color:var(--background);
+    font-size:var(--caption);font-weight:700;line-height:1.35;
+}
+.section-bar a{display:flex;align-items:center;min-height:44px;text-decoration:none}
+.section-bar a:hover{text-decoration:underline}
+.section-bar a:focus-visible{outline-color:currentColor}
+main{padding:clamp(32px,6vw,84px) var(--gutter) var(--section-space)}
+h1{font-size:clamp(2.375rem,6vw,5.25rem);line-height:1;letter-spacing:-.055em;margin:0 0 24px}
+.map{--gap:24px;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:var(--gap);margin-bottom:var(--section-space)}
 .sources{display:grid;gap:16px;position:relative}
 .node{display:flex;align-items:center;gap:12px;position:relative;border:1px dotted var(--line);padding:13px;text-decoration:none;min-width:0}
 .node:hover,.node:focus-visible{background:var(--text);color:var(--background)}
 .node strong,.node span span{display:block}
-.node img{width:84px;max-width:100%;height:auto;image-rendering:pixelated;flex:none}
+.node img{width:42px;max-width:100%;height:auto;image-rendering:pixelated;flex:none}
 .node:hover img,.node:focus-visible img{filter:invert(1)}
 .learning::after,.learning::before,.sources .node::after{content:"";position:absolute;top:50%;height:1px;background:var(--line)}
 .learning::after,.sources .node::after{left:calc(100% + 1px)}
@@ -38,19 +55,30 @@ article{border-top:1px dotted var(--line);padding:18px 0;max-width:72ch;scroll-m
 article:target h2{text-decoration:underline;text-underline-offset:.25em}
 article h2{margin:0;font-size:17px}
 article p{margin:8px 0 0}
-@media(max-width:790px){
-    .map{--gap:22px;grid-template-columns:1fr;gap:var(--gap)}
-    .sources{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .sources::after{left:calc(25% - 4px);right:calc(25% - 4px);top:calc(100% + var(--gap) / 2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
-    .sources .node::after,.learning::after,.learning::before{left:50%;top:calc(100% + 1px);width:1px;height:calc(var(--gap) / 2)}
-    .learning::after{height:var(--gap)}
-    .learning::before{top:auto;bottom:calc(100% + 1px)}
-    .sources .node{flex-direction:column;align-items:flex-start;overflow-wrap:anywhere}
+/* The original branches rotate as a unit on narrow screens. */
+.map .node{font-size:.875rem;line-height:1.45;padding:12px}
+.map .node strong{margin-bottom:3px}
+.map .node span span{color:var(--muted)}
+.map .node:is(:hover,:focus-visible) span span{color:inherit}
+.sources{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sources .node{flex-direction:column;align-items:flex-start;gap:8px}
+.sources::after{left:calc(25% - 3px);right:calc(25% - 3px);top:calc(100% + var(--gap) / 2);bottom:auto;border-left:0;border-top:1px solid var(--line)}
+.sources .node::after,.learning::after,.learning::before{left:50%;top:calc(100% + 1px);width:1px;height:calc(var(--gap) / 2)}
+.learning::after{height:var(--gap)}
+.learning::before{top:auto;bottom:calc(100% + 1px)}
+@media(min-width:800px){
+    .map{--gap:clamp(28px,4vw,56px);grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,1fr))}
+    .map .node{padding:16px}
+    .sources{grid-template-columns:1fr;gap:16px}
+    .sources .node{flex-direction:row;align-items:center;min-height:88px;gap:16px}
+    .sources::after{left:calc(100% + var(--gap) / 2);right:auto;top:calc(25% - 4px);bottom:calc(25% - 4px);border-left:1px solid var(--line);border-top:0}
+    .sources .node::after,.learning::after,.learning::before{top:50%;height:1px}
+    .sources .node::after,.learning::after{left:calc(100% + 1px)}
+    .learning::before{left:auto;right:calc(100% + 1px);bottom:auto}
+    .sources .node::after,.learning::before{width:calc(var(--gap) / 2)}
+    .learning::after{width:var(--gap)}
 }
-
 [hidden]{display:none!important}
-.intro{margin:-16px 0 26px;color:#ccc}
-.overview h2{font-size:17px}
 .topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .topic{min-width:0;border-top:1px dotted var(--line)}
 .topic h3{display:inline-block;background:#dedbd3;color:#171717;padding:2px 8px}
@@ -61,10 +89,11 @@ article p{margin:8px 0 0}
 .note .back{margin:0 0 18px}
 .note .back a{text-decoration:none}
 .note .summary{color:#dedbd3;font-size:1.08em;line-height:1.65;margin:14px 0 22px}
-.note p{max-width:66ch}
+.note{font-size:1rem;line-height:1.7}
+.note p{max-width:64ch}
 .note p+p{margin-top:1em}
 .note figure{margin:20px 0}
-.note pre{background:#090909;margin:0;border:1px dotted var(--line);padding:12px;font:inherit;font-size:clamp(9px,2.8vw,13px);line-height:1.45;overflow:auto}
+.note pre{background:#090909;margin:0;border:1px dotted var(--line);padding:12px;font:inherit;font-size:var(--caption);line-height:1.5;overflow:auto}
 .related{padding-left:20px;margin:0}
 .related li{margin:6px 0}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -127,10 +156,8 @@ html:has(.photo-view[open]){overflow:hidden}
 .pattern-trail a.photo-word,.implementation-note a.photo-word{color:#ffad47;text-decoration:none;text-shadow:0 0 4px rgba(255,160,48,.25)}
 .pattern-trail a.photo-word:hover{color:#ffc578;text-shadow:0 0 5px rgba(255,160,48,.5)}
 .pattern-trail a.photo-word:focus-visible,.pattern-trail a.photo-word:active{color:#151008;background:#ffad47;text-shadow:none}
-.link-key{font-size:11px;color:#aaa;margin:-12px 0 26px;line-height:1.9;overflow-wrap:anywhere}
-.key-media{color:#ffad47;text-shadow:0 0 4px rgba(255,160,48,.25)}
+.key-media{color:var(--amber)}
 .key-note{color:var(--text);text-decoration:underline dotted #c8c8c8;text-underline-offset:.25em}
-.key-separator{padding:0 .6ch}
 @media(forced-colors:active){.pattern-trail a.photo-word{color:LinkText;text-decoration:underline;text-shadow:none}}
 
 /* Explicit link roles, independent of the surrounding paragraph or section. */
@@ -149,23 +176,18 @@ a.note-link:hover,a.note-link:focus-visible{
 .trail-reference{font-size:.92em;color:#aaa;margin-top:.85em!important}
 .key-note{color:#fff;text-decoration:underline dotted #fff;text-decoration-thickness:1.5px;text-underline-offset:.28em}
 
-.protocol-ascii{font-family:"IBM Plex Mono",ui-monospace,"DejaVu Sans Mono",monospace!important;color:#ffad47;background:#090909!important;border:1px dotted #b68b47!important;padding:clamp(8px,2vw,18px)!important;font-size:clamp(9px,2.4vw,13px)!important;line-height:1.55!important;white-space:pre;overflow-x:auto;max-width:100%;margin:16px 0 28px!important;font-variant-ligatures:none;text-shadow:0 0 3px rgba(255,160,48,.12)}
+.protocol-ascii{font-family:"IBM Plex Mono",ui-monospace,"DejaVu Sans Mono",monospace!important;color:#ffad47;background:#090909!important;border:1px dotted #b68b47!important;padding:clamp(8px,2vw,18px)!important;font-size:var(--caption)!important;line-height:1.55!important;white-space:pre;overflow-x:auto;max-width:100%;margin:16px 0 28px!important;font-variant-ligatures:none;text-shadow:0 0 3px rgba(255,160,48,.12)}
 #response-systems h3{margin-top:28px;color:#ededed}
 
 /* Optional discovery layer: no progress tracking, locks or forced route. */
-.discovery-intro{margin:0 0 24px;padding:13px 15px;border-left:1px dotted #777;color:#dedbd3;font-size:12px;line-height:1.55}
-.discovery-intro p{margin:0 0 8px}
-.discovery-intro p:last-child{margin:0}
-.signal-label{color:#ffad47;font-size:11px;letter-spacing:.07em}
-.discovery-mode{color:#aaa;margin-left:1ch}
-.discovery-foot{color:#aaa;font-size:10px;letter-spacing:.035em}
+.signal-label{color:var(--amber);font-size:var(--caption)}
 .discovery-signal{margin:1.6rem 0;padding:.65rem .85rem;border-left:1px dotted #777;color:#dedbd3;font-size:12px}
 .discovery-signal p{margin:.25rem 0!important}
 .discovery-signal .signal-route{color:#aaa;margin-top:.5rem!important}
 .discovery-reveal summary{cursor:pointer;color:#ededed;text-decoration:underline dotted;text-underline-offset:.25em}
 .discovery-reveal summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
-.source-inspection{margin:2rem 0}.source-fragment{border:1px dotted #777;margin:12px 0;padding:10px 12px}.source-fragment summary{cursor:pointer;color:#ededed;font-size:12px;line-height:1.6}.source-fragment summary::marker{color:#aaa}.source-fragment pre{color:#ffad47;font-size:clamp(10px,2.5vw,12px);white-space:pre;overflow-x:auto;margin:12px 0!important}.source-fragment code{font:inherit}.source-ref{font-size:11px;overflow-wrap:anywhere;color:#aaa}.source-fragment summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.source-inspection{margin:2rem 0}.source-fragment{border:1px dotted #777;margin:12px 0;padding:10px 12px}.source-fragment summary{cursor:pointer;color:#ededed;font-size:12px;line-height:1.6}.source-fragment summary::marker{color:#aaa}.source-fragment pre{color:#ffad47;font-size:var(--caption);white-space:pre;overflow-x:auto;margin:12px 0!important}.source-fragment code{font:inherit}.source-ref{font-size:11px;overflow-wrap:anywhere;color:#aaa}.source-fragment summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
 .technical-trace{border-color:#555;margin:12px 0 22px}.technical-trace summary{font-size:11px;letter-spacing:.025em}.technical-trace summary::marker{color:#aaa}.technical-trace p{font-size:12px}.technical-trace pre{max-width:100%;overflow-x:auto}
 
@@ -174,8 +196,6 @@ a.note-link:hover,a.note-link:focus-visible{
 .curriculum-weeks{margin:12px 0}.curriculum-weeks>div{border-top:1px dotted #555;padding:10px 0}.curriculum-weeks strong{color:#ffad47;font-size:12px}.curriculum-weeks p{margin:4px 0!important}.curriculum-focus{columns:2;column-gap:24px;padding-left:20px}.curriculum-focus li{break-inside:avoid;margin-bottom:5px}@media(max-width:600px){.curriculum-focus{columns:1}}
 
 .curriculum-index-mini{margin-top:10px;font-size:12px;color:#ccc}.curriculum-index-mini summary{cursor:pointer;color:#ededed;text-decoration:underline dotted;text-underline-offset:.25em}.curriculum-index-mini li{margin:4px 0}#curriculum-design details[id]{scroll-margin-top:16px}
-
-.entry-directory{margin:0 0 22px}.entry-directory h2{font-size:15px;letter-spacing:.07em;margin:0 0 6px;color:#ffad47}.directory-intro{font-size:12px;color:#aaa;margin:0 0 14px}.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.directory-branch{border:1px dotted #777;padding:14px;min-width:0}.directory-branch h3{margin:0 0 8px;color:#ffad47;font-size:12px;letter-spacing:.045em}.directory-branch p{color:#aaa;font-size:12px;margin:0 0 8px}.directory-branch a{display:block;padding:7px 0;overflow-wrap:anywhere;font-size:12px}.directory-more{border:1px dotted #555;margin:12px 0;padding:12px 14px}.directory-more>summary{cursor:pointer;color:#ededed;font-size:12px;letter-spacing:.035em;min-height:28px;display:list-item;padding:4px 0}.directory-more>summary:focus-visible{outline:2px solid #fff;outline-offset:3px}.directory-more .pattern-index,.directory-more .route{margin:12px 0 0;border:0;padding:0}.directory-more .topics{margin-top:12px}.overview .map{margin-bottom:28px}@media(max-width:700px){.directory-grid{grid-template-columns:1fr;gap:8px}.directory-branch{padding:10px 12px}.directory-branch a{padding:8px 0}}
 
 .lab-records{overflow-x:auto;margin:14px 0}.lab-records table{width:100%;border-collapse:collapse;font-size:12px}.lab-records caption{text-align:left;color:#aaa;margin-bottom:8px;font-size:11px}.lab-records th,.lab-records td{text-align:left;padding:9px 6px;border-bottom:1px dotted #555}.lab-records thead th{color:#ffad47}.lab-feedback{padding:10px 12px;border-left:2px solid #ffad47;background:#151515;color:#ededed;min-height:3em;font-size:12px;line-height:1.55}.lab-controls button[aria-pressed="true"]{border:1px solid #ffad47;color:#ffad47;background:#20180e}.lab-choice-stack{flex-direction:column;align-items:stretch}.lab-choice-stack button{text-align:left;white-space:normal}.lab-document{border:1px dotted #777;padding:12px;margin:12px 0}.lab-document .lab-label{margin-top:0!important}.lab-takeaway{border-top:1px dotted #777;padding-top:12px;font-size:12px}.lab-takeaway strong{color:#ffad47}.lab-extra{margin-top:20px}
 
@@ -186,7 +206,7 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .note .curriculum-pdf a,.note .curriculum-pdf a:visited{color:#ffad47!important;text-decoration:none!important;text-shadow:0 0 4px rgba(255,160,48,.25)}.note .curriculum-pdf a:hover,.note .curriculum-pdf a:focus-visible{text-decoration:underline!important}
 
-.project-access{display:flex;flex-wrap:wrap;gap:8px 16px;margin:18px 0!important}.project-access a{font-size:12px;padding:8px 0}.note{margin-inline:auto}.note p,.note li{overflow-wrap:anywhere}.note pre{max-width:100%}.section-bar a{padding:8px 0}@media(min-width:850px){.note{font-size:15px;line-height:1.7}}@media(max-width:480px){body{padding:12px 10px}.note{font-size:14px;line-height:1.7}.note .summary{line-height:1.55}.directory-branch a{min-height:40px}.photo-view header{padding:.4rem .65rem;gap:8px}.photo-view h2{overflow-wrap:anywhere;min-width:0}.photo-view header form{flex:none}.note .back a{display:inline-block;padding:8px 0}}
+.project-access{display:flex;flex-wrap:wrap;gap:8px 16px;margin:18px 0!important}.project-access a{font-size:12px;padding:8px 0}.note{margin-inline:auto}.note p,.note li{overflow-wrap:anywhere}.note pre{max-width:100%}@media(max-width:480px){.photo-view header{padding:.4rem .65rem;gap:8px}.photo-view h2{overflow-wrap:anywhere;min-width:0}.photo-view header form{flex:none}.note .back a{display:inline-block;padding:8px 0}}
 
 .pattern-question{margin:0 0 .7rem;line-height:1.55}.pattern-reveal{border-top:1px dotted #705738;padding-top:.45rem}.pattern-reveal summary{color:#ffad47;cursor:pointer;font-size:.86em;min-height:44px;display:list-item;padding:.65rem 0}.pattern-reveal summary:focus-visible{outline:2px solid #ffad47;outline-offset:3px}.pattern-reveal p{margin:.5rem 0;line-height:1.55}.pattern-motif{color:#ffad47;font-size:.85em;letter-spacing:.04em}.pattern-follow a{color:inherit;text-decoration:underline dotted;text-underline-offset:.25em}
 
@@ -202,13 +222,6 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .invariance-lab{margin:18px 0}.invariance-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.invariance-tabs button{font:inherit;font-size:12px;min-height:44px;background:transparent;color:#ffad47;border:1px dotted #a57b43;padding:8px;cursor:pointer}.invariance-tabs button[aria-pressed=true]{background:#ffad47;color:#101010}.invariance-tabs button:focus-visible{outline:2px solid #ffad47;outline-offset:3px}.invariance-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}.invariance-images figure{min-width:0;margin:0!important}.invariance-images img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:#090909}.invariance-images figcaption{font-size:11px;color:#ccc;margin-top:6px;overflow-wrap:anywhere}.invariance-reveal summary{min-height:44px;padding:8px 0;color:#ffad47;cursor:pointer}.invariance-reveal strong{color:#ffad47;font-size:12px}@media(max-width:480px){.invariance-images{gap:6px}.invariance-images img{max-height:270px}}
 
-.activity-shortcuts{margin:0 0 24px}.activity-shortcuts h2{font-size:13px;color:#ffad47;letter-spacing:.05em;margin:0 0 10px}.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.activity-tile{display:flex;flex-direction:column;gap:6px;border:1px dotted #a57b43;padding:13px;color:#dedbd3;text-decoration:none;min-width:0}.activity-tile strong{font-size:14px;color:#fff;line-height:1.35}.activity-tile span{font-size:11px;color:#ffad47}.activity-tile span:last-child{margin-top:auto;padding-top:4px}.activity-tile small{font-size:12px;line-height:1.4;color:#bbb}.activity-tile:hover,.activity-tile:focus-visible{border-style:solid;background:#1a1510}.activity-tile:focus-visible{outline:2px solid #ffad47;outline-offset:3px}@media(max-width:480px){.activity-grid{gap:7px}.activity-tile{padding:10px;gap:4px}.activity-tile strong{font-size:13px}.activity-tile small{font-size:11px}}
-
-/* Compact link legend and separate action hierarchy. */
-.overview .link-key{display:flex;flex-wrap:wrap;column-gap:24px;row-gap:6px;margin:12px 0 24px;padding:8px 0;border-top:1px dotted #555;border-bottom:1px dotted #555;line-height:1.45;font-size:11px;overflow-wrap:normal}.link-key .key-item{display:flex;align-items:baseline;gap:8px;min-width:0}.link-key .key-item>span:first-child{flex-shrink:0;font-size:10px;letter-spacing:.04em}.link-key .key-item>span:last-child{color:#bcbcbc}.activity-shortcuts{margin:0 0 32px}.activity-shortcuts h2{margin-bottom:12px}.activity-grid{gap:12px}.activity-tile{padding:16px;gap:8px;min-height:132px;box-sizing:border-box}.activity-tile strong{font-size:15px;line-height:1.4}.activity-tile .activity-command{font-size:11px;letter-spacing:.055em}.activity-tile .activity-launch{padding-top:10px;display:flex;justify-content:space-between;align-items:center;border-top:1px dotted #5e4d35;margin-top:auto}.activity-tile .activity-launch span{font-size:14px;padding:0;margin:0}.entry-directory{padding-top:16px;border-top:1px dotted #555}.entry-directory h2{margin-bottom:8px}@media(max-width:480px){.overview .link-key{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0 20px}.link-key .key-item{display:grid;grid-template-columns:86px minmax(0,1fr);gap:8px}.activity-grid{gap:8px}.activity-tile{padding:12px;min-height:144px;gap:7px}.activity-tile strong{font-size:14px}.activity-tile small{font-size:12px}.activity-shortcuts{margin-bottom:28px}}
-
-.overview .link-key{display:block;text-align:center;border:0;padding:0;margin:8px auto 24px;max-width:560px;line-height:1.9}.link-key .key-line{display:inline-block;white-space:normal}.link-key .key-separator{margin:0 5px}@media(max-width:600px){.overview .link-key{display:block;margin:8px auto 20px;line-height:1.8}.link-key .key-line{display:block}.link-key .key-separator{display:none}}
-
 .hidden-connections{margin:12px 0 20px;border:1px dotted #705738;padding:10px}.hidden-connections>summary{color:#ffad47;cursor:pointer;min-height:44px;padding:8px 0}.hc-label{color:#ffad47;font-size:12px}.hc-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.hc-options button,.hc-actions button{background:transparent;color:#ddd;border:1px dotted #a57b43;font:inherit;cursor:pointer;padding:7px;min-height:44px;min-width:0;overflow-wrap:anywhere}.hc-options button img{width:100%;height:130px;object-fit:contain;display:block;margin-bottom:8px}.hc-options button span{font-size:10px}.hc-options button[aria-pressed=true]{border:2px solid #ffad47;background:#251c11;color:#ffad47}.hc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hc-terminal a[hidden]{display:none}.hc-options button:focus-visible,.hc-actions button:focus-visible{outline:2px solid #ffad47;outline-offset:2px}@media(max-width:480px){.hc-options button{padding:4px}.hc-options button img{height:100px}}
 
 .constellation svg [data-node]{cursor:pointer;outline:none}.constellation svg .node-hit,.constellation svg g.active .node-hit{fill:transparent;stroke:none;r:22;pointer-events:all}.constellation svg [data-node]:focus-visible .node-hit{stroke:#ffad47;stroke-width:1.5;stroke-dasharray:3 3}.constellation svg [data-node]:hover .node-dot{fill:#ffad47}.constellation-result details summary{color:#ffad47;cursor:pointer;padding:10px 0;min-height:44px}.constellation-result details a{padding-left:12px}
@@ -217,50 +230,57 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .symbol-sequence{display:flex;align-items:center;justify-content:space-between;gap:3px;margin:12px 0}.symbol-sequence button{font:inherit;font-size:23px;background:transparent;color:#ffad47;border:1px dotted #a57b43;min-height:44px;min-width:36px;cursor:pointer}.symbol-sequence button[aria-pressed=true]{background:#ffad47;color:#111}.symbol-sequence span{color:#aaa;font-size:12px}.symbol-sequence button:focus-visible{outline:2px solid #ffad47;outline-offset:2px}
 
-/* Editorial rhythm / overview only. Original concept map and navigation retained. */
-main>h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 24px;letter-spacing:0}
-.overview .intro{font-size:15px;line-height:1.7;max-width:66ch;margin:0 0 24px}
-.overview .discovery-intro{font-size:13px;line-height:1.65;padding:0 0 0 16px;margin:0 0 24px}
-.overview .discovery-intro p{margin:0 0 12px}
-.overview .discovery-intro p:last-child{margin:0}
-.overview .discovery-intro .signal-label{font-size:12px;line-height:1.65;letter-spacing:.025em}
-.overview .discovery-foot{font-size:12px;line-height:1.6;letter-spacing:0}
-.overview .link-key{font-size:12px;line-height:1.65;max-width:100%;margin:24px auto;text-align:center;padding:0;border:0}
-.overview .link-key .key-line{white-space:normal}
-.overview .activity-shortcuts{margin-bottom:32px}
-.overview .activity-shortcuts h2,.overview .entry-directory h2{font-size:14px;line-height:1.5;letter-spacing:.035em;margin:0 0 16px}
-.overview .activity-grid{gap:12px}
-.overview .activity-tile{padding:16px;gap:8px;min-height:0;border-color:#70604b}
-.overview .activity-tile strong{font-size:14px;line-height:1.45}
-.overview .activity-tile small{font-size:12px;line-height:1.6}
-.overview .activity-tile .activity-command{font-size:12px;letter-spacing:0}
-.overview .activity-tile .activity-launch{padding-top:8px;margin-top:auto;border-color:#504638}
-.overview .entry-directory{margin-bottom:24px;padding-top:24px}
-.overview .directory-intro{font-size:13px;line-height:1.6;margin:0 0 16px}
-.overview .directory-branch{padding:16px;border:0;border-top:1px dotted #777}
-.overview .directory-branch h3{font-size:13px;margin:0 0 8px;line-height:1.5}
-.overview .directory-branch p,.overview .directory-branch a{font-size:13px;line-height:1.6}
-.overview .directory-more{margin:0 0 16px;padding:12px 0;border:0;border-top:1px dotted #555}
-.overview .directory-more>summary{font-size:13px;line-height:1.55;letter-spacing:0;min-height:44px;padding:10px 0}
-#pattern-engine>summary{color:#ffad47}
-#pattern-engine>summary .engine-entry-title{font-weight:700}
-.engine-entry-description{display:block;color:#ccc;font-weight:400;margin:12px 0 16px;max-width:60ch}
-.engine-entry-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:400px;margin:0 0 8px}
-.engine-entry-images img{display:block;width:100%;height:120px;object-fit:contain;background:#090909;border:1px solid #444}
-#pattern-engine[open]>summary .engine-entry-images,#pattern-engine[open]>summary .engine-entry-description{display:none}
+/* Overview: technical manual columns, indexed actions and image preview. */
+.intro{max-width:46ch;margin:0;color:var(--text);font-size:clamp(1.0625rem,1.55vw,1.375rem);line-height:1.55;text-wrap:pretty}
+.discovery-intro{margin-top:24px;padding-left:16px;border-left:1px solid var(--rule);font-size:.875rem;color:var(--muted)}
+.discovery-intro p{margin:0 0 8px}
+.discovery-intro p:last-child{margin:0}
+.discovery-mode{color:var(--muted);margin-left:.65ch}
+.discovery-foot{font-size:var(--caption)}
+.link-key{display:grid;gap:4px;margin:28px 0;color:var(--muted);font-size:var(--caption)}
+.key-separator{display:none}
+.activity-shortcuts,.entry-directory{margin-bottom:var(--section-space)}
+.activity-shortcuts h2,.entry-directory h2{font-size:clamp(1.125rem,2vw,1.5rem);line-height:1.25;letter-spacing:-.025em;margin:0 0 16px}
+.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+.activity-tile{display:flex;flex-direction:column;gap:6px;padding:12px 0 8px;color:var(--text);border-top:1px solid var(--rule);text-decoration:none}
+.activity-tile:hover,.activity-tile:focus-visible{border-color:var(--amber);background:var(--surface)}
+.activity-command,.activity-launch{font-size:var(--caption);color:var(--amber)}
+.activity-tile strong{font-size:1rem;line-height:1.35}
+.activity-tile small,.directory-intro,.directory-branch p{color:var(--muted);font-size:.875rem;line-height:1.55}
+.activity-launch{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px}
+.activity-launch span{font-size:1rem}
+.directory-intro{margin:0 0 20px}
+.directory-grid{display:grid;gap:20px}
+.directory-branch{min-width:0;padding-top:12px;border-top:1px solid var(--rule)}
+.directory-branch h3{margin:0 0 6px;color:var(--amber);font-size:.875rem}
+.directory-branch p{margin:0 0 6px}
+.directory-branch a{display:block;min-height:44px;padding:10px 0;overflow-wrap:anywhere;font-size:.9375rem}
+.directory-more{border-block-start:1px solid var(--rule);padding:4px 0}
+.directory-more>summary{cursor:pointer;min-height:44px;padding:12px 0;font-size:.9375rem;font-weight:700}
+.directory-more>summary:hover,.directory-more>summary::marker{color:var(--amber)}
+.directory-more .pattern-index,.directory-more .route{margin:12px 0 16px;border:0;padding:0}
+.directory-more .topics{margin:12px 0 16px}
+#pattern-engine>summary{color:var(--amber)}
+.engine-entry{display:grid;gap:14px;margin:8px 0 12px}
+.engine-entry-description{display:block;color:var(--muted);font-weight:400;max-width:38ch}
+.engine-entry-images{display:flex;gap:8px}
+.engine-entry-images img{display:block;width:clamp(60px,19vw,84px);height:auto;aspect-ratio:2/3;object-fit:contain}
+#pattern-engine[open]>summary .engine-entry-images{display:none}
 .overview:focus:not(:focus-visible),.note:focus:not(:focus-visible){outline:none}
-@media(max-width:600px){
- body{padding:16px 10px}
- main{padding:24px 16px}
- .overview .link-key{margin:24px 0;font-size:12px;line-height:1.65}
- .overview .link-key .key-line+.key-line{margin-top:8px}
- .overview .link-key .key-line:last-child{margin-top:8px}
- .overview .activity-tile{padding:12px;gap:8px}
- .overview .activity-grid{gap:12px}
- .overview .directory-branch{padding:12px 0}
- .engine-entry-images img{height:112px}
+@media(min-width:600px){
+    .link-key{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin:32px 0}
+    .key-separator{display:inline;color:var(--line)}
+    .directory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .engine-entry{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;max-width:36rem}
 }
-
+@media(min-width:800px){
+    .overview{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:clamp(40px,8vw,112px)}
+    .overview>*{grid-column:1/-1;min-width:0}
+    .overview>.intro{grid-column:1}
+    .overview>.discovery-intro{grid-column:2;margin-top:0}
+    .activity-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+}
+@media(min-width:1280px){.section-bar{margin-top:28px}}
 </style>
 </head>
 <body>
@@ -290,7 +310,7 @@ main>h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 24px;letter-s
 <div class="directory-branch"><h3>B / INSPECT</h3><p>Implementation, source code and design evidence.</p><a class="note-link" href="#pixel-to-teach">Pixel to Teach</a><a class="note-link" href="#curriculum-design">Curriculum Architecture</a><a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/tree/main/pixel-to-teach-showcase">Technical Showcase / GitHub</a></div>
 <div class="directory-branch"><h3>C / EXPERIMENT</h3><p>Try structure, evidence and knowledge mapping in the browser.</p><a class="note-link" href="#code-lab">Interactive Code Lab</a></div>
 </div></section>
-<details class="directory-more constellation" id="pattern-engine"><summary><span class="engine-entry-title">[ OPEN PATTERN ENGINE ]</span><span class="engine-entry-description">Explore the network of connections between images, motifs and concepts.</span><span class="engine-entry-images"><img src="images/notes/angulo-figure.webp" alt="Ángulo figure with lettering and wiring" loading="lazy" decoding="async"><img src="images/notes/the-world-24.png" alt="The World 24 figure with circuitry" loading="lazy" decoding="async"></span></summary><p>Tap a point. Inspect the evidence. Not every motif needs a graph link.</p><details class="hidden-connections" id="evidence-game"><summary>[ PLAY / TEST THE CONNECTION ]</summary><p>Choose the claim that the images actually support.</p><div class="hc-terminal"><p id="eg-index" class="hc-label"></p><div class="engine-pair" id="eg-images"></div><p id="eg-question"></p><div class="quick-choices" id="eg-options"></div><p id="eg-feedback" role="status"></p><button class="quick-exit" type="button" id="eg-next">NEXT COMPARISON →</button></div></details><details class="hidden-connections" id="hidden-connections"><summary>[ PLAY / HIDDEN CONNECTIONS ]</summary><p>Choose two images that satisfy the clue. The link appears when both are selected.</p><div class="hc-terminal"><p class="hc-label" id="hc-round"></p><p id="hc-clue"></p><div id="hc-options" class="hc-options" role="group" aria-label="Select two images"></div><p id="hc-feedback" role="status"></p><a id="hc-link" class="note-link" hidden></a><div class="hc-actions"><button type="button" id="hc-clear">CLEAR</button><button type="button" id="hc-next">NEXT CLUE →</button></div></div></details><svg viewBox="0 0 360 295" role="group" aria-label="Interactive visual motifs and their existing connections"><g><line data-edge="0,2" x1="62" y1="58" x2="300" y2="110"/><line data-edge="3,4" x1="253" y1="244" x2="93" y2="258"/></g><g data-node="0" role="button" tabindex="0" aria-label="Select ÁNGULO" aria-pressed="false"><circle class="node-hit" cx="62" cy="58" r="22"/><circle class="node-dot" cx="62" cy="58" r="5"/><text x="62" y="45" text-anchor="middle">ÁNGULO</text></g><g data-node="1" role="button" tabindex="0" aria-label="Select LEGACY" aria-pressed="false"><circle class="node-hit" cx="193" cy="38" r="22"/><circle class="node-dot" cx="193" cy="38" r="5"/><text x="193" y="25" text-anchor="middle">LEGACY</text></g><g data-node="2" role="button" tabindex="0" aria-label="Select THE WORLD 24" aria-pressed="false"><circle class="node-hit" cx="300" cy="110" r="22"/><circle class="node-dot" cx="300" cy="110" r="5"/><text x="300" y="97" text-anchor="middle">THE WORLD 24</text></g><g data-node="3" role="button" tabindex="0" aria-label="Select INTERESTING" aria-pressed="false"><circle class="node-hit" cx="253" cy="244" r="22"/><circle class="node-dot" cx="253" cy="244" r="5"/><text x="253" y="231" text-anchor="middle">INTERESTING</text></g><g data-node="4" role="button" tabindex="0" aria-label="Select BODY / POSE" aria-pressed="false"><circle class="node-hit" cx="93" cy="258" r="22"/><circle class="node-dot" cx="93" cy="258" r="5"/><text x="93" y="245" text-anchor="middle">BODY / POSE</text></g><g data-node="5" role="button" tabindex="0" aria-label="Select BUEN SUCESO" aria-pressed="false"><circle class="node-hit" cx="56" cy="153" r="22"/><circle class="node-dot" cx="56" cy="153" r="5"/><text x="56" y="140" text-anchor="middle">BUEN SUCESO</text></g><g data-node="6" role="button" tabindex="0" aria-label="Select NOTATION" aria-pressed="false"><circle class="node-hit" cx="177" cy="150" r="22"/><circle class="node-dot" cx="177" cy="150" r="5"/><text x="177" y="137" text-anchor="middle">NOTATION</text></g></svg><div class="constellation-controls" role="group" aria-label="Choose a visual motif"><button type="button" data-select="0" aria-pressed="false">ÁNGULO</button><button type="button" data-select="1" aria-pressed="false">LEGACY</button><button type="button" data-select="2" aria-pressed="false">THE WORLD 24</button><button type="button" data-select="3" aria-pressed="false">INTERESTING</button><button type="button" data-select="4" aria-pressed="false">BODY / POSE</button><button type="button" data-select="5" aria-pressed="false">BUEN SUCESO</button><button type="button" data-select="6" aria-pressed="false">NOTATION</button></div><div class="constellation-result" aria-live="polite"></div><noscript><p>Explore the <a href="visual-notes.html#photo-angulo">visual connections</a>.</p></noscript></details>
+<details class="directory-more constellation" id="pattern-engine"><summary><span class="engine-entry-title">[ OPEN PATTERN ENGINE ]</span><span class="engine-entry"><span class="engine-entry-description">Explore the network of connections between images, motifs and concepts.</span><span class="engine-entry-images"><img src="images/notes/angulo-figure-preview.webp" alt="Ángulo figure with lettering and wiring" loading="lazy" decoding="async"><img src="images/notes/the-world-24-preview.webp" alt="The World 24 figure with circuitry" loading="lazy" decoding="async"></span></span></summary><p>Tap a point. Inspect the evidence. Not every motif needs a graph link.</p><details class="hidden-connections" id="evidence-game"><summary>[ PLAY / TEST THE CONNECTION ]</summary><p>Choose the claim that the images actually support.</p><div class="hc-terminal"><p id="eg-index" class="hc-label"></p><div class="engine-pair" id="eg-images"></div><p id="eg-question"></p><div class="quick-choices" id="eg-options"></div><p id="eg-feedback" role="status"></p><button class="quick-exit" type="button" id="eg-next">NEXT COMPARISON →</button></div></details><details class="hidden-connections" id="hidden-connections"><summary>[ PLAY / HIDDEN CONNECTIONS ]</summary><p>Choose two images that satisfy the clue. The link appears when both are selected.</p><div class="hc-terminal"><p class="hc-label" id="hc-round"></p><p id="hc-clue"></p><div id="hc-options" class="hc-options" role="group" aria-label="Select two images"></div><p id="hc-feedback" role="status"></p><a id="hc-link" class="note-link" hidden></a><div class="hc-actions"><button type="button" id="hc-clear">CLEAR</button><button type="button" id="hc-next">NEXT CLUE →</button></div></div></details><svg viewBox="0 0 360 295" role="group" aria-label="Interactive visual motifs and their existing connections"><g><line data-edge="0,2" x1="62" y1="58" x2="300" y2="110"/><line data-edge="3,4" x1="253" y1="244" x2="93" y2="258"/></g><g data-node="0" role="button" tabindex="0" aria-label="Select ÁNGULO" aria-pressed="false"><circle class="node-hit" cx="62" cy="58" r="22"/><circle class="node-dot" cx="62" cy="58" r="5"/><text x="62" y="45" text-anchor="middle">ÁNGULO</text></g><g data-node="1" role="button" tabindex="0" aria-label="Select LEGACY" aria-pressed="false"><circle class="node-hit" cx="193" cy="38" r="22"/><circle class="node-dot" cx="193" cy="38" r="5"/><text x="193" y="25" text-anchor="middle">LEGACY</text></g><g data-node="2" role="button" tabindex="0" aria-label="Select THE WORLD 24" aria-pressed="false"><circle class="node-hit" cx="300" cy="110" r="22"/><circle class="node-dot" cx="300" cy="110" r="5"/><text x="300" y="97" text-anchor="middle">THE WORLD 24</text></g><g data-node="3" role="button" tabindex="0" aria-label="Select INTERESTING" aria-pressed="false"><circle class="node-hit" cx="253" cy="244" r="22"/><circle class="node-dot" cx="253" cy="244" r="5"/><text x="253" y="231" text-anchor="middle">INTERESTING</text></g><g data-node="4" role="button" tabindex="0" aria-label="Select BODY / POSE" aria-pressed="false"><circle class="node-hit" cx="93" cy="258" r="22"/><circle class="node-dot" cx="93" cy="258" r="5"/><text x="93" y="245" text-anchor="middle">BODY / POSE</text></g><g data-node="5" role="button" tabindex="0" aria-label="Select BUEN SUCESO" aria-pressed="false"><circle class="node-hit" cx="56" cy="153" r="22"/><circle class="node-dot" cx="56" cy="153" r="5"/><text x="56" y="140" text-anchor="middle">BUEN SUCESO</text></g><g data-node="6" role="button" tabindex="0" aria-label="Select NOTATION" aria-pressed="false"><circle class="node-hit" cx="177" cy="150" r="22"/><circle class="node-dot" cx="177" cy="150" r="5"/><text x="177" y="137" text-anchor="middle">NOTATION</text></g></svg><div class="constellation-controls" role="group" aria-label="Choose a visual motif"><button type="button" data-select="0" aria-pressed="false">ÁNGULO</button><button type="button" data-select="1" aria-pressed="false">LEGACY</button><button type="button" data-select="2" aria-pressed="false">THE WORLD 24</button><button type="button" data-select="3" aria-pressed="false">INTERESTING</button><button type="button" data-select="4" aria-pressed="false">BODY / POSE</button><button type="button" data-select="5" aria-pressed="false">BUEN SUCESO</button><button type="button" data-select="6" aria-pressed="false">NOTATION</button></div><div class="constellation-result" aria-live="polite"></div><noscript><p>Explore the <a href="visual-notes.html#photo-angulo">visual connections</a>.</p></noscript></details>
 <details class="directory-more"><summary>[ OPEN PATTERN TRAILS / 08 ]</summary><section class="pattern-index" aria-labelledby="pattern-index-title"><h2 id="pattern-index-title">CROSS-REFERENCES / PATTERN TRAILS</h2><p>Follow a relationship across different notes. These paths distinguish visual analogies from documented cultural connections.</p><div class="pattern-index-grid"><a class="note-link" href="#patterns">FORM / INVARIANCE</a><a class="note-link" href="#mercury">SIGNAL / INTERPRETATION</a><a class="note-link" href="#technical-writing">ACCESS / IDENTIFICATION</a><a class="note-link" href="#before-learning">EVIDENCE / INFERENCE</a><a class="note-link" href="#scale">LOAD / REUSE</a><a class="note-link" href="#architecture">NOTATION / STRUCTURE</a><a class="note-link" href="#bridge">RECONTEXTUALISATION / TRANSFER</a><a class="note-link" href="#explanation">INTERFACE / BOUNDARY</a></div></section></details>
 <details class="directory-more"><summary>[ OPEN ARCHITECTURE ROUTE ]</summary><section class="route" aria-label="Explore the knowledge map">
 <a class="route-start note-link" href="#architecture">SYS.NOTES_001 / THE ARCHITECTURE OF KNOWLEDGE</a>
