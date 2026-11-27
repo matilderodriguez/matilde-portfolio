@@ -338,15 +338,3 @@ main{
     }
 
 }
-
-
-@font-face{font-family:Menu;src:url("BarlowCondensed-Medium.ttf") format("truetype");font-weight:500}
-.main-menu{width:100%;max-width:600px;color:#c7923e}
-.main-menu h2{font:500 17px/1.2 Menu,monospace;letter-spacing:.09em;color:#17130d;background:#c7923e;padding:5px 10px;margin:0 0 7px}
-.main-menu a{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;align-items:baseline;padding:11px 10px;min-height:44px;align-content:center;color:inherit;text-decoration:none}
-.main-menu strong{font:500 clamp(18px,1.4vw,21px)/1.12 Menu,monospace;letter-spacing:.025em;text-wrap:balance}
-.main-menu small{font:400 12px/1.45 "IBM Plex Mono",monospace;color:#c2a782}
-.main-menu .secondary{border-top:1px dotted #705738;margin-top:5px;padding-top:7px}
-.main-menu .secondary strong{font-size:17px}
-.main-menu a:is(:hover,:focus-visible){background:#282218;outline:1px solid #c7923e;outline-offset:-1px}
-@media(max-width:850px){.main-menu a{padding:9px 7px;gap:10px}.main-menu small{font-size:11px}.main-menu h2{padding-left:7px}}

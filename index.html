@@ -6,12 +6,21 @@
 <title>Matilde Rodríguez | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.system-notes-entry{display:flex;flex-wrap:wrap;gap:0 2ch;margin-top:16px;font-size:13px}
-.system-notes-entry a{display:inline-block;padding:5px 0;color:#c7923e;text-decoration:none}
-.system-notes-entry a:hover,.system-notes-entry a:focus-visible{background:#c7923e;color:#101010}
+.hero { display: block; container-type: inline-size; }
+.hero .ascii { display: flex; justify-content: space-between; align-items: center; white-space: normal; margin-bottom: 2rem; }
+.hero .ascii-art { width: auto; white-space: pre; font-size: clamp(10px, 3cqi, 30px); line-height: 1.08; transform: none; }
+.hero .ascii-name, .main-menu { font-family: "Share Tech Mono", "IBM Plex Mono", monospace; }
+.hero .ascii-name { font-size: clamp(17px, 5.7cqi, 49px); font-weight: 400; letter-spacing: .25em; line-height: 1.15; }
+.main-menu { color: #dda64f; }
+.main-menu h2 { background: #ce9949; color: #151009; padding: .4em .65em; font-size: clamp(19px, 3cqi, 29px); font-weight: 400; }
+.main-menu a { display: grid; grid-template-columns: 1.04fr 1fr; align-items: center; gap: .8rem; padding: .85em .65em; min-height: 44px; color: inherit; text-decoration: none; font-size: clamp(16px, 2.8cqi, 25px); }
+.main-menu small { color: #ddba86; font-size: .86em; }
+.main-menu .secondary { border-top: 2px dotted #b68b47; }
+.main-menu a:hover, .main-menu a:focus-visible { color: #17120c; background: #dda64f; }
+.main-menu a:hover small, .main-menu a:focus-visible small { color: inherit; }
 </style>
 <link rel="icon" href="favicon.svg">
 </head>
@@ -38,10 +47,7 @@ matilde@career:~$
 ██╔████╔██║ ██████╔╝
 ██║╚██╔╝██║ ██╔══██╗
 ██║ ╚═╝ ██║ ██║  ██║
-╚═╝     ╚═╝ ╚═╝  ╚═╝</span><span class="ascii-name">
-M A T I L D E
-R O D R Í G U E Z
-</span>
+╚═╝     ╚═╝ ╚═╝  ╚═╝</span><span class="ascii-name">MATILDE<br>RODRÍGUEZ</span>
 
 </div>
 <div class="hero-content">
@@ -52,7 +58,14 @@ R O D R Í G U E Z
 Designing learning systems, technical documentation
 and language solutions for international organisations.
 </div>
-<nav class="main-menu" aria-labelledby="menu-heading"><h2 id="menu-heading">MAIN MENU</h2><a href="Matilde_Rodriguez_ASCII_A4.pdf" download><strong>DOWNLOAD CV</strong><small>PDF</small></a><a href="Matilde_Rodriguez_Portfolio_Case_Studies.pdf" target="_blank" rel="noopener noreferrer"><strong>EXPLORE PORTFOLIO</strong><small>Case studies</small></a><a href="https://pixel-to-teach.lovable.app" target="_blank" rel="noopener noreferrer"><strong>AI KNOWLEDGE-TO-LEARNING STUDIO</strong><small>Pixel to Teach</small></a><div class="secondary"><a href="system-notes.html"><strong>SYSTEM NOTES</strong><small>Knowledge Architecture Atlas</small></a><a href="https://github.com/matilderodriguez" aria-label="Matilde Rodríguez on GitHub"><strong>GITHUB</strong><small>Matilde’s profile</small></a></div></nav>
+<nav class="main-menu" aria-label="Main menu">
+<h2>MAIN MENU</h2>
+<a href="Matilde_Rodriguez_ASCII_A4.pdf" download><span>DOWNLOAD CV</span><small>PDF</small></a>
+<a href="Matilde_Rodriguez_Portfolio_Case_Studies.pdf" target="_blank" rel="noopener noreferrer"><span>EXPLORE PORTFOLIO</span><small>Case studies</small></a>
+<a href="https://pixel-to-teach.lovable.app" target="_blank" rel="noopener noreferrer"><span>AI KNOWLEDGE-TO-LEARNING STUDIO</span><small>Pixel to Teach</small></a>
+<a href="system-notes.html" class="secondary"><span>SYSTEM NOTES</span><small>Knowledge Architecture Atlas</small></a>
+<a href="https://github.com/matilderodriguez" aria-label="Matilde Rodríguez on GitHub"><span>GITHUB</span><small>Matilde’s profile</small></a>
+</nav>
 </div>
 </section>
 <div class="prompt">$ contact</div>
