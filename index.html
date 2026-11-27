@@ -22,6 +22,33 @@
 .main-menu a:hover, .main-menu a:focus-visible { color: #17120c; background: #dda64f; }
 .main-menu a:hover small, .main-menu a:focus-visible small { color: inherit; }
 #boot[hidden]{display:none!important}.evidence-link,.evidence-link:visited{color:#ffad47;text-decoration:underline dotted;text-underline-offset:.25em}.evidence-link:focus-visible{outline:2px solid currentColor;outline-offset:3px}#boot-skip{position:absolute;right:25px;bottom:25px;min-height:44px;background:transparent;color:inherit;border:1px dotted currentColor;font:inherit;padding:8px 14px;cursor:pointer}#boot-skip:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media(prefers-reduced-motion:reduce){.window-title::after,.prompt::after,#boot::after{animation:none}}@media(max-width:480px){.main-menu a{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:.65rem;overflow-wrap:anywhere}.main-menu small{font-size:.77em}.iam-box .box-content{font-size:14px;line-height:1.65}.contact-box{overflow-wrap:anywhere}}
+
+/* Editorial terminal cover: typography and composition only. */
+body{padding:clamp(8px,2.5vw,36px);background:#0b0b0b}
+.terminal{max-width:1280px;border-radius:3px;box-shadow:none;border-color:#514332}
+main{padding:clamp(18px,5vw,72px)}
+.prompt{margin:0 0 18px;font-size:12px;letter-spacing:.08em}
+.hero{padding-bottom:clamp(36px,6vw,72px)}
+.hero .ascii{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(12px,4cqi,48px);align-items:end;border-bottom:1px solid #9a7138;padding:0 0 clamp(20px,4cqi,48px);margin-bottom:clamp(20px,4cqi,44px)}
+.hero .ascii-art{font-size:clamp(8px,3.2cqi,36px);color:#e4aa59;text-shadow:none}
+.hero .ascii-name{font-family:"IBM Plex Mono",monospace;font-size:clamp(19px,6cqi,76px);font-weight:700;letter-spacing:-.055em;line-height:1.04;color:#f0e9d9}
+.hero-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);column-gap:clamp(24px,6cqi,72px);align-items:start}
+.roles{font-size:clamp(13px,1.6cqi,17px);line-height:1.7;letter-spacing:.035em;color:#e4aa59}
+.hero-description{grid-column:1;font-size:clamp(16px,2cqi,23px);line-height:1.55;color:#e3ddd2;margin:18px 0 0;max-width:36ch}
+.main-menu{grid-column:2;grid-row:1/span 2;font-family:"IBM Plex Mono",monospace;border-top:1px solid #dda64f}
+.main-menu h2{background:transparent;color:#dda64f;font-size:13px;font-weight:600;letter-spacing:.12em;padding:12px 0;border-bottom:1px solid #554631}
+.main-menu a{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);font-size:clamp(13px,1.65cqi,19px);font-weight:600;padding:16px 8px;gap:12px;border-bottom:1px solid #403a30;overflow-wrap:anywhere}
+.main-menu small{font-size:12px;font-weight:400;line-height:1.5;color:#c5b9a6}
+.main-menu .secondary{border-top:0}
+.terminal-box{border:0;border-top:1px solid #9a7138;padding:16px 0;gap:12px}
+.terminal-box h2{font-size:12px;letter-spacing:.12em}
+.iam-box{max-width:76ch}
+.iam-box .box-content{font-size:clamp(14px,1.5vw,17px);line-height:1.8}
+.contact-box{max-width:100%}
+.line{margin:24px 0 40px}
+@media(max-width:720px){.hero-content{display:block}.main-menu{margin-top:28px}.hero-description{max-width:44ch}.hero .ascii{align-items:center}.hero .ascii-name{font-size:clamp(16px,6cqi,42px)}.hero .ascii-art{font-size:clamp(7px,3.2cqi,24px)}}
+@media(max-width:360px){.hero .ascii{gap:8px}.main-menu a{grid-template-columns:1fr;gap:4px;padding:12px 4px}}
+
 </style>
 <link rel="icon" href="favicon.svg">
 </head>
