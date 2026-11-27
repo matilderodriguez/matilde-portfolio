@@ -81,3 +81,35 @@ html[data-display=crt] .note{max-width:68ch;font-size:16px;line-height:1.8}
 html[data-display=crt] .note h2{font-size:clamp(32px,5vw,52px)}
 html[data-display=crt] .photo-view{width:min(96vw,48rem)}
 @media(max-width:480px){html[data-display=vga] .activity-tile{padding:12px;min-height:160px}html[data-display=bios] .activity-command,html[data-display=bios] .activity-launch{font-size:11px}html[data-display=crt] .activity-tile{padding:10px}html[data-display=crt] .activity-tile .activity-launch{font-size:13px}html[data-display] .display-selector{gap:5px}html[data-display] .display-selector button{padding:6px 8px;min-width:48px}}
+
+/* Distinct visual architectures — all original notes remain in document order. */
+.atlas-intro,.bios-index{display:none}
+html[data-display=vga] .atlas-intro{display:block;margin:0 0 48px}
+html[data-display=vga] .atlas-kicker{font-family:RetroVGA,monospace;color:var(--amber);border-bottom:1px dotted var(--amber);padding:8px 0}
+html[data-display=vga] .atlas-works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+html[data-display=vga] .atlas-works figure{margin:0;min-width:0;border-bottom:1px solid var(--rule)}
+html[data-display=vga] .atlas-works img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;object-position:left top}
+html[data-display=vga] .atlas-works figcaption{font-family:RetroVGA,monospace;color:var(--amber);padding:10px 0;font-size:22px}
+html[data-display=vga] .atlas-works small{display:block;font:12px/1.5 "IBM Plex Mono",monospace;color:var(--muted)}
+html[data-display=vga] .atlas-mercury{grid-column:1/-1;border:1px dotted var(--amber);padding:16px}
+html[data-display=vga] #hermathena{max-width:70ch;border-left:3px solid var(--amber);padding:16px 20px;scroll-margin-top:100px}
+html[data-display=vga] #hermathena h2{font:26px RetroVGA,monospace;color:var(--amber)}
+html[data-display=vga] .overview{border-top:1px solid var(--amber);padding-top:24px}
+html[data-display=bios] .bios-index{display:block;border:2px solid var(--amber);padding:12px;margin:0 0 24px}
+html[data-display=bios] .bios-index h2{font:18px RetroBIOS,monospace;color:var(--amber);margin:0 0 12px}
+html[data-display=bios] .bios-index ol{list-style:none;padding:0;margin:0 0 12px;columns:2;column-gap:20px}
+html[data-display=bios] .bios-index li{break-inside:avoid;border-bottom:1px dotted var(--rule)}
+html[data-display=bios] .bios-index li a{display:block;text-decoration:none;padding:8px 3px;overflow-wrap:anywhere;font-size:13px}
+html[data-display=bios] .bios-index li a:hover,html[data-display=bios] .bios-index li a:focus-visible{background:var(--amber);color:#101010}
+html[data-display=bios] .bios-index li span{color:inherit;opacity:.8}
+html[data-display=bios] .overview{border:1px solid var(--amber);padding:14px}
+html[data-display=bios] .note{border:1px solid var(--rule);padding:18px;margin-block:12px;max-width:none}
+html[data-display=bios] .note .back{border-bottom:1px solid var(--rule);padding-bottom:8px}
+html[data-display=crt] .section-bar{border:1px dotted var(--amber);background:transparent}
+html[data-display=crt] .note{border-top:3px double var(--amber);padding-block:32px}
+html[data-display=crt] .note pre{font-family:RetroCRT,monospace;font-size:clamp(18px,2.4vw,25px);line-height:1.15;border:0;border-left:2px solid var(--amber);padding:12px 18px}
+html[data-display=crt] .note .back{font:20px RetroCRT,monospace;color:var(--amber)}
+html[data-display=crt] .pattern-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+html[data-display=crt] .note h2{letter-spacing:.02em}
+@media(min-width:1000px){html[data-display=bios] main{display:grid;grid-template-columns:minmax(230px,1fr) minmax(0,2.7fr);gap:14px 22px;align-items:start}html[data-display=bios] main>.display-selector,html[data-display=bios] main>h1{grid-column:1/-1}html[data-display=bios] .bios-index{grid-column:1;grid-row:3;position:sticky;top:80px;max-height:calc(100vh - 100px);overflow:auto}html[data-display=bios] .bios-index ol{columns:1}html[data-display=bios] main>.overview,html[data-display=bios] main>.note{grid-column:2}html[data-display=vga] .atlas-works{grid-template-columns:1.2fr 1fr .65fr;align-items:start}html[data-display=vga] .atlas-mercury{grid-column:auto}}
+@media(max-width:550px){html[data-display=bios] .bios-index ol{columns:1}html[data-display=vga] .atlas-works figcaption{font-size:18px}}
