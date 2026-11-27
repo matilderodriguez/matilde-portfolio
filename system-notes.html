@@ -33,7 +33,7 @@ a{color:inherit}
     padding:4px var(--gutter);background:var(--text);color:var(--background);
     font-size:var(--caption);font-weight:700;line-height:1.35;
 }
-.section-bar a{display:flex;align-items:center;min-height:44px;text-decoration:none}
+.section-bar a{display:flex;align-items:center;justify-content:flex-end;min-inline-size:44px;min-height:44px;text-decoration:none}
 .section-bar a:hover{text-decoration:underline}
 .section-bar a:focus-visible{outline-color:currentColor}
 main{padding:clamp(32px,6vw,84px) var(--gutter) var(--section-space)}
@@ -228,7 +228,7 @@ a.note-link:hover,a.note-link:focus-visible{
 
 .constellation-result .engine-preview{display:block;width:auto;max-width:100%;max-height:210px;object-fit:contain;margin:12px auto}.engine-comparison{border:1px dotted #705738;padding:10px;margin:10px 0}.engine-comparison summary{cursor:pointer;color:#ffad47;line-height:1.5}.engine-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0}.engine-pair img{width:100%;height:220px;object-fit:contain}.engine-comparison strong{color:#ffad47;font-size:12px}.engine-note{color:#aaa;font-size:12px}@media(max-width:480px){.engine-pair img{height:150px}}
 
-.symbol-sequence{display:flex;align-items:center;justify-content:space-between;gap:3px;margin:12px 0}.symbol-sequence button{font:inherit;font-size:23px;background:transparent;color:#ffad47;border:1px dotted #a57b43;min-height:44px;min-width:36px;cursor:pointer}.symbol-sequence button[aria-pressed=true]{background:#ffad47;color:#111}.symbol-sequence span{color:#aaa;font-size:12px}.symbol-sequence button:focus-visible{outline:2px solid #ffad47;outline-offset:2px}
+.symbol-sequence{display:flex;align-items:center;justify-content:space-between;gap:3px;margin:12px 0}.symbol-sequence button{font:inherit;font-size:23px;background:transparent;color:#ffad47;border:1px dotted #a57b43;min-height:44px;min-inline-size:min(44px,16%);cursor:pointer}.symbol-sequence button[aria-pressed=true]{background:#ffad47;color:#111}.symbol-sequence span{color:#aaa;font-size:12px}.symbol-sequence button:focus-visible{outline:2px solid #ffad47;outline-offset:2px}
 
 /* Overview: technical manual columns, indexed actions and image preview. */
 .intro{max-width:46ch;margin:0;color:var(--text);font-size:clamp(1.0625rem,1.55vw,1.375rem);line-height:1.55;text-wrap:pretty}
