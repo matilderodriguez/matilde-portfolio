@@ -36,6 +36,19 @@ a{color:inherit}
 .section-bar a{display:flex;align-items:center;justify-content:flex-end;min-inline-size:44px;min-height:44px;text-decoration:none}
 .section-bar a:hover{text-decoration:underline}
 .section-bar a:focus-visible{outline-color:currentColor}
+.mode-switcher{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    padding:0 var(--gutter);border-bottom:1px solid var(--rule);
+    font-size:.75rem;line-height:1.15;color:var(--muted);
+}
+.mode-switcher a{display:grid;place-items:center;min-height:44px;text-decoration:none}
+.mode-switcher a[aria-current],.mode-switcher a:hover{
+    color:var(--amber);text-decoration:underline;text-underline-offset:.3em;
+}
+@media(min-width:600px){
+    .mode-switcher{grid-template-columns:repeat(4,max-content);gap:20px;font-size:var(--caption)}
+    .mode-switcher a{min-width:44px}
+}
 main{padding:clamp(32px,6vw,84px) var(--gutter) var(--section-space)}
 h1{font-size:clamp(2.625rem,calc(21px + 5.1vw),5.25rem);line-height:1;letter-spacing:-.055em;margin:0 0 20px}
 .map{--gap:24px;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:var(--gap);margin-bottom:var(--section-space)}
@@ -318,6 +331,12 @@ h1{color:#f0e9d9;letter-spacing:-.055em;border-bottom:1px solid #9a7138;padding-
 <body>
 <div class="window">
 <nav class="section-bar" aria-label="Site navigation"><span>KNOWLEDGE ARCHITECTURE ATLAS</span><a href="./" aria-label="Return to home page">HOME</a></nav>
+<nav class="mode-switcher" aria-label="Display modes">
+    <a href="system-notes.html" target="_top" aria-current="page">ORIGINAL</a>
+    <a href="system-notes-bios.html" target="_top">BIOS</a>
+    <a href="system-notes-editorial.html" target="_top">EDITORIAL</a>
+    <a href="system-notes-atlas.html" target="_top">ATLAS</a>
+</nav>
 <main>
 <h1>SYSTEM NOTES</h1>
 <div id="map" class="overview" tabindex="-1">
