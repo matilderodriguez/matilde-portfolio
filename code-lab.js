@@ -58,6 +58,37 @@ function boot(){
   yes:"NOT ESTABLISHED / The manual gives an inspection instruction, but no replacement interval.",
   no:"EVIDENCE LIMIT IDENTIFIED / No replacement interval is given. Do not invent one."
  });
+ const mapState={first:null,second:null};
+ function renderMap(){
+  q("lab-map-edge-one").textContent=mapState.first==="correct"?"↓ sends readings to":"? / relationship pending";
+  q("lab-map-edge-two").textContent=mapState.second==="correct"?"↓ sends readings to":"? / relationship pending";
+  q("lab-map-status").textContent=mapState.first==="correct"&&mapState.second==="correct"?"MAP COMPLETE / Both directed relationships are supported by the brief.":"Select both source-supported relationships to complete the map.";
+ }
+ for(const [key,attr,output] of [["first","data-map-first","lab-map-first-feedback"],["second","data-map-second","lab-map-second-feedback"]]){
+  const buttons=[...root.querySelectorAll("["+attr+"]")];
+  buttons.forEach(button=>{
+   button.setAttribute("aria-pressed","false");
+   button.addEventListener("click",()=>{
+    buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+    mapState[key]=button.getAttribute(attr);
+    q(output).textContent=mapState[key]==="correct"?"RELATIONSHIP CONFIRMED / This direction follows the source.":"NOT SUPPORTED / The brief describes readings flowing in the opposite direction.";
+    renderMap();
+   });
+  });
+ }
+ bindChoices("data-map-limit","lab-map-limit-feedback",{
+  yes:"NOT ESTABLISHED / Receiving readings does not establish that the controller changes temperature.",
+  no:"EVIDENCE LIMIT IDENTIFIED / Leave that relationship out unless further evidence supports it."
+ });
+ q("lab-map-reset").addEventListener("click",()=>{
+  mapState.first=null;mapState.second=null;
+  root.querySelectorAll("[data-map-first],[data-map-second],[data-map-limit]").forEach(b=>b.setAttribute("aria-pressed","false"));
+  q("lab-map-first-feedback").textContent="Choose the direction supported by the brief.";
+  q("lab-map-second-feedback").textContent="Choose the second connection.";
+  q("lab-map-limit-feedback").textContent="Distinguish a source-supported relationship from a plausible assumption.";
+  renderMap();
+ });
+ renderMap();
  runStructure();runEvidence();
 }
 if(typeof document!=="undefined"){if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot()}
