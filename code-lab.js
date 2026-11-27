@@ -27,7 +27,7 @@ function boot(){
  quote.addEventListener("input",runEvidence);
  q("lab-reset-structure").addEventListener("click",()=>{data.value=defaults.rows;runStructure();data.focus()});
  q("lab-reset-evidence").addEventListener("click",()=>{src.value=defaults.source;quote.value=defaults.quote;runEvidence();quote.focus()});
- q("lab-change-pattern").addEventListener("click",()=>{data.value="Pump | 30 days | Ready\nValve | 14 days | Unknown\nFilter | 7 days | Ready";runStructure()});
+ q("lab-change-pattern").addEventListener("click",()=>{data.value="A | 10 | ACTIVE\nB | 20\nC | 30 | INACTIVE";runStructure()});
  q("lab-change-claim").addEventListener("click",()=>{quote.value="Replace the seal before every startup.";runEvidence()});
  function bindChoices(attribute, output, messages){
   const buttons=[...root.querySelectorAll("["+attribute+"]")];
@@ -40,15 +40,6 @@ function boot(){
    });
   });
  }
- bindChoices("data-structure-choice","lab-structure-feedback",{
-  A:"NOT THIS ONE / Record A contains all three required fields. Compare the status column again.",
-  B:"PATTERN DETECTED / Record B has no status. The repeated format reveals the missing field.",
-  C:"NOT THIS ONE / Record C contains all three required fields. Compare the status column again."
- });
- bindChoices("data-repair-choice","lab-repair-feedback",{
-  guess:"NOT SUPPORTED / Other devices being ready does not establish the valve's status. Copying that value invents information.",
-  flag:"GOOD DECISION / Mark the status as unknown and request evidence if it is needed. The structure is restored without inventing a fact."
- });
  bindChoices("data-evidence-choice","lab-evidence-feedback",{
   a:"SOURCE MATCH / The manual explicitly instructs the reader to inspect the seal before startup.",
   b:"NOT SUPPORTED / Inspecting a seal and replacing it are different actions. The source does not require replacement.",

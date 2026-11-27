@@ -902,19 +902,16 @@ a.note-link:hover,a.note-link:focus-visible{
 <p class="summary">Think like a knowledge engineer. Three guided challenges, no programming required.</p>
 <p>Imagine you are preparing a training guide from a set of technical records. Before writing the guide, you need to recognise how the information is organised and check what the source actually says. Try these three short challenges.</p>
 <section class="lab-panel" aria-labelledby="lab-structure-title">
-<h3 id="lab-structure-title">MISSION_001 / FIND THE MISSING FIELD</h3><p class="lab-brief">Tap the incomplete record, then choose how to handle its missing status.</p>
-<p><strong>YOUR TASK:</strong> A training team receives three equipment records. Each should contain a device, an inspection interval and a status. One record is incomplete. Which one?</p>
-<div class="lab-records" tabindex="0"><table><caption>Fictional equipment records</caption><thead><tr><th scope="col">Record</th><th scope="col">Device</th><th scope="col">Interval</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">A</th><td>Pump</td><td>30 days</td><td>Ready</td></tr><tr><th scope="row">B</th><td>Valve</td><td>14 days</td><td>—</td></tr><tr><th scope="row">C</th><td>Filter</td><td>7 days</td><td>Ready</td></tr></tbody></table></div>
-<p class="lab-label">01 / SELECT THE INCOMPLETE RECORD</p>
-<div class="lab-controls" role="group" aria-label="Select incomplete record"><button type="button" data-structure-choice="A">RECORD A</button><button type="button" data-structure-choice="B">RECORD B</button><button type="button" data-structure-choice="C">RECORD C</button></div>
-<p class="lab-feedback" id="lab-structure-feedback" role="status">Choose a record to see why it matters.</p>
-<p class="lab-label">02 / HOW SHOULD WE HANDLE THE MISSING STATUS?</p>
-<div class="lab-controls" role="group" aria-label="Choose how to handle missing status"><button type="button" data-repair-choice="guess">COPY “READY”</button><button type="button" data-repair-choice="flag">FLAG AS UNKNOWN</button></div>
-<p class="lab-feedback" id="lab-repair-feedback" role="status">Choose how to handle the missing information.</p>
-<details class="source-fragment lab-extra"><summary>[ EXPERIMENT / EDIT THE RAW RECORDS ]</summary><p>Tap MARK STATUS UNKNOWN and observe how the column counts change from 3, 2, 3 to 3, 3, 3. RESET INPUT restores the example.</p><label for="lab-rows">INPUT / Device | interval | status</label><textarea id="lab-rows" rows="4" spellcheck="false" maxlength="12000">Pump | 30 days | Ready
-Valve | 14 days
-Filter | 7 days | Ready</textarea><div class="lab-controls"><button type="button" id="lab-change-pattern">MARK STATUS UNKNOWN</button><button type="button" id="lab-reset-structure">RESET INPUT</button></div><pre class="lab-output" id="lab-structure-output" aria-live="polite">JavaScript required for live results.</pre></details>
-<p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> Recognising a repeated structure helps locate missing information. It does not tell us what that information should be.</p>
+<h3 id="lab-structure-title">DEMO_001 / STRUCTURAL RECOGNITION</h3>
+<p>Each line below is a record. The vertical bar (|) separates its fields. All three records initially have the same structure.</p>
+<p><strong>TRY IT / </strong>Press BREAK THE PATTERN to remove one field from record B. Watch COLUMN COUNTS change from 3, 3, 3 to 3, 2, 3, and see how the detector responds. RESET INPUT restores the original pattern. You can also edit the records yourself.</p>
+<label for="lab-rows">INPUT / Pipe-separated records</label>
+<textarea id="lab-rows" rows="5" spellcheck="false" maxlength="12000">A | 10 | ACTIVE
+B | 20 | ACTIVE
+C | 30 | INACTIVE</textarea>
+<div class="lab-controls"><button type="button" id="lab-change-pattern">BREAK THE PATTERN</button><button type="button" id="lab-reset-structure">RESET INPUT</button></div>
+<p class="lab-label">OUTPUT / STRUCTURE</p><pre class="lab-output" id="lab-structure-output" aria-live="polite">JavaScript required for live results.</pre>
+<p class="lab-takeaway"><strong>WHAT YOU DISCOVERED /</strong> The detector can recognise a repeated format and notice when it changes, without knowing what A, 10 or ACTIVE mean. Recognising a structure is not the same as understanding its meaning.</p>
 <p class="source-ref">+-- <a class="note-link" href="#patterns">Explore Pattern Recognition</a><br>+-- <a class="note-link" href="https://github.com/matilderodriguez/matilde-portfolio/blob/main/pixel-to-teach-showcase/src/structure/repeated-columns.ts">Inspect related production excerpt</a></p>
 </section>
 <section class="lab-panel" aria-labelledby="lab-evidence-title">
@@ -1102,6 +1099,6 @@ for (const word of document.querySelectorAll(".photo-word")) {
 renderView(false);
 window.addEventListener("hashchange", () => renderView(true));
 </script>
-<script>(()=>{function stop(root){root.querySelectorAll('.culture-player iframe').forEach(frame=>frame.remove());root.querySelectorAll('.culture-play').forEach(b=>b.hidden=false)}document.querySelectorAll('.culture-play').forEach(b=>b.addEventListener('click',()=>{const root=b.closest('dialog,section')||document;stop(root);const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?autoplay=1&playsinline=1';frame.title=b.dataset.title;frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';b.after(frame);b.hidden=true}));document.querySelectorAll('dialog').forEach(d=>d.addEventListener('close',()=>stop(d)));window.addEventListener('hashchange',()=>stop(document));})();</script><script src="code-lab.js?v=45" defer></script>
+<script>(()=>{function stop(root){root.querySelectorAll('.culture-player iframe').forEach(frame=>frame.remove());root.querySelectorAll('.culture-play').forEach(b=>b.hidden=false)}document.querySelectorAll('.culture-play').forEach(b=>b.addEventListener('click',()=>{const root=b.closest('dialog,section')||document;stop(root);const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?autoplay=1&playsinline=1';frame.title=b.dataset.title;frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';b.after(frame);b.hidden=true}));document.querySelectorAll('dialog').forEach(d=>d.addEventListener('close',()=>stop(d)));window.addEventListener('hashchange',()=>stop(document));})();</script><script src="code-lab.js?v=47" defer></script>
 </body>
 </html>
