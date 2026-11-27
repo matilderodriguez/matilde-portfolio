@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Notes / BIOS | Matilde Rodríguez</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="system-notes-modes/modes.css">
+<script src="system-notes-modes/modes.js" defer></script>
+</head>
+<body class="bios">
+<div class="mode-shell">
+<header class="masthead"><h1 class="bios-title">SYSTEM NOTES</h1><nav class="modes" aria-label="Display modes"><a href="system-notes.html">Original</a><a href="system-notes-bios.html" aria-current="page">BIOS</a><a href="system-notes-editorial.html">EDITORIAL</a><a href="system-notes-atlas.html">ATLAS</a></nav></header>
+<main id="mode-landing">
+<nav class="bios-menu" aria-label="File manager views">
+<button type="button" data-bios-action="directories">Directories</button>
+<button type="button" data-bios-action="records">Records</button>
+<button type="button" data-bios-action="index">Index</button>
+<button type="button" data-bios-action="help">Help</button>
+</nav>
+<div class="bios-workspace">
+    <section class="bios-panel bios-dirs" aria-labelledby="bios-dirs-title">
+        <h2 id="bios-dirs-title">A:\KNOWLEDGE\*.*</h2>
+        <p class="bios-columns"><span>Name</span><span>Type</span></p>
+        <div id="bios-directories" class="bios-list"></div>
+    </section>
+    <section class="bios-panel bios-files" aria-labelledby="bios-files-title">
+        <h2 id="bios-files-title">A:\01_DISCOVERY\*.*</h2>
+        <p class="bios-columns"><span>Name</span><span>Type</span></p>
+        <div id="bios-records" class="bios-list"></div>
+    </section>
+    <section class="bios-panel bios-index" aria-labelledby="bios-index-title">
+        <h2 id="bios-index-title">INDEX</h2>
+        <div id="bios-index" class="bios-list"></div>
+    </section>
+    <section class="bios-panel bios-preview" aria-labelledby="bios-preview-title">
+        <h2 id="bios-preview-title">PREVIEW: MERCURY.TXT</h2>
+        <div class="bios-preview-body" id="bios-preview" aria-live="polite"></div>
+    </section>
+</div>
+<nav class="bios-command" aria-label="Record commands">
+<button type="button" data-bios-action="help"><kbd>F1</kbd> Help</button>
+<a id="bios-open" data-record="mercury" href="system-notes.html#mercury"><kbd>F2</kbd> Open</a>
+<button type="button" data-bios-action="preview"><kbd>F3</kbd> Preview</button>
+<a data-record="map" href="system-notes.html#map"><kbd>F4</kbd> Atlas</a>
+</nav>
+<dialog id="bios-help"><h2>FILE MANAGER HELP</h2><p>Choose a directory, then select a record to read its preview. Use the arrow keys within a list. Open the selected record with F2.</p><form method="dialog"><button>Close</button></form></dialog>
+<p id="bios-error" hidden>Records could not be loaded. <a href="system-notes.html">Open Original</a>.</p>
+<noscript><p><a href="system-notes.html">Open Original to browse all records.</a></p></noscript>
+
+</main>
+<section id="record-reader" aria-label="System Notes reader" hidden>
+<div class="reader-bar"><button type="button" id="return-to-mode">[ BACK TO BIOS ]</button><a id="open-original" href="system-notes.html">Open in Original</a></div>
+<iframe id="original-reader" title="Original System Notes"></iframe>
+</section>
+</div>
+</body>
+</html>
