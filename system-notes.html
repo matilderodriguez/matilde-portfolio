@@ -1249,34 +1249,14 @@ const notesById = new Map(noteViews.map(note => [note.id, note]));
 function renderView(moveFocus) {
     const fragment = location.hash.slice(1);
     const sub = document.getElementById(fragment);
-    const detail = sub && sub.matches(".note details[id], #pattern-engine, #hidden-connections, #evidence-game") ? sub : null;
+    const detail = sub && sub.matches(".note [id], #pattern-engine, #hidden-connections, #evidence-game") ? sub : null;
     const active = notesById.get(fragment) || (detail && detail.closest(".note"));
-    if (detail && !active) { if(["hidden-connections","evidence-game"].includes(detail.id)) document.getElementById("pattern-engine").open=true; detail.open = true; }
+    if(detail){for(let p=detail;p;p=p.parentElement){if(p.tagName==="DETAILS")p.open=true;}if(["hidden-connections","evidence-game"].includes(detail.id))document.getElementById("pattern-engine").open=true;}
     overview.hidden = Boolean(active);
-    for (const note of noteViews) {
-        note.hidden = note !== active;
-    }
-    if (moveFocus || active) {
-        (active || overview).focus({preventScroll: true});
-        if (active) {
-            if (detail) {
-                detail.open = true;
-                detail.querySelector("summary").focus({preventScroll:true});
-                detail.scrollIntoView({block:"start"});
-            } else {
-                active.scrollIntoView({block:"start"});
-            }
-        } else if (detail) {
-            detail.querySelector("summary").focus({preventScroll:true});
-            detail.scrollIntoView({block:"start"});
-        } else {
-            window.scrollTo(0, 0);
-        }
-    } else if (detail) {
-        detail.scrollIntoView({block:"start"});
-    }
+    for(const note of noteViews)note.hidden=note!==active;
+    if(moveFocus||active){(active||overview).focus({preventScroll:true});if(detail){detail.scrollIntoView({block:"start"});}else if(active){active.scrollIntoView({block:"start"});}else window.scrollTo(0,0);}
+    else if(detail)detail.scrollIntoView({block:"start"});
 }
-
 // All article image links use one delegated handler; native navigation is the fallback.
 function hydratePhotoImages(viewer) {
     viewer.querySelectorAll(".photo-grid img, .culture-comparison img").forEach(img => {
@@ -1355,6 +1335,7 @@ document.addEventListener("click", event => {
     if (!word || event.ctrlKey || event.shiftKey || event.metaKey || event.altKey) return;
     const viewer = document.getElementById(word.getAttribute("aria-controls"));
     if (openPhotoViewer(viewer, word)) event.preventDefault();
+    else {const fallback=new URL(word.href,location.href);fallback.searchParams.set("return",location.hash||"#");word.href=fallback.href;}
 });
 for (const link of document.querySelectorAll(".photo-view .pattern-follow a")) {
     link.addEventListener("click", event => {
@@ -1395,6 +1376,7 @@ document.addEventListener("click",event=>{
  if(!current||!next)return;
  if(current===next){event.preventDefault();return}
  if(moveVisual(current,next,[...(current._visualTrail||[]),snapshotVisual(current)]))event.preventDefault();
+ else {const fallback=new URL(link.href,location.href);fallback.searchParams.set("return",location.hash||"#");link.href=fallback.href;}
 });
 for(const viewer of document.querySelectorAll("dialog.photo-view")){
  const form=viewer.querySelector("header form");
